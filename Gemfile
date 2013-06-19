@@ -122,7 +122,7 @@ end
 group :test do
   gem 'launchy'
   gem 'database_cleaner'
-  gem 'shoulda'
+  gem 'shoulda', :require => false
   gem 'factory_girl_rails'
   gem 'capybara',   '~> 2.0.2'
   gem 'jasmine'
