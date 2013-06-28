@@ -82,7 +82,7 @@ Channel.find_or_create_by_name!(
 
 OauthProvider.find_or_create_by_name!(
   name: 'facebook',
-  key: 'your_facebook_app_key',
-  secret: 'your_facebook_app_secret',
+  key: '656322704383031',
+  secret: '7ab68b8b788304eaf6ab581b72a42885',
   path: 'facebook'
 )
