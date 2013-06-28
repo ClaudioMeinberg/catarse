@@ -2,11 +2,12 @@
 	.promo
 		.container
 			.row
-				.span6.video
-					= content_tag("iframe", "", :src => "http://player.vimeo.com/video/65627895?color=9dff00", :width => "700", :height => "390", :frameborder => "0", :webkitAllowFullScreen => true, :mozallowfullscreen => true, :allowFullScreen => true)
-					= content_tag("p", link_to("The Future of Sports", "http://vimeo.com/65627895") + " from " + link_to("fanfuel TV", "http://vimeo.com/fanfuel") + " on " + link_to("Vimeo", "http://vimeo.com") + "." )
+				.span7.video
+					.video-container
+						= content_tag("iframe", "", :src => "http://player.vimeo.com/video/65627895?color=9dff00", :width => "700", :height => "390", :frameborder => "0", :webkitAllowFullScreen => true, :mozallowfullscreen => true, :allowFullScreen => true)
+						= content_tag("p", link_to("The Future of Sports", "http://vimeo.com/65627895") + " from " + link_to("fanfuel TV", "http://vimeo.com/fanfuel") + " on " + link_to("Vimeo", "http://vimeo.com") + "." )
 
-				.span4.offset2
+				.span4.offset1
 					h2 = "It is time to change the sponsorship industry."
 					h2.green_title = "We allow athletes to be sponsored by their fans!"
 					p = link_to "Join the Revolution!", guidelines_start_path, class: "btn btn-large btn-success"
