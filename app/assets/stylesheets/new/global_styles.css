@@ -1,37 +1,50 @@
 /* GLOBAL STYLES 
-      --------------------------------------------------*/
-      /*@import url("//hello.myfonts.net/count/270bdf");*/
-      @font-face{
-            font-family: TradeGothicLTPro-Cn18;
-            src: font-url('270BDF_0_0.ttf'), font-url('270BDF_0_0.eot'); /* IE9 */
-      }
-      
-      @font-face{
-            font-family: TradeGothicLTPro-Cn20;
-            src: font-url('270BDF_1_0.ttf'), font-url('270BDF_1_0.eot'); /* IE9 */
-      }
-      
-      body {color:#dddddd;text-transform:uppercase;font-family: TradeGothicLTPro-Cn18;}
-      a {color:#dddddd;text-transform:uppercase;font-family: TradeGothicLTPro-Cn20;}
-      li {color:#dddddd;text-transform:uppercase;font-family: TradeGothicLTPro-Cn18;}
+--------------------------------------------------*/
+/*@import url("//hello.myfonts.net/count/270bdf");*/
+@font-face{
+      font-family: TradeGothicLTPro-Cn18;
+      src: font-url('270BDF_0_0.ttf'), font-url('270BDF_0_0.eot'); /* IE9 */
+}
 
-      /* Fanfuel COLORS
-      ==============================
+@font-face{
+      font-family: TradeGothicLTPro-Cn20;
+      src: font-url('270BDF_1_0.ttf'), font-url('270BDF_1_0.eot'); /* IE9 */
+}
 
-      green   #99ff00
-      orange  #ff6600   lightest in orange grad
-      orange  #ff3300   darker orange
+body {
+      color: #dddddd;
+      text-transform: uppercase;
+      font-family: TradeGothicLTPro-Cn18;
+}
+a {
+      color: #dddddd;
+      text-transform: uppercase;
+      font-family: TradeGothicLTPro-Cn20;
+}
 
-      grey1   #dddddd   (lightest)(text - <h1> body)
+li {
+      color: #dddddd;
+      text-transform: uppercase;
+      font-family: TradeGothicLTPro-Cn18;
+}
 
-      grey2   #999999   (text - <h2>)
+/* Fanfuel COLORS
+==============================
 
-      grey3   #595959   (search bar + light in grad)
+green   #99ff00
+orange  #ff6600   lightest in orange grad
+orange  #ff3300   darker orange
 
-      grey4   #292929   (middle background)
+grey1   #dddddd   (lightest)(text - <h1> body)
 
-      grey5   #1a1a1a   (top background + divs) dark in grad
+grey2   #999999   (text - <h2>)
 
-      black   #0a0a0a   (just off of black) 
+grey3   #595959   (search bar + light in grad)
 
-      =============================== */
+grey4   #292929   (middle background)
+
+grey5   #1a1a1a   (top background + divs) dark in grad
+
+black   #0a0a0a   (just off of black) 
+
+=============================== */
