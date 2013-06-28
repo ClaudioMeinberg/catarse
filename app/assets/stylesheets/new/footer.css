@@ -2,7 +2,7 @@
 =========================== */
 
 .footer{
-	margin-top: -20px;
+/*	margin-top: -20px;*/
 	height:40px;
 	width:100%;
 	background: #595959; /* Old browsers */
@@ -14,7 +14,7 @@
 	background: linear-gradient(to bottom,  #595959 0%,#1a1a1a 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#595959', endColorstr='#1a1a1a',GradientType=0 ); /* IE6-9 */
 	border-top: #99ff00 1px solid;
-	overflow: hidden;
+/*	overflow: hidden;*/
 }
 
 .footer .nav {
@@ -29,7 +29,9 @@
 }
 
 .footer li p {
-	color:#99ff00;
+	font-family: 'genevaregular';
+	font-size:13px;
+	color:#bebebe;
 	padding:10px 30px 10px 30px;
 	margin:0;
 }
@@ -40,6 +42,8 @@
 }
 
 .copyright li p {
-	color:#dddddd;	
+	font-family: 'genevaregular';
+	font-size:13px;
+	color:#bebebe;	
 }
 
