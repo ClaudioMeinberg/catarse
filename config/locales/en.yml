@@ -1,16 +1,20 @@
 en:
+  current_update: 'Alteração atual feita em '
+  'no': "Não"
+  'yes': "Sim"
+  or: "ou"
   site:
     title: "The biggest crowdfunding community in Brazil"
     meta_title:  "%{title} · %{company_name}"
-    description: "O Catarse é uma ferramenta diferente – e colaborativa – para tirar o seu projeto do papel!"
-    keywords: "catarse, crowdfunding, project, community, open source"
+    description: "Fanfuel is a sports sponsorship revolution"
+    keywords: "fanfuel, crowdfunding, project, community, sports"
   backer_report_to_project_owner:
     reward_description: 'Reward description'
     confirmed_at: 'Payment confirmed at'
     value: 'Back value'
     service_fee: 'Catarse fee'
+    user_email: 'User profile e-mail'
     user_name: 'Backer name'
-    user_email: 'Catarse user profile e-mail'
     payer_email: 'Payment gateway user e-mail'
     payment_method: 'Payment method'
     address_street: 'Street'
@@ -22,10 +26,13 @@ en:
     address_zip_code: 'Zip code'
     anonymous: 'Anonymous'
   edit_project: 'Edit this project'
+  days: 'days'
+  controllers:
+    rewards:
+      create:
+        notice: 'Reward successfully created!'
+        alert: 'Sorry! The reward could not be created'
   facebook_locale: 'en_US'
-  or: or
-  'no': "No"
-  'yes': "Yes"
   newsletter_ok_header: "You are subscribed to the newsletter!"
   newsletter_ok_body: "Your email is now in our newsletter list, thanks for subscribing!"
   newsletter_error_header: "Woops! There was an error."
@@ -43,15 +50,15 @@ en:
       subtitle: "total of %{total}"
   project_by: "project by"
   tell_about_this_back: "Tell the world about your support!"
-  share_my_backs: "See the projects that I support in Catarse!"
+  share_my_backs: "See the projects that i support in Catarse!"
   tell_about_this_project: "Tell the world about your project!"
-  share_my_projects: "See my projects in Catarse!"
+  share_my_projects: "See my created projects in Catarse!"
   count_backed_projects: "backed %{total} projects"
   footer:
     titles:
       info: "Useful Information"
       opendata: "nice statistics"
-      social: "do you like Catarse?"
+      social: "Connect with Fanfuel"
       newsletter: "receive our newsletter"
     stats:
       backers: Backers
@@ -61,13 +68,13 @@ en:
       funded_projects: "Successful projects"
       active_projects: "Projects on air now"
     links:
-      about: "Who are we"
+      about: "About Fanfuel"
       how_works: "How It works"
       faq: F.A.Q./Help
       terms: "Terms of use"
       policy: "Privacy Policy"
-      terms_link: 'http://suporte.catarse.me/knowledgebase/articles/161102-terms-of-use'
-      policy_link: 'http://suporte.catarse.me/knowledgebase/articles/161104-privacy-policy'
+      terms_link: 'http://www.fanfuel.co/terms'
+      policy_link: 'http://www.fanfuel.co/privacy'
       contact: Contact
   main:
     links:
@@ -109,19 +116,21 @@ en:
         category: Category
         expires_at: Deadline
         online_days: Days of the air campaign
-        headline: Headline
+        headline: "Punch Line"
         image_url: "Image URL"
         name: Name
-        user_id: "User ID"
+        user_id: "User Id"
         video_url: "Video URL"
-        permalink: 'Project URL'
-        how_know: "How did you hear about Catarse?"
+        permalink: 'type you project URL'
+        how_know: "How did you meet Catarse?"
         more_links: 'Where can we find more about you and your project?'
       reward:
         description: Description
         maximum_backers: "Maximum backers"
         minimum_value: "Minimum value"
       user:
+        moip_login: 'MoIP login'
+        moip_login_hint: '(How to create an account)'
         address_city: City
         address_complement: Complement
         address_neighbourhood: Neighbourhood
@@ -130,11 +139,9 @@ en:
         address_street: Street
         address_zip_code: "Zip code"
         cpf: 'CPF / CNPJ '
-        cpf_hint_title: 'Nota Fiscal será emitida para esse documento'
+        cpf_hint_title: 'Invoice will be sent'
         cpf_hint: '(?)'
-        state_inscription: 'State Inscription'
-        moip_login: 'MoIP Login'
-        moip_login_hint: '(How to create an account)'
+        state_inscription: 'State inscription'
         current_password: "Current password"
         email: Email
         full_name: "Full name / Company Name"
@@ -143,6 +150,7 @@ en:
         password: Password
         password_confirmation: "Password Confirmation"
         phone_number: "Mobile phone number"
+        id: 'ID'
     models:
       backer: Backer
       category: Category
@@ -153,7 +161,7 @@ en:
     reward_must_be_from_project: "must be from the same project"
     should_not_back_if_maximum_backers_been_reached: "has reached its maximum backers"
     value_must_be_at_least_rewards_value: "must be at least %{minimum_value} for the selected reward"
-    project_should_be_online: "You cannot back a project that is not online"
+    project_should_be_online: "You can not back a project that is not online"
   backer_plural: backers
   project_plural: projects
   project_singular: project
@@ -167,7 +175,7 @@ en:
     modal:
       title: "Do you want to confirm your refund request?"
       text: "Check out how our refund process works:"
-      link: "See how the refund works"
+      link: "See how works the refund"
       reject_btn: "I want to keep my credits"
       accept_btn: "I want to request the refund"
     index:
@@ -211,68 +219,6 @@ en:
     show:
       backed: backed
       reached: reached
-  devise:
-    confirmations:
-      confirmed: "Your account was successfully confirmed. You are now signed in."
-      send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
-      send_paranoid_instructions: "If your e-mail exists on our database, you will receive a password recovery link on your e-mail"
-    failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account was not activated yet."
-      invalid: "Invalid email or password."
-      invalid_token: "Invalid authentication token."
-      locked: "Your account is locked."
-      timeout: "Your session expired, please sign in again to continue."
-      unauthenticated: "You need to sign up or sign in to continue."
-      unconfirmed: "You have to confirm your account before continuing."
-    links:
-      forgot_password: "Forgot your password?"
-      sign_in: "Sign in"
-      sign_up: "Sign up"
-    mailer:
-      confirmation_instructions:
-        subject: "Confirmation instructions"
-      reset_password_instructions:
-        subject: "Reset password instructions"
-        alt: "Reset password instructions"
-      unlock_instructions:
-        subject: "Unlock Instructions"
-    omniauth_callbacks:
-      failure: "Could not authorize you from %{kind} because \"%{reason}\"."
-      success: "Successfully authorized from %{kind} account."
-    passwords:
-      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
-      send_paranoid_instructions: "If your e-mail exists on our database, you will receive a password recovery link on your e-mail"
-      updated: "Your password was changed successfully. You are now signed in."
-      updated_not_active: "Your password was changed successfully."
-    registrations:
-      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
-      inactive_signed_up: "You have signed up successfully. However, we could not sign you in because your account is %{reason}."
-      reasons:
-        inactive: inactive
-        locked: locked
-        unconfirmed: unconfirmed
-      signed_up: "Welcome! You have signed up successfully."
-      updated: "You updated your account successfully."
-    sessions:
-      new:
-        site_title: "Sign in"
-        submit: "Sign in"
-        title: "Sign in using your email"
-        login_title: Login
-        login_subtitle: "If already have an account"
-        register_title: "Sign Up"
-        register_subtitle: "Use your e-mail account"
-        with_facebook: "Sign in with your facebook account"
-        with_facebook_subtitle: "A quick way to access"
-        with_another_social: "Don't have facebook account?"
-        with_another_social_subtitle: "Sign in with another social network"
-      signed_in: "Signed in successfully."
-      signed_out: "Signed out successfully."
-    unlocks:
-      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
-      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
-      unlocked: "Your account was successfully unlocked. You are now signed in."
   error: "Ooops! There was an error. Please try again."
   explore:
     index:
@@ -284,14 +230,14 @@ en:
       subtitle: "Explore the projects, find the ones that touch you, and make them happen!"
       successful: Successful
       title: "Discover amazing projects"
-    title: "Explore the projects"
+    title: "Explore projects"
     project:
       empty: "Hey, we didn't find any project with the text you searched. Wanna try some new words? =D"
   formtastic:
     hints:
       backer:
         credits: "You have <strong>%{credits}</strong> in credits and can back with up to this amount without needing to make a new payment."
-        value: "You chose the amount ;) starting with R$10, any amount is great."
+        value: "You chose any amount starting from $10."
       project:
         video_url_edit: 'Paste here the URL of your Vimeo video.'
         about: "Tell us about what inspired you to come up with this project . Be objective end charming, present your readers with something that moves them while being very transparent over the expectations on your project!"
@@ -304,7 +250,7 @@ en:
         headline: "Summarize your project in 140 characters. This sentence will be the first contact people will have with your project, before even seeing the video. Be creative, clear and direct :)"
         name: "Be as objective as you can. Leave explanations for the About section."
         uploaded_image: "Upload a 512x400 image(.jpg)."
-        video_url: "Paste the URL from a <a href=\"http://vimeo.com\" target=\"_blank\">Vimeo</a> video. We recommend Vimeo because it looks better and doesn't have ads. This way, your project will look better too! <strong>Produce your video the best you can and make a video specifically for your campaign</strong>. If there is a single thing that differentiates the projects that reach the goal from the others is the video. Observe ;)"
+        video_url: "Paste the URL from a <a href=\'http://vimeo.com\' target=\'_blank\''>Vimeo</a> video. We recommend Vimeo because it looks better and doesn't have ads. This way, your project will look better too! <strong>Produce your video the best you can and make a video specifically for your campaign</strong>. If there is a single thing that differentiates the projects that reach the goal from the others is the video. Observe ;)"
       reward:
         description: "Describe your reward in a way that arouses people's interest to back the project. Don't be shy!"
         maximum_backers: "If your reward is limited, tell us the maximum backers."
@@ -319,8 +265,8 @@ en:
         comment: "Leave your comment about this project"
       project:
         more_links: "List project related links *"
-        how_know: "How did you get to know Catarse?"
-        headline: "Punch Line"
+        how_know: "How did you get to know Fanfuel?"
+        headline: "Head line"
         category: 'Category'
         first_backers: "List your first backers *"
         about: "About your project. How will you spend this money?"
@@ -336,8 +282,8 @@ en:
   found_plural: Found
   found_singular: Found
   here: here
-  i_backed: "I backed the project %{name} on @catarse"
-  i_just_backed: "I just backed the project %{name} on @catarse"
+  i_backed: "I backed the project %{name} on @fanfuelco"
+  i_just_backed: "I just backed the project %{name} on @fanfuelco"
   layouts:
     login:
       login_with_facebook: "sign in with your facebook account"
@@ -345,6 +291,7 @@ en:
     header:
       blog: blog
       help: help
+      faq: FAQ
       signup: "sign up"
       signin: login
       explore: explore
@@ -366,7 +313,7 @@ en:
       submit: "Change password"
       title: "Reset password"
       site_title: "Change password"
-      subtitle: "You requested to reset your password. Fill your new password below and click \"Change Password\". If you did not request this password reset, just skip this page and your password will remain the same."
+      subtitle: "You requested to reset your password. Fill your new password below and click \'Change Password\'. If you did not request this password reset, just skip this page and your password will remain the same."
     email:
       content_html: " <p>Someone has requested a link to change your password, and you can do this through the link below.</p><p>%{link}</p><p>If you didn't request this, please ignore this email.</p><p>Your password won't change until you access the link above and create a new one.</p> "
       title: "Reset password instructions."
@@ -376,8 +323,8 @@ en:
       site_title: "Recover password"
   project:
     start:
-      email_subject: "Your project has been received by Catarse's team"
-      email_text: "Thanks for trusting your project to Catarse :)<br><br>We know that you expect a quick reply but, to be quite frank, we take up to 4 days to resnpond, ok? That is because we have a small team working on several projects. Note that the reply can come sooner, so keep atention to your inbox.<br><br>Meanwhile it is worth to get to know the projects that are online (<a href='%{explore_link}' style='color: #E75297 !important;'>%{explore_link}</a>) and - if you like any of them- back it! This is the way to show support for the crowdfunding culture in Brazil and to feed the ecosystem that keeps growing around Catarse.<br><br>Besides that, you will get some inspiration for your own project...<br><br>Stay tuned for updates in <a href='%{facebook}' style='color: #E75297 !important;'>Facebook</a> and get some deeper knowledge about Catarse reading the posts in our <a href='%{blog}' style='color: #E75297 !important;'>blog</a>.<br><br>If you have any doubt, send an email to: %{email}"
+      email_subject: "Your project has been received by Fanfuel"
+      email_text: "Thanks for submitting your project to Fanfuel :)<br><br>We'll get back to you within the next few days! Please check your inbox.<br><br>Meanwhile it is worth to get to know the projects that are online (<a href='%{explore_link}' style='color: #E75297 !important;'>%{explore_link}</a>) and - if you like any of them- back it! This is the way to show support for the crowdfunding culture in Brazil and to feed the ecosystem that keeps growing around Catarse.<br><br>Besides that, you will get some inspiration for your own project...<br><br>Stay tuned for updates in <a href='%{facebook}' style='color: #E75297 !important;'>Facebook</a> and get some deeper knowledge about Catarse reading the posts in our <a href='%{blog}' style='color: #E75297 !important;'>blog</a>.<br><br>If you have any doubt, send an email to: %{email}"
       notification_text: "Your project has been received by Catarse's team"
     finish:
       successful:
@@ -395,6 +342,7 @@ en:
     video_regex_validation: "only Vimeo URLs are allowed"
     display_status:
       expired: expired
+      rejected: rejected
       failed: "not funded"
       successful: funded
       waiting_confirmation: waiting
@@ -410,6 +358,7 @@ en:
         reached_goal: "This project will be successful and funded on %{date}"
         not_reached_goal: "This project will only be funded if at least %{goal} is backed until %{date}"
         failed: "This project didn't reach the goal of %{goal} until %{date} and wasn't funded"
+        rejected: "Este projeto foi rejeitado"
         successful: "This project was successful and was funded on %{date}"
         waiting_funds: "Waiting confirmation from payments to know if this project will be funded."
         draft: "This project is in draft mode and is not open to backers yet."
@@ -461,6 +410,14 @@ en:
         choose_payment_subtitle: "Select below a payment method"
         choose_credit_card: "PayPal"
         choose_boleto: "Payments from Brazil"
+        cpf: "Please complete to continue"
+        payment_card: "Card payment"
+        owner_card: "Cardholder information"
+        number_card: "Card number"
+        payment_boleto: "Pay with receipt"
+        select_boleto: "To proceed, please select:"
+        payment_account: "Payment by Direct Debit"
+        select_account: "You will be redirected to your bank's website"
         you_are_about_html: "You are about to become part of the group that does everything to make %{link} happen."
         pay_with: "Pay With"
     create:
@@ -468,7 +425,7 @@ en:
     form:
       permalink_hint: 'Simplify the URL of your project. Think that your sponsor need to remember the address to share your project.'
       add_reward: "Add reward"
-      important_html: "Please notice that Catarse will charge 13% if your project is successful. Add this values to your budget in order to execute your project with no surprises."
+      important_html: "Please notice that Fanfuel will charge 13% if your project is successful. Add this values to your budget in order to execute your project with no surprises."
       project_warning:
         content_html: "Want to have your project selected? Don't forget to read %{link}."
         help_link: "our guide"
@@ -483,7 +440,7 @@ en:
       suggest_for_you: "suggested for you"
       highlight_project: "featured project"
       guidelines: "How it Works"
-      guidelines_subtitle: "Getting to know Catarse"
+      guidelines_subtitle: "Getting to know Fanfuel"
     pending:
       can_finish: "Can finish?"
       finished: Finished?
@@ -572,46 +529,57 @@ en:
         take_a_look: "Check out the project"
         title: "Be part of it and share this project"
     new:
-      legend_html: "After filling in the form below, you will receive a project page in Draft mode. In this draft you will add the rewards for your backers. You may also share the page with your friends to collect feedback and sharpen your project even more.<br><br>The information filled in below is not definitive, but remember that the more consistent you are in your project submission, the faster it will go on air.<br><br><b>Very Important:</b> <i>Catharsis is cured platform, which means that our board will evaluate the focus, the feasibility and consistency of your project during the Draft. If we understand that your project does not comply with our <a href='https://docs.google.com/a/catarse.me/document/d/1wLDS2lphQ6monovg9rEaTIDcxBD3FRZV9dfGKmajyj8/edit' target='_blank' >selection criteria</a>, it may be refused by the team of curators.</i>"
-      permalink_important: 'Try not to use underline, hyphen etc.'
-      permalink_hint: 'Go simple. Your backers should be able to remmember the URL to your project ;)'
-      name_important: "Do not exceed  50 characters"
-      online_days_important: "60 days is the maximum"
-      about_important: "Don't make it too long! Indicate links so people can know more about your work"
-      important_html: 'Keep in mind the 13% fee charged by Catarse in case you reach your financial goal. Just divide your final budget by 0.87 to find the discounted amount.'
-      send_project: "I want to submit my project."
-      video_important: "The video must be hosted by Vimeo. Paste here the URL!"
-      more_links_important: "It's very important to use social medias to spread the word about your project and engage your network into making it a success"
-      first_backers_important: "These people are fundamental to the success of your project."
-      how_know_important: "Yay! We reached  the final question."
-      headline_important: "It's a summary of  your project . 140 characteres tops!:D"
-      tags_important: "Check ou other projects in your category  <a href='%{href}' target='_blank'>here!</a>!."
       subtitle: "The time to make it happen is now! We really want to know what you're up to..."
       title: "Submit your project"
+      introduction_html: "Complete as much information as you can in the form below. The more you tell us, <br/> the faster we can launch your project on Fanfuel"
+      permalink_important: 'No underlines, hyphens, etc'
+      permalink_hint: 'A simple URL for your project.'
+      important_html: "Remember, Fanfuel charges 13% if your project is successful. Simply divide the final budget you need by 0.87."
       about: "Describe your project and how much do you need"
-      category: "Project category"
       how_much_you_need: "How much do you want to raise?"
+      how_much_hint_html: "It's important to remember that most of the support comes from people close to you. <a href='%{href}' target='_blank'>Clique aqui!</a> So think about how you can tap into your existing network."
+      how_much_important: "Remember, Fanfuel charges 13% if your project is successful. Simply divide the final budget you need by 0.87."
+      days: "How many days"
+      days_hint: "On average, projects run for 40 days."
+      days_important: "The project can run for a maximum of 60 days"
       about_hint: "Tell us a little about what you want to do, how much you need and what for. Be brief and punctual, but don't forget to give the readers something that moves them. After all, it's your creation and they need to see your passion taking place!"
+      about_important: "Keep it short. Include links so your supporters can explore more of your work."
       contact: "Leave us your email address so we can contact you"
       links: "Where can we find more about you and your project?"
+      links_important: "Including links will help us get to know you"
       links_hint: "Leave us as many links as you have, so we can get to know your work and your project better. Doesn't have to be something formal or fancy, just a few useful links."
-      video: "Your project already have a video?"
+      category: "Project category"
+      tags_hint: "Before submitting your project, explore and be inspired by other projects that have gone through the site."
+      tags_important: "Check out other campaigns in this category <a href='%{href}' target='_blank'>here!</a>."
+      video: "Does your project have a video?"
       video_hint: "A Vimeo link"
-      twitter: "Have twitter account?"
-      facebook: "Have facebook account?"
-      blog: "Have a blog about the project?"
-      know_us_via: "How did you meet Catarse?"
+      video_important: "Your video needs to be hosted on Vimeo. Just send us the link!"
+      how_know_important: "The final question!"
+      more_links_important: "It's very important to use social medias to spread the word about your project and engage your network into making it a success"
+      first_backers_important: "These people are fundamental to the success of your project."
+      online_days_important: "60 days is the maximum"
+      headline_important: "Summary of your project. 140 characters tops!:D"
+      name_important: "Do not exceed 50 characters"
+      social: "Social media"
+      facebook_hint: "http://facebook.com/__________"
+      twitter_hint: "http:// twitter.com/____________"
+      social_important: "Use social media to tell people about your campaign and engage your network in the success of the project."
+      know_us_via: "How did you hear about Fanfuel?"
+      knowus_important: "Alright! The last question!"
       how_works: "How to mobilize backers to raise $ needed for enforcement?"
       project_warning:
         content_html: "Want to have your project selected? Don't forget to read %{link}."
         help_link: "our guide"
       rewards: "What rewards do you want to offer?"
       rewards_hint: "We believe that the best way to inspire people to back a project is offering excelent – and creative! – rewards. Everybody loves limited editions, unique things and joyfull experiences (parties, candies, balloon traveling!). Spend some time devising creative rewards and people will be interested."
+      rewards_important: "Think about how you will be able to distribute rewards and put it all in the budget"
       submit: "Submit the project"
+      send_project: "I want to submit my project."
       subtitle: "The time to make it happen is now! We really want to know what you're up to..."
       title: "Submit your project"
+      legend_html: "After completing the form below, you will be directed to the project page in draft format. From there you can add rewards and share it with your friends.<br><br><b>Important</b> <i> Fanfuel is a curated platform. We will assess the focus, feasibility and consistency of your draft project. We choose projects based on our <a href='http://www.fanfuel.co/selectioncriteria' target='_blank' >selection criteria</a>.</i>"
     twitter:
-      take_a_look: "Check out the project %{name} on @catarse"
+      take_a_look: "Check out the %{name} project on @fanfuelco"
     video_embed:
       a_project_by_html: "A project by %{link} on"
   projects_mailer:
@@ -641,9 +609,73 @@ en:
       success: "Successfully logged out. See you!"
     failure:
       error: "There was an error while loggin in. Please try again."
-  site:
-    title: "The first crowdfunding platform from Brazil"
   static:
+    faq:
+      title: "Frequently asked questions"
+    guidelines_start:
+      accept: "I have read and understand how Fanfuel works."
+      explore_curious: "Just looking around!"
+      explore_projects: "I want to explore the projects."
+      submit: "Next step!"
+      send_project: "I want to submit my project."
+      subtitle: "Understand, step-by-step, how to get funded on Fanfuel."
+      title: "How Fanfuel works"
+      introduction: "Catarse is a different - and collaborative - way to make your projects become reality."
+      legend_html: "Use this guide to decide if Catarse is the right tool for the job."
+      title_one: "Submit your project"
+      step_one: "Projects are actions! And we receive them with open arms whether they are small, big, funny, serious, traditional, innovative... We love projects that require little money and have a big impact in their communities."
+      title_two: "Review"
+      step_two: "After we receive your project, it will be screened by our team of reviewers. The objective here is to give you tips in order to maximize the chances of your project becoming successful, as well as filtering NON-SENSE projects. Remember, we want your project to be successful as much as you do ;)"
+      title_three: "Let's go live!?"
+      step_three: "When your project is ready, it's time to go live and plan your campaign. During this period, you will need to engage as many people as possible to reach your goal."
+      title_four: "It's all-or-nothing"
+      step_four: "If your project doesn't reach its goal before time runs out, all backers will receive their pledged amount in credits and later, if they want, can ask for a refund."
+      title_requirements: "Requirements to submit your project to Catarse"
+      creative: "Creative and Finite"
+      colective: "Collective Benefits"
+      nonprofit: "Non-financial rewards"
+      donation: "No philanthropic or “fund my life” projects"
+      video: "Make a video"
+      more_questions: "Ok, but tell me more about this Catarse..."
+      title_magic: "Our magic formula"
+      magic: "We believe that providing a meeting place for people that share common values is the best way to turn projects into reality. Use Catarse as a channel to direct your network towards a COMMON objective."
+      title_money: "Where does the money to finance projects come from?"
+      money: "At least 50% will come from your own network of contacts. In this manner, Catarse is a way for you to get closer to the people that enjoy your work and expand this network through sharing in social networks, newspapers, blogs and, of course, your favorite bar."
+      title_work: "Does it take a lot of work?"
+      work: "A loooot! There is no 'easy money on the INTERNET'. You will have to work a lot during your project, but the experience will be worth it - we assure you :D And you will have a much stronger network behind your project after Catarse."
+      title_costs: "How much does it cost to use Catarse?"
+      costs: "Submitting your project is free. Now, when your project is approved and has reached its goal, Catarse will apply a 13% fee, this value includes both the Catarse fee and the payment gateway fee."
+      why: "Why Catarse?"
+      intro: "First of all, it's good that you know why we believe that this new way to finance projects is phenomenal:"
+      why_one: "By creating a very strong bond with your network, this kind of campaign open doors to new projects, partnerships and other unexpected connections."
+      why_two: "If the projects are well connected, they can spread, quickly, to a lot of people, expanding your network and strengthening the base of people around your project."
+      why_three: "Minimum red tape and low financial risk. No interest rate, no entry fees... and lots of fun and emotion."
+    guidelines_tips:
+      title: "Almost there!"
+      subtitle: "Before submitting your project, it's good to think over a few important points."
+      introduction_html: "We know you can't wait to have your project online, but first answer <br> (in a piece of paper) the following questions."
+      legend_html: "Having clear answers to these questions will help tremendously in structuring your project, <br>increasing the chances that it will be successful."
+      title_one: "What inspired you to make this project?"
+      tip_one: "People only engage when they realize the importance of a cause for society or for the person who leads a campaign. So be very clear about what is your inspiration and let it overflow into your project."
+      title_two: "What is the focus?"
+      tip_two: "Catarse is an excellent way to take the first steps. Therefore, define very well the purpose of your project, as well as who will benefit from it. Clearly defining your objectives is one of the best ways to engage people."
+      title_three: "What is your goal?"
+      tip_three: "Calculate all costs for the project execution and rewards delivery. Also take into account your ability to engage people in order to define your financial goal."
+      title_four: "What is your deadline for the fundraising?"
+      tip_four: "Don't underestimate the work of a campaign. You will have to work hard during the entire period the project is live, so, it's recommended that you don't tire yourself too much in this process. Our recommendation: 40 days of campaign."
+      title_five: "Have you thought about the project rewards?"
+      tip_five: "Remember that rewards are public promises. So, think very well when elaborating them, as well as the logistics in delivering them to your backers. Our suggestion: think about immaterial rewards: downloads, experiences, courses e kisses."
+      title_six: "Is your video ready?"
+      tip_six: "The video is the business card of your project. It's through it that the backers will get in touch with your cause. So, take special care in the script, audio and image quality. HD is recommended."
+      title_seven: "How will you mobilize your network?"
+      tip_seven: "You need to have a clear idea on how you will stir your network and convince it to back your project. Distribute your work weekly and change your approach with the network according to how close you are to it."
+      title_eight: "How will the money be used?"
+      tip_eight: "Create a GOOGLE DOCS spreadsheet and open your budget to show everyone how the money will be used. TRANSPARENCY is everything."
+      explore_curious: "Just looking around!"
+      explore_projects: "I want to explore the projects."
+      submit: "Next step!"
+      send_project: "I want to submit my project."
+      guide: "Download here a complete guide with all the tips to elaborate your project in Catarse."
     guidelines_backers:
       title: "I want to back a project!"
       subtitle: "Understand step by step how to back a project on Catarse."
@@ -724,72 +756,6 @@ en:
       name_nine: "Antônio Roberto"
       title_nine: "Fireman"
       text_nine: "A fellow crazy about development who lives in Tonland"
-    faq:
-      title: "Frequently asked questions"
-    guidelines_start:
-      accept: "I have read and understand how catarse works."
-      explore_curious: "Just looking around!"
-      explore_projects: "I want to explore the projects."
-      submit: "Next step!"
-      send_project: "I want to submit my project."
-      subtitle: "Understand, step-by-step, how to finance your project through Catarse."
-      title: "How Catarse works?"
-      introduction: "Catarse is a different - and collaborative - way to make your projects become reality."
-      legend_html: "Use this guide to decide if Catarse is the right tool for the job."
-      title_one: "Submit your project"
-      step_one: "Projects are actions! And we receive them with open arms whether they are small, big, funny, serious, traditional, innovative... We love projects that require little money and have a big impact in their communities."
-      title_two: "Review"
-      step_two: "After we receive your project, it will be screened by our team of reviewers. The objective here is to give you tips in order to maximize the chances of your project becoming successful, as well as filtering NON-SENSE projects. Remember, we want your project to be successful as much as you do ;)"
-      title_three: "Let's go live!?"
-      step_three: "When your project is ready, it's time to go live and plan your campaign. During this period, you will need to engage as many people as possible to reach your goal."
-      title_four: "It's all-or-nothing"
-      step_four: "If your project doesn't reach its goal before time runs out, all backers will receive their pledged amount in credits and later, if they want, can ask for a refund."
-      title_requirements: "Requirements to submit your project to Catarse"
-      creative: "Creative and Finite"
-      colective: "Collective Benefits"
-      nonprofit: "Non-financial rewards"
-      donation: "No philanthropic or “fund my life” projects"
-      video: "Make a video"
-      more_questions: "Ok, but tell me more about this Catarse..."
-      title_magic: "Our magic formula"
-      magic: "We believe that providing a meeting place for people that share common values is the best way to turn projects into reality. Use Catarse as a channel to direct your network towards a COMMON objective."
-      title_money: "Where does the money to finance projects come from?"
-      money: "At least 50% will come from your own network of contacts. In this manner, Catarse is a way for you to get closer to the people that enjoy your work and expand this network through sharing in social networks, newspapers, blogs and, of course, your favorite bar."
-      title_work: "Does it take a lot of work?"
-      work: "A loooot! There is no 'easy money on the INTERNET'. You will have to work a lot during your project, but the experience will be worth it - we assure you :D And you will have a much stronger network behind your project after Catarse."
-      title_costs: "How much does it cost to use Catarse?"
-      costs: "Submitting your project is free. Now, when your project is approved and has reached its goal, Catarse will apply a 13% fee, this value includes both the Catarse fee and the payment gateway fee."
-      why: "Why Catarse?"
-      intro: "First of all, it's good that you know why we believe that this new way to finance projects is phenomenal:"
-      why_one: "By creating a very strong bond with your network, this kind of campaign open doors to new projects, partnerships and other unexpected connections."
-      why_two: "If the projects are well connected, they can spread, quickly, to a lot of people, expanding your network and strengthening the base of people around your project."
-      why_three: "Minimum red tape and low financial risk. No interest rate, no entry fees... and lots of fun and emotion."
-    guidelines_tips:
-      title: "Almost there!"
-      subtitle: "Before submitting your project, it's good to think over a few important points."
-      introduction_html: "We know you can't wait to have your project online, but first answer <br> (in a piece of paper) the following questions."
-      legend_html: "Having clear answers to these questions will help tremendously in structuring your project, <br>increasing the chances that it will be successful."
-      title_one: "What inspired you to make this project?"
-      tip_one: "People only engage when they realize the importance of a cause for society or for the person who leads a campaign. So be very clear about what is your inspiration and let it overflow into your project."
-      title_two: "What is the focus?"
-      tip_two: "Catarse is an excellent way to take the first steps. Therefore, define very well the purpose of your project, as well as who will benefit from it. Clearly defining your objectives is one of the best ways to engage people."
-      title_three: "What is your goal?"
-      tip_three: "Calculate all costs for the project execution and rewards delivery. Also take into account your ability to engage people in order to define your financial goal."
-      title_four: "What is your deadline for the fundraising?"
-      tip_four: "Don't underestimate the work of a campaign. You will have to work hard during the entire period the project is live, so, it's recommended that you don't tire yourself too much in this process. Our recommendation: 40 days of campaign."
-      title_five: "Have you thought about the project rewards?"
-      tip_five: "Remember that rewards are public promises. So, think very well when elaborating them, as well as the logistics in delivering them to your backers. Our suggestion: think about immaterial rewards: downloads, experiences, courses e kisses."
-      title_six: "Is your video ready?"
-      tip_six: "The video is the business card of your project. It's through it that the backers will get in touch with your cause. So, take special care in the script, audio and image quality. HD is recommended."
-      title_seven: "How will you mobilize your network?"
-      tip_seven: "You need to have a clear idea on how you will stir your network and convince it to back your project. Distribute your work weekly and change your approach with the network according to how close you are to it."
-      title_eight: "How will the money be used?"
-      tip_eight: "Create a GOOGLE DOCS spreadsheet and open your budget to show everyone how the money will be used. TRANSPARENCY is everything."
-      explore_curious: "Just looking around!"
-      explore_projects: "I want to explore the projects."
-      submit: "Next step!"
-      send_project: "I want to submit my project."
-      guide: "Download here a complete guide with all the tips to elaborate your project in Catarse."
     privacy:
       title: "Privacy Policy"
     terms:
@@ -832,6 +798,7 @@ en:
       title: "Choose from which projects you want to receive update notifications:"
       updates: "I want to receive project updates"
     current_user_fields:
+      my_facebook: 'connect with Facebook'
       bio_limit: 'only 140 characters'
       updated: "Your information has been updated"
       update_social_info: "Update info"
@@ -851,9 +818,10 @@ en:
       newsletter: "I want to receive news from Catarse via email"
       password_hint: "<i>Leave blank if you don't want to change it.</i>"
     header:
-      bio_tooltip: "Click here to write about you..."
+      bio_tooltip: "Click here to write about yourself..."
       name_tooltip: "Click here to fill your name..."
     projects:
+      here: 'here'
       no_projects: "%{name} haven't started any project on Catarse yet. We wonder if inspiration will hit one of these days!"
       no_projects_current_user_html: "You haven't submitted any project to Catarse yet. Let the inspiration flow and %{link} to start!"
       title: "%{name}'s projects"
@@ -872,11 +840,3 @@ en:
       weblink: "View on the web"
       whitelist: "Add contact"
       whitelist_long: "Add our email to your contacts"
-  notifications:
-    backers:
-      to_backer:
-        subject: "Thank you! Your back for %{project} has been confirmed!"
-        text: "Success! <br />Your back has just been confirmed.<br /><br />Check: %{backer_name}<br />%{backer_value}<br />%{reward}<br /><br />%{project_name}"
-    updates:
-      subject: "If the league! Update of %{project_name} by %{project_owner}: %{update_title}"
-      text: "%{update_title}<br />%{update_text}<br />Comments? Send it on in the project page: <a href='%{project_link}'>%{project_name}</a>."
