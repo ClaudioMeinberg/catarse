@@ -1,0 +1,23 @@
+	/* fanfuel responsive styles
+    --------------------------------------------------*/
+
+@media (max-width: 979px) {
+	body {
+	padding-top:0px;
+	}
+	.navbar-fixed-top {
+		margin-bottom:-40px;
+}
+
+@media (max-width: 767px) {
+	body {
+		padding-right: 0px;
+		padding-left: 0px;
+	}
+
+	.navbar {
+		padding-right: 20px;
+		padding-left: 20px;
+	}
+}
+	
