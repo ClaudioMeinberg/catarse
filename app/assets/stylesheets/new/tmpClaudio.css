@@ -1,0 +1,38 @@
+.bg-yellow{
+	background-color: yellow;
+}
+
+.bg-gradient {
+	border-bottom:1px black solid;
+	background: url('gradient2.png') repeat-x;
+}
+
+.ff-green {
+	color:#99ff00;
+}
+
+.bg-noise{
+	background: url('noise.png') repeat-y;
+	overflow:hidden;
+}
+
+.margin-what{
+	margin-top:80px;
+}
+
+.bg-grey {
+   	background:#1d1d1d;
+  	border-bottom:1px black solid;
+}
+
+.ff-blue{
+	color:#0095da;
+}
+
+#faq h2{
+	margin-top: 50px;
+}
+
+#faq h4{
+	margin-top: 30px;
+}
