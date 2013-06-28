@@ -1,0 +1,57 @@
+I, [2013-06-27T09:28:19.141922 #20763]  INFO -- : Refreshing Gem list
+/home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/stack.rb:120:in `assert_index': No such middleware to insert before: ActionDispatch::Static (RuntimeError)
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/actionpack-3.2.13/lib/action_dispatch/middleware/stack.rb:83:in `insert'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/railties-3.2.13/lib/rails/configuration.rb:38:in `block in merge_into'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/railties-3.2.13/lib/rails/configuration.rb:37:in `each'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/railties-3.2.13/lib/rails/configuration.rb:37:in `merge_into'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/railties-3.2.13/lib/rails/engine.rb:469:in `app'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/railties-3.2.13/lib/rails/application/finisher.rb:31:in `block in <module:Finisher>'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/railties-3.2.13/lib/rails/initializable.rb:30:in `instance_exec'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/railties-3.2.13/lib/rails/initializable.rb:30:in `run'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/railties-3.2.13/lib/rails/initializable.rb:55:in `block in run_initializers'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/railties-3.2.13/lib/rails/initializable.rb:54:in `each'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/railties-3.2.13/lib/rails/initializable.rb:54:in `run_initializers'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/railties-3.2.13/lib/rails/application.rb:136:in `initialize!'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/railties-3.2.13/lib/rails/railtie/configurable.rb:30:in `method_missing'
+	from /home/ubuntu/railsApps/catarse/config/environment.rb:5:in `<top (required)>'
+	from config.ru:4:in `require'
+	from config.ru:4:in `block in <main>'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/rack-1.4.5/lib/rack/builder.rb:51:in `instance_eval'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/rack-1.4.5/lib/rack/builder.rb:51:in `initialize'
+	from config.ru:1:in `new'
+	from config.ru:1:in `<main>'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/unicorn-4.6.2/lib/unicorn.rb:44:in `eval'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/unicorn-4.6.2/lib/unicorn.rb:44:in `block in builder'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/unicorn-4.6.2/bin/unicorn_rails:139:in `call'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/unicorn-4.6.2/bin/unicorn_rails:139:in `block in rails_builder'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/unicorn-4.6.2/lib/unicorn/http_server.rb:722:in `call'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/unicorn-4.6.2/lib/unicorn/http_server.rb:722:in `build_app!'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/unicorn-4.6.2/lib/unicorn/http_server.rb:140:in `start'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/gems/unicorn-4.6.2/bin/unicorn_rails:209:in `<top (required)>'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/bin/unicorn_rails:23:in `load'
+	from /home/ubuntu/.rvm/gems/ruby-1.9.3-p429/bin/unicorn_rails:23:in `<main>'
+I, [2013-06-27T09:29:39.523339 #20777]  INFO -- : Refreshing Gem list
+I, [2013-06-27T09:30:01.124378 #20777]  INFO -- : unlinking existing socket=/home/ubuntu/railsApps/catarse/tmp/sockets/unicorn.sock
+I, [2013-06-27T09:30:01.124701 #20777]  INFO -- : listening on addr=/home/ubuntu/railsApps/catarse/tmp/sockets/unicorn.sock fd=13
+I, [2013-06-27T09:30:01.125194 #20777]  INFO -- : listening on addr=0.0.0.0:8080 fd=14
+I, [2013-06-27T09:30:01.203577 #20783]  INFO -- : worker=0 ready
+I, [2013-06-27T09:30:01.250808 #20786]  INFO -- : worker=1 ready
+I, [2013-06-27T09:30:01.302473 #20789]  INFO -- : worker=2 ready
+I, [2013-06-27T09:30:01.329775 #20777]  INFO -- : master process ready
+I, [2013-06-27T09:30:01.359554 #20792]  INFO -- : worker=3 ready
+/home/ubuntu/railsApps/catarse/app/views/layouts/_header.html.slim:30 - spaces around attribute delimiters will be allowed in Slim 2.0. Your code is incompatible.
+I, [2013-06-27T09:34:24.515745 #21044]  INFO -- : Refreshing Gem list
+I, [2013-06-27T09:34:44.665038 #21044]  INFO -- : unlinking existing socket=/home/ubuntu/railsApps/catarse/tmp/sockets/unicorn.sock
+I, [2013-06-27T09:34:44.665481 #21044]  INFO -- : listening on addr=/home/ubuntu/railsApps/catarse/tmp/sockets/unicorn.sock fd=13
+I, [2013-06-27T09:34:44.668503 #21044]  INFO -- : listening on addr=0.0.0.0:8080 fd=14
+I, [2013-06-27T09:34:44.737958 #21049]  INFO -- : worker=0 ready
+I, [2013-06-27T09:34:44.780729 #21052]  INFO -- : worker=1 ready
+I, [2013-06-27T09:34:44.833957 #21055]  INFO -- : worker=2 ready
+I, [2013-06-27T09:34:44.855457 #21044]  INFO -- : master process ready
+I, [2013-06-27T09:34:44.886474 #21058]  INFO -- : worker=3 ready
+/home/ubuntu/railsApps/catarse/app/views/layouts/_header.html.slim:30 - spaces around attribute delimiters will be allowed in Slim 2.0. Your code is incompatible.
+/home/ubuntu/railsApps/catarse/app/views/layouts/_header.html.slim:30 - spaces around attribute delimiters will be allowed in Slim 2.0. Your code is incompatible.
+/home/ubuntu/railsApps/catarse/app/views/layouts/_header.html.slim:30 - spaces around attribute delimiters will be allowed in Slim 2.0. Your code is incompatible.
+/home/ubuntu/railsApps/catarse/app/views/layouts/_header.html.slim:30 - spaces around attribute delimiters will be allowed in Slim 2.0. Your code is incompatible.
+/home/ubuntu/railsApps/catarse/app/views/projects/_project_templates.html.slim:2 - quoted attribute value '<%= embed_url %>?title=0&amp;byline=0&amp;portrait=0&amp' might be double escaped in Slim 2.0. Remove manually escaped entities and set :escape_quoted_attrs => true! :escaped_quoted_attrs is activated on Slim 2.0 by default.
+/home/ubuntu/railsApps/catarse/app/views/projects/_project_templates.html.slim:2 - quoted attribute value '<%= embed_url %>?title=0&amp;byline=0&amp;portrait=0&amp' might be double escaped in Slim 2.0. Remove manually escaped entities and set :escape_quoted_attrs => true! :escaped_quoted_attrs is activated on Slim 2.0 by default.
