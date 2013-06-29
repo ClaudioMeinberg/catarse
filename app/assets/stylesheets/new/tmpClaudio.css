@@ -29,10 +29,15 @@
 	color:#0095da;
 }
 
-#faq h2{
+div#faq h2{
 	margin-top: 50px;
 }
 
-#faq h4{
+div#faq h4{
 	margin-top: 30px;
+}
+
+ul#faq a{
+	text-transform: none;
+	text-decoration: none;
 }
