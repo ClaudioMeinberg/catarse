@@ -51,7 +51,7 @@ end
 {
   company_name: 'Catarse',
   host: 'catarse.me',
-  base_url: "http://catarse.me",
+  base_url: "http://www.fanfuel.co",
   blog_url: "http://blog.catarse.me",
   email_contact: 'contato@catarse.me',
   email_payments: 'financeiro@catarse.me',

@@ -6,8 +6,7 @@
       span.icon-bar
       span.icon-bar
     /= render 'layouts/announcement'
-    = link_to image_tag('fflogo.png', :size => "100x26"), root_url(host: Configuration[:base_domain] || request.domain), :class => 'brand', :title => Configuration[:company_name]
-    / = link_to "Fanfuel", root_url(host: Configuration[:base_domain] || request.domain), :class => 'brand', :title => Configuration[:company_name]
+    = link_to image_tag('fflogo.png', :size => "100x26"), root_url, :class => 'brand', :title => Configuration[:company_name]
     .nav-collapse.collapse
       ul.nav
         li.nav_border_right.double_border_left
@@ -15,7 +14,7 @@
         li.nav_border_right.nav_border_left
           = link_to "ffBLOG", "http://blog.fanfuel.co/", :class => 'lowercase-menu'
         li.nav_border_right.nav_border_left
-          = link_to "ffTV", "http://blog.fanfuel.co/fanfueltv/", :class => 'lowercase-menu'
+          = link_to "fanfuelTV", "http://blog.fanfuel.co/fanfueltv/", :class => 'lowercase-menu'
         li.nav_border_left.double_border_right
           = link_to "FAQ", "#"
       form.nav.pull-right
