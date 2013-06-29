@@ -163,18 +163,26 @@ h1.campaigntitle {
 }
 
 
-@media (max-width: 767px) {
-	.campaign-submenu  .item {
-		width:100%;
-	}
-}
-
 #project_content .content {
 	background:none;
 	padding-top:50px;
 	padding-bottom:50px;
 	font-size:20px;
 }
+
+
+@media (max-width: 767px) {
+	.campaign-submenu  .item {
+		width:100%;
+	}
+}
+
+@media (max-width: 979px) {
+	.campaignheader {
+		margin-top:0;
+	}
+}
+
 
 
 

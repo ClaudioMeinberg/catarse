@@ -1,0 +1,56 @@
+#signin {
+	margin-top:40px;
+    background: url('gradient.png') repeat;
+}
+
+@media (max-width: 979px) {
+	#signin {
+		margin-top:0;
+	}
+}
+
+.signup-page {
+	border:1px solid #6a6a6a;
+	margin-top:50px;
+	margin-bottom:50px;
+	background:#292929;
+}
+
+.new_session {
+	margin-left:20px;
+}
+.login_with_social {
+	margin-right:20px;
+}
+
+.form_login {
+	border:1px solid #6a6a6a;
+	margin-top:20px;
+	margin-bottom:20px;
+	padding:20px;
+	text-align:left;
+}
+
+.form_login input[type="text"], .form_login input[type="password"] {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  text-indent:10px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px; 
+  border-radius: 0px;
+  width:100%;
+  padding:10px 0;
+  background-color:#cbcbcb;
+  border:1px solid #6a6a6a;
+}
+
+
+.form_login input[type="text"]:focus, .form_login input[type="password"]:focus {
+  border: 1px solid $ffgreen;
+  -webkit-box-shadow: 0 0 5px $ffgreen;
+  box-shadow: 0 0 5px $ffgreen;
+}
+
