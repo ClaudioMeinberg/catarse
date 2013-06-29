@@ -41,3 +41,11 @@ ul#faq a{
 	text-transform: none;
 	text-decoration: none;
 }
+
+div#faq h3 a {
+	color:#99ff00;
+	text-decoration: none;
+}
+div#faq h3 a:hover {
+	color:#0095da;
+}

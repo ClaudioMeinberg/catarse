@@ -6,6 +6,7 @@
       .row
         .span12
           h2.ff-green.text-center = "FAQ"
+          a#top
         .span4.offset2
           h3.ff-green = "NUTS AND BOLTS"
           ul#faq.unstyled
@@ -211,3 +212,6 @@
     p = "Yes."
 
     h4.ff-blue = "Still not sure about this? Get in touch with us."
+
+    h3.text-center
+        = link_to("BACK TO TOP", "#top")
