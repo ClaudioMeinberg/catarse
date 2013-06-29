@@ -148,7 +148,7 @@ en:
         bio: 'Mini Bio'
         name: Nickname
         password: Password
-        password_confirmation: "Password Confirmation"
+        password_confirmation: "Confirm password"
         phone_number: "Mobile phone number"
         id: 'ID'
     models:
@@ -287,7 +287,7 @@ en:
   layouts:
     login:
       login_with_facebook: "sign in with your facebook account"
-      remember_me: "Remember me and keep me connected."
+      remember_me: "Remember me"
     header:
       blog: blog
       help: help
@@ -815,7 +815,7 @@ en:
       submit_text: "Choose your picture"
       submit: "Submit"
       my_data: "My profile"
-      newsletter: "I want to receive news from Catarse via email"
+      newsletter: "I want to receive information about Fanfuel"
       password_hint: "<i>Leave blank if you don't want to change it.</i>"
     header:
       bio_tooltip: "Click here to write about yourself..."

@@ -20,7 +20,7 @@
                   = f.password_field :password
                 p.input.check
                   = f.check_box :remember_me
-                  = f.label :remember_me, t('layouts.login.remember_me')
+                  = f.label :remember_me, t('layouts.login.remember_me'), :class => 'check-label'
                 p.action
                   .bootstrap-twitter
                     = f.submit t('.submit'), class: 'btn', id: 'user_submit'
@@ -48,7 +48,7 @@
                   = f.password_field :password_confirmation, required: true
                 p.input.check
                   = f.check_box :newsletter
-                  = f.label :newsletter, t('users.current_user_fields.newsletter')
+                  = f.label :newsletter, t('users.current_user_fields.newsletter'), :class => 'check-label'
                 p.action
                   .bootstrap-twitter
                     = f.submit t('registrations.new.submit'), class: 'btn', id: 'user_submit'
@@ -57,7 +57,8 @@
             .content_form
               h1=t('.with_facebook')
               h3=t('.with_facebook_subtitle')
-              = link_to t('layouts.login.login_with_facebook'), user_omniauth_authorize_path(provider: 'facebook', locale: nil), :class => 'facebook_start'
+              / = link_to t('layouts.login.login_with_facebook'), user_omniauth_authorize_path(provider: 'facebook', locale: nil), :class => 'facebook_start'
+              = link_to (image_tag 'fb_login.png'), user_omniauth_authorize_path(provider: 'facebook', locale: nil), :class => 'facebook_start'              
               / h1=t('.google_warning_html')
               / h3=t('.google_step_1', link: (link_to t('devise.links.forgot_password'), new_password_path(resource_name))).html_safe
               / h3=t('.google_step_2')
