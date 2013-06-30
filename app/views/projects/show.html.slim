@@ -35,7 +35,7 @@
       .row-fluid.header-video
         .span8.video
           .video-container
-            = content_tag("iframe", "", :src => "http://player.vimeo.com/video/65627895?color=9dff00", :width => "700", :height => "390", :frameborder => "0", :webkitAllowFullScreen => true, :mozallowfullscreen => true, :allowFullScreen => true)
+            = content_tag("iframe", "", :src => "#{@project.display_video_embed_url}?color=9dff00", :width => "700", :height => "390", :frameborder => "0", :webkitAllowFullScreen => true, :mozallowfullscreen => true, :allowFullScreen => true)
             #project_about.content= render 'project_about'
         .span4
           .progress

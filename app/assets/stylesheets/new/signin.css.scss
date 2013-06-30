@@ -1,0 +1,147 @@
+#signin {
+	margin-top:40px;
+    background: url('gradient.png') repeat;
+}
+
+
+.signup-page {
+	border:1px solid #6a6a6a;
+	margin-top:50px;
+	margin-bottom:50px;
+	background:#292929;
+}
+
+.new_session {
+	margin-left:20px;
+}
+
+.form_login {
+	border:1px solid #6a6a6a;
+	margin-top:20px;
+	margin-bottom:20px;
+	padding:30px;
+	text-align:left;
+}
+
+.login_with_social {
+	margin-right:20px;
+}
+
+.form_login input[type="text"], .form_login input[type="password"] {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  text-indent:10px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px; 
+  border-radius: 0px;
+  width:100%;
+  padding:10px 0;
+  background-color:#cbcbcb;
+  border:1px solid #6a6a6a;
+}
+
+
+.form_login input[type="text"]:focus, .form_login input[type="password"]:focus {
+  border: 1px solid $ffgreen;
+  -webkit-box-shadow: 0 0 5px $ffgreen;
+  box-shadow: 0 0 5px $ffgreen;
+}
+
+.form_login input[type="checkbox"] {
+	display:inline;
+	margin:0px;
+}
+
+.form_login {
+	h1 {
+		font-family:'TradeGothicLTPro-Cn20';
+		font-weight:normal;
+		font-size:30px;
+		line-height:36px;
+	}
+	h3 {
+		font-family:'geneva';
+		text-transform:none;
+		font-weight:normal;
+		font-size:14px;
+		line-height:24px;
+		margin-top:0;
+		margin-bottom:24px;
+		color:#999;
+	}
+	label {
+		font-family:'TradeGothicLTPro-Cn20';
+		font-size:16px;
+		color:#999;
+	}
+	label.check-label {
+		display:inline;
+		margin-bottom:0;
+		margin-left:5px;
+	}
+	.btn {
+		-moz-border-radius:0px;
+		-webkit-border-radius:0px;
+		border-radius:0px;
+		font-family:'TradeGothicLTPro-Cn20';
+		text-transform:uppercase;
+		color:white;
+		background: $fforange; /* Old browsers */
+		background: -moz-linear-gradient(top, #999 0%, #595959 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#999), color-stop(100%,#595959)); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, #999 0%,#595959  100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, #999 0%,#595959 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, #999 0%,#595959 100%); /* IE10+ */
+		background: linear-gradient(to bottom, #999 0%,#595959 100%); /* W3C */
+		border: 1px solid #595959;
+		text-shadow: 0 -1px 0 black;
+		font-size: 20px;
+		padding: 8px 30px;
+	}
+}
+
+
+.login_with_social, .signup-page .actived {
+	background-color:#0a0a0a;
+	h1 {
+		color:$ffgreen;
+	}
+
+}
+
+
+.actived {
+	.btn {
+		background: $fforange; /* Old browsers */
+		background: -moz-linear-gradient(top, $fforange 0%, $ffdarkorange 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$fforange), color-stop(100%,$ffdarkorange )); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top, $fforange 0%,$ffdarkorange  100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* IE10+ */
+		background: linear-gradient(to bottom, $fforange 0%,$ffdarkorange 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$fforange, endColorstr=$ffdarkorange ,GradientType=0 ); /* IE6-9 */		
+		text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+		box-shadow: inset 0px 0px 0px 0px #ffffff;
+		border: 1px solid rgba(0, 0, 0, 0.247059);
+	}
+}
+
+@media (max-width: 979px) {
+	#signin {
+		margin-top:0;
+	}
+
+
+}
+
+@media (max-width: 767px) {
+	.form_login {
+		margin-left:20px;
+		margin-right:20px;
+	}
+}
+
+

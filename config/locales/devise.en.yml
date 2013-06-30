@@ -58,9 +58,9 @@ en:
         login_title: Login
         login_subtitle: "If you already have an account"
         register_title: "Sign Up"
-        register_subtitle: "Use your email address"
-        with_facebook: "Use your facebook account"
-        with_facebook_subtitle: "A fast way to log in"
+        register_subtitle: "If you are new to fanfuel"
+        with_facebook: "Sign in with your facebook account"
+        with_facebook_subtitle: "Quick and easy"
         google_warning_html: "If you were using a <strong>Google</strong> account:"
         google_step_1: "1 - Click in %{link}"
         google_step_2: "2 - Follow the steps to create a new password."
