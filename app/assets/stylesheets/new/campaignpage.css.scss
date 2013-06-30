@@ -7,13 +7,14 @@
 
 h1.campaigntitle {
 	text-align:center;
-	font-size:28px;
+	font-size:30px;
 	color:#fff;
 	margin-top:50px;
 	margin-bottom:0;
 }
 .campaignbyline {
 	text-align:center;
+	font-size:16px;
 }
 
 .campaignbyline a {
@@ -50,8 +51,6 @@ h1.campaigntitle {
 	padding-top:5.75%;
 }
 
-
-
 .statistics .item-units {
 	font-family:'TradeGothicLTPro-Cn18';
 	font-size:18px;
@@ -71,27 +70,18 @@ h1.campaigntitle {
 
 .bar p {
 	font-family:'TradeGothicLTPro-Cn20';
-	font-size: 16px;
+	font-size: 13px;
 	margin-top:6%;
 }
 
-@media (max-width: 979px) {
-	.bar p {
-		margin-top:3%;
-		font-size:14px;
-	}
-}
 
-@media (max-width: 767px) {
-	// Reponsive view
-}
 
 .btn-fundathlete {
 	font-family: TradeGothicLTPro-Cn20;
 	text-decoration:none;
 	text-align: center;
-	font-size: 30px;
-	color:#1a1a1a;
+	font-size: 28px;
+	color:#333;
 	margin-bottom: 20px;
 	text-transform: uppercase;
 	-moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
@@ -110,21 +100,11 @@ h1.campaigntitle {
 	-webkit-border-radius:0px;
 	border-radius:0px;
 	display:inline-block;
-	padding:6% 0px;
+	padding:5.5% 0px;
 	width:100%;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	box-shadow: inset 0px 0px 0px 0px #ffffff;
 	border: 1px solid rgba(0, 0, 0, 0.247059);
-}
-
-@media (max-width: 767px) {
-	.btn-fundathlete {
-	}
-}
-
-@media (max-width: 979px) {
-	.btn-fundathlete {
-	}
 }
 
 .btn-fundathlete:hover {
@@ -136,20 +116,56 @@ h1.campaigntitle {
 	background: -ms-linear-gradient(top, $ffgreen 0%,$ffdarkergreen 100%); /* IE10+ */
 	background: linear-gradient(to bottom, $ffgreen 0%,$ffdarkergreen 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$ffgreen, endColorstr=$ffdarkergreen,GradientType=0 ); /* IE6-9 */
-
 	background-color:#57d000;
-	color:#1a1a1a;
+	// color:#1a1a1a;
 
 }
 
 .btn-fundathlete:active {
 	position:relative;
 	top:1px;
-	color:#1a1a1a;
+	// color:#1a1a1a;
 }
 
+@media (max-width: 979px) {
+	.bar p {
+		margin-top:4%;
+		font-size:14px;
+	}
+	.btn-fundathlete {
+		font-size:20px;
+		padding:4.5% 0;
+	}
 
+}
 
+@media (max-width: 767px) {
+	// Reponsive view
+	.statistics .item {
+		padding:0 10px 0 0;
+		height:40px;
+		margin-bottom:10px;
+	}
+	.stat {
+		padding:0;
+		line-height:40px;
+		margin-bottom:10px;
+	}
+	.header-video .progress {
+		padding:0;
+		height:20px;
+		margin:15px 0;
+		// line-height:30px;
+	}
+	.bar p {
+		margin:0;
+	}
+
+	.btn-fundathlete {
+		padding:12px 0;
+
+	}
+}
 
 
 .campaignpage-body {
@@ -176,7 +192,7 @@ h1.campaigntitle {
 	// height:42px;
 	background: #292929; /* Old browsers */
 	background: -moz-linear-gradient(top,  #292929 0%, #0a0a0a 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#595959), color-stop(100%,#0a0a0a)); /* Chrome,Safari4+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#292929), color-stop(100%,#0a0a0a)); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top,  #292929 0%,#0a0a0a 100%); /* Chrome10+,Safari5.1+ */
 	background: -o-linear-gradient(top,  #292929 0%,#0a0a0a 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top,  #292929 0%,#0a0a0a 100%); /* IE10+ */
@@ -217,6 +233,92 @@ h1.campaigntitle {
 	.campaignheader {
 		margin-top:0;
 	}
+}
+
+/* Restyle social plugins */
+
+td.hcent:first-child {
+	display:none;
+}
+
+
+.accessible_elem {
+	display:none;
+}
+
+
+div.pluginConnectButton {
+	display:none;
+}
+
+
+/* Rewards CSS */
+
+.reward-container {
+	padding:0;
+}
+
+.campaign-reward {
+	margin-top:30px;
+	background-color:#111;
+}
+
+.campaign-reward-bar {
+	height:50px;
+	line-height:50px;
+	font-family:'TradeGothicLTPro-Cn20';
+	border-bottom:1px solid #1a1a1a;
+	background: #444; /* Old browsers */
+	background: -moz-linear-gradient(top,  #444 0%, #0a0a0a 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#444), color-stop(100%,#0a0a0a)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #444 0%,#0a0a0a 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #444 0%,#0a0a0a 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #444 0%,#0a0a0a 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #444 0%,#0a0a0a 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444', endColorstr='#0a0a0a',GradientType=0 ); /* IE6-9 */
+}
+
+.campaign-reward-bar-price {
+	font-size:30px;
+	text-align:left;
+	padding:0 20px;
+	float:left;
+	display:inline-block;
+}
+
+.campaign-reward-bar-middle {
+	float:left;
+	display:inline-block;
+}
+.campaign-reward-bar-buynow {
+	line-height:15px;
+	font-size:15px;
+	text-align:right;
+	float:right;
+	display:inline-block;
+	padding:10px 20px;
+	p {
+		margin:0;
+	}
+}
+
+.campaign-reward-text {
+	text-align:left;
+	padding:16px;
+}
+
+p.reward-title {
+	font-family:'TradeGothicLTPro-Cn20';
+	font-size:20px;
+
+}
+
+.reward-description {
+	font-family:'genevaregular';
+	text-transform:none;
+	text-align:justify;
+	font-size:14px;
+	line-height:18px;
 }
 
 
