@@ -760,6 +760,8 @@ en:
       title: "Privacy Policy"
     terms:
       title: "Terms of use"
+    terms_conditions:
+      title: "Terms and conditions"
   terms: "terms of use"
   user:
     backs_text:
