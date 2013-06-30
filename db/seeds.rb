@@ -49,22 +49,22 @@
 end
 
 {
-  company_name: 'Catarse',
-  host: 'catarse.me',
-  base_url: "http://www.fanfuel.co",
-  blog_url: "http://blog.catarse.me",
-  email_contact: 'contato@catarse.me',
-  email_payments: 'financeiro@catarse.me',
-  email_projects: 'projetos@catarse.me',
-  email_system: 'system@catarse.me',
-  email_no_reply: 'no-reply@catarse.me',
-  facebook_url: "http://facebook.com/catarse.me",
-  facebook_app_id: '173747042661491',
-  twitter_username: "catarse",
+  company_name: 'FanFuel',
+  host: 'fanfuel.co',
+  base_url: "http://dev.fanfuel.co:8080",
+  blog_url: "http://blog.fanfuel.co",
+  email_contact: 'contact@fanfuel.co',
+  email_payments: 'finance@fanfuel.co',
+  email_projects: 'projects@fanfuel.co',
+  email_system: 'system@fanfuel.co',
+  email_no_reply: 'no-reply@fanfuel.co',
+  facebook_url: "http://facebook.com/fanfuelco",
+  facebook_app_id: '514362811950577',
+  twitter_username: "fanfuelco",
   mailchimp_url: "http://catarse.us5.list-manage.com/subscribe/post?u=ebfcd0d16dbb0001a0bea3639&amp;id=149c39709e",
-  catarse_fee: '0.13',
-  support_forum: 'http://suporte.catarse.me/',
-  base_domain: 'catarse.me'
+  catarse_fee: '0.10',
+  support_forum: 'http://support.fanfuel.co/',
+  base_domain: 'fanfuel.co'
 }.each do |name, value|
    conf = Configuration.find_or_initialize_by_name name
    conf.update_attributes({
@@ -82,7 +82,7 @@ Channel.find_or_create_by_name!(
 
 OauthProvider.find_or_create_by_name!(
   name: 'facebook',
-  key: '656322704383031',
-  secret: '7ab68b8b788304eaf6ab581b72a42885',
+  key: '514362811950577',
+  secret: 'b14213c20a0ce3adf5694d4d6fd000ce',
   path: 'facebook'
 )

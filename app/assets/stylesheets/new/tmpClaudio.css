@@ -29,10 +29,82 @@
 	color:#0095da;
 }
 
-#faq h2{
+div#faq h2{
 	margin-top: 50px;
 }
 
-#faq h4{
+div#faq h4{
 	margin-top: 30px;
+}
+
+ul#faq a{
+	text-transform: none;
+	text-decoration: none;
+}
+
+div#faq h3 a {
+	color:#99ff00;
+	text-decoration: none;
+}
+div#faq h3 a:hover {
+	color:#0095da;
+}
+
+
+.content_form{
+	background-color: black;
+	padding: 30px;
+	margin: 0;
+	border:1px solid #6a6a66;
+}
+.content_form h3 {
+	line-height: normal;
+	margin: 0;
+}
+
+.content_form input[type="text"],
+.content_form input[type="password"]{
+	width: 95%;
+}
+.content_form form{
+	margin-top: 20px;
+}
+.actived h3{
+	color:#99ff00;	
+}
+
+.facebook_start {
+  margin-bottom: 40px !important;
+  clear: both;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  width: 150px; /* 246px; */
+  height: 27px;
+  background: image-url("login_with_facebook_button310x60.png") left top no-repeat;
+  display: block;
+  padding: 33px 0 0 64px;
+  color: #fff;
+  font-size: 13px;
+  font-family: Arial;
+  text-decoration: none;
+  text-shadow: #000,1px,1px,1px;
+  text-align: left;
+  text-transform: none;
+}
+
+.facebook_start:hover,.facebook_start:focus {
+  -webkit-box-shadow: rgba(0,0,0,0.75) 0 0 5px inset !important;
+  -moz-box-shadow: rgba(0,0,0,0.75) 0 0 5px inset !important;
+  box-shadow: rgba(0,0,0,0.75) 0 0 5px inset !important;
+  color: #fff;
+  text-decoration: none;
+}
+
+.facebook_start:active {
+  -webkit-box-shadow: #000 0 0 15px inset !important;
+  -moz-box-shadow: #000 0 0 15px inset !important;
+  box-shadow: #000 0 0 15px inset !important;
 }
