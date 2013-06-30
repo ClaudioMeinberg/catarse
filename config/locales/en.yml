@@ -612,6 +612,8 @@ en:
   static:
     faq:
       title: "Frequently asked questions"
+    privacy_policy:
+      title: "Privacy Policy"
     guidelines_start:
       accept: "I have read and understand how Fanfuel works."
       explore_curious: "Just looking around!"
