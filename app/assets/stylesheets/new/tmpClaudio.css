@@ -50,8 +50,13 @@ div#faq h3 a:hover {
 	color:#0095da;
 }
 
+textarea#terms-and-conditions{
+	width: 100%;
+	height: 400px;
+}
 
-/*.content_form{
+/*
+.content_form{
 	background-color: black;
 	padding: 30px;
 	margin: 0;
@@ -107,4 +112,6 @@ div#faq h3 a:hover {
   -webkit-box-shadow: #000 0 0 15px inset !important;
   -moz-box-shadow: #000 0 0 15px inset !important;
   box-shadow: #000 0 0 15px inset !important;
-}*/
+}
+*/
+
