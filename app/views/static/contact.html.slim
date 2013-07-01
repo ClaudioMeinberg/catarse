@@ -1,17 +1,44 @@
 #contact.container-fluid
   .row-fluid
     .span12
-      h3.text-center = "CHECKOUT"
       #page_content.row-fluid
-        .span9.black-box
+        .span8.black-box
           .row-fluid
-            h2 = "titulo"
-            = "subtitulo"
-
-          .row-fluid
-            .span12
-              #line-sep
-            .span12
+            h2 = "Get in touch with us"
+            form
+              p.input
+                label for="first_name" = "First Name:"
+                input#first_name name="contact[first_name]" type="text"
+              p.input
+                label for="last_name" = "Last Name:"
+                input#last_name name="contact[last_name]" type="text"
+              p.input
+                label for="email" = "Email:"
+                input#email name="contact[email]" type="text"
+              p.input
+                label for="sport" = "WHAT SPORTS DO YOU COMPETE IN OR ARE INTERESTED IN?"
+                input#sport.big-text name="contact[sport]" type="text"
+              p.input
+                label for="message" = "Message:"
+                textarea#message.big-text name="contact[message]" rows="7"
+              p.input
+                input#contact_submit.btn name="contact" type="submit" value="Send"
               
 
-        #back-faq.span3.black-box
+        .span4.black-box
+          h3 = "Other ways to reach us"
+          p
+            label= "our email"
+            #contact-item.ff-green = "hello@fanfuel.co"
+          p
+            label= "facebook page"
+            #contact-item.ff-green = "facebook.com/fanfuelco"
+          p
+            label= "twitter feed"
+            #contact-item.ff-green = "twitter.com/fanfuelco"
+          p
+            label= "vimeo channel"
+            #contact-item.ff-green = "vimeo.com/fanfuel"
+          p
+            label= "youtube channel"
+            #contact-item.ff-green = "youtube.com/user/fanfuel"
