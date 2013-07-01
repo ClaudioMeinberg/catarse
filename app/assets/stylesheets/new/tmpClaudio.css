@@ -60,3 +60,50 @@ textarea#privacy-policy {
 	text-transform: none;
 	font-family: genevaregular;
 }
+
+#checkout {
+	margin-top:40px;
+  background: url('gradient.png') repeat;
+}
+
+.grey-box {
+	border:1px solid #6a6a6a;
+	margin-top:50px;
+	margin-bottom:50px;
+	background:#292929;
+}
+.black-box{
+	border:1px solid #6a6a6a;
+	background:black;	
+	padding: 20px;
+}
+#checkout .row-fluid{
+	text-align: left;
+}
+
+.fake-img{
+	width: 200px;
+	height: 140px;
+	background-color: #ccccff;
+}
+
+#back-faq h4{
+	margin: 20px 0;
+	font-size: 13px;
+}
+
+#back-faq p{
+	text-transform: none;	
+	font-family: genevaregular;
+	color: #6a6a66;
+	font-size: 13px;
+	line-height: 14px;
+}
+
+#checkout li.choice{
+	color: black;
+	background-color: #cbcbcb;
+}
+#checkout li.selected{
+	background-color: #99ff00;
+}
