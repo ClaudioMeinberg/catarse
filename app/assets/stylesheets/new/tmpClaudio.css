@@ -61,11 +61,6 @@ textarea#privacy-policy {
 	font-family: genevaregular;
 }
 
-#checkout {
-	margin-top:40px;
-  background: url('gradient.png') repeat;
-}
-
 .grey-box {
 	border:1px solid #6a6a6a;
 	margin-top:50px;
@@ -102,8 +97,11 @@ textarea#privacy-policy {
 
 
 
-#checkout {
-/* 	font-family: TradeGothicLTPro-Cn20; */
+#checkout,
+#contact
+ {
+	margin-top:40px;
+  background: url('gradient.png') repeat;
 }
 
 #checkout ol {

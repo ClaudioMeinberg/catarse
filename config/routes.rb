@@ -56,6 +56,7 @@ Catarse::Application.routes.draw do
   get "/faq",                   to: "static#faq",                 as: :faq
   get "/terms-and-conditions",  to: "static#terms_conditions",    as: :terms_conditions
   get "/privacy-policy",        to: "static#privacy_policy",      as: :privacy_policy
+  get "/contact",               to: "static#contact",             as: :contact
 
 
   match "/explore" => "explore#index", as: :explore
