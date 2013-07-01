@@ -20,3 +20,6 @@ db/structure.sql
 .sass-cache
 Cookbooks
 .vagrant
+shared/log/*
+shared/pids/*
+sftp-config.json
