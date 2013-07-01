@@ -236,8 +236,8 @@ en:
   formtastic:
     hints:
       backer:
-        credits: "You have <strong>%{credits}</strong> in credits and can back with up to this amount without needing to make a new payment."
-        value: "You chose any amount starting from $10."
+        credits: "You have <strong>%{credits}</strong> in credits and can contribute with up to this amount without needing to make a new payment."
+        value: "Minimum amount you can contribute is $10."
       project:
         video_url_edit: 'Paste here the URL of your Vimeo video.'
         about: "Tell us about what inspired you to come up with this project . Be objective end charming, present your readers with something that moves them while being very transparent over the expectations on your project!"
@@ -257,10 +257,10 @@ en:
         minimum_value: "This is the minimum amount to choose this reward."
     labels:
       backer:
-        anonymous: "I want my back to be anonymous."
+        anonymous: "I want my contribution to be anonymous."
         credits: "I want to use my credits on this back."
-        reward: "Select your reward"
-        value: "How much do you want to contribute with?"
+        reward: "Choose your reward"
+        value: "Insert amount you want to contribute with?"
       comment:
         comment: "Leave your comment about this project"
       project:
@@ -384,10 +384,10 @@ en:
       new:
         cannot_back: "It's not possible to back this project right now. Please, back other projects."
         header:
-          subtitle: "You're just a few steps away from making a difference and becoming a part of this project."
-          title: "Oohh yeah!"
-        no_reward: "Thanks. I just want to help the project."
-        submit: "Review and proceed to checkout"
+          subtitle: "You are very close to contribute to this campaign!"
+          title: "Hell yeah!"
+        no_reward: "Personal email thanking you for your kind support"
+        submit: "Review & Pay"
         title: "Back %{name}"
       create:
         brazil_address_title: 'Fill when you back is in Brazil'
@@ -599,7 +599,7 @@ en:
   require_permission: "You don't have permission to perform this action."
   reward:
     display_remaining: "%{remaining} of %{maximum} available"
-    dont_want: "I don't want a reward"
+    dont_want: "Any amount"
     limited: Limited
     sold_out: "Sold out"
   sessions:
