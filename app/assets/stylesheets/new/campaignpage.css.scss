@@ -185,7 +185,7 @@ h1.campaigntitle {
 }
 
 .campaign-submenu .item {
-	width:20%;
+	width:25%;
 	display:inline-block;
 	float:left;
 	margin-left:-2px;
@@ -199,7 +199,6 @@ h1.campaigntitle {
 	background: linear-gradient(to bottom,  #292929 0%,#0a0a0a 100%); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#292929', endColorstr='#0a0a0a',GradientType=0 ); /* IE6-9 */
 }
-
 
 
 .campaign-submenu .selected {
@@ -226,6 +225,9 @@ h1.campaigntitle {
 @media (max-width: 767px) {
 	.campaign-submenu  .item {
 		width:100%;
+		width:50%;
+
+
 	}
 }
 
