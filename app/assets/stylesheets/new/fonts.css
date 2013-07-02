@@ -1,13 +1,20 @@
-/*@import url("//hello.myfonts.net/count/270bdf");*/
-@font-face{
-      font-family: TradeGothicLTPro-Cn18;
-      src: font-url('270BDF_0_0.ttf'), font-url('270BDF_0_0.eot'); /* IE9 */
+/* Fanfuel font face declarations */
+@import url("//hello.myfonts.net/count/270bdf");
+@font-face {
+    font-family: 'TradeGothicLTPro-Cn18';
+    src:  font-url('270BDF_0_0.eot');
+    src:  font-url('270BDF_0_0.eot?#iefix') format('embedded-opentype'),
+          font-url('270BDF_0_0.woff') format('woff'),
+          font-url('270BDF_0_0.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'TradeGothicLTPro-Cn20';
+  src:  font-url('270BDF_1_0.eot');
+  src:  font-url('270BDF_1_0.eot?#iefix') format('embedded-opentype'),
+        font-url('270BDF_1_0.woff') format('woff'),
+        font-url('270BDF_1_0.ttf') format('truetype');
 }
 
-@font-face{
-      font-family: TradeGothicLTPro-Cn20;
-      src: font-url('270BDF_1_0.ttf'), font-url('270BDF_1_0.eot'); /* IE9 */
-}
 
 @font-face {
     font-family: 'genevaregular';
