@@ -12,12 +12,13 @@
     = render partial: 'project', locals: {project: @first_project, custom_class: 'first' } if @first_project
     = render partial: 'project', locals: {project: @second_project } if @second_project
     = render partial: 'project', locals: {project: @third_project, custom_class: 'last' } if @third_project
-    p#more = "More coming soon..."
 
 / HOW IT WORKS SECTION
 .howitworks.content
   h3 = "How it works"
-  .container = ""
+  .container-fluid
+    .row-fluid
+       = "How it works section"
 
 / PRESS MATERIAL SECTION
 .press-material

@@ -2,10 +2,6 @@
 	.promo
 		.container-fluid
 			.row-fluid.homepage-video
-				.span8.video
-					.video-container
-						= content_tag("iframe", "", :src => "http://player.vimeo.com/video/65627895?color=9dff00", :width => "700", :height => "390", :frameborder => "0", :webkitAllowFullScreen => true, :mozallowfullscreen => true, :allowFullScreen => true)
-						= content_tag("p", link_to("The Future of Sports", "http://vimeo.com/65627895") + " from " + link_to("fanfuel TV", "http://vimeo.com/fanfuel") + " on " + link_to("Vimeo", "http://vimeo.com") + "." )
 				.span4.bannertext
 					.bannertext-screen
 						p.headertext
@@ -30,4 +26,8 @@
 					.bannertext-mobile
 						p.mobiletext= "It's time to change the sponsorship industry!"
 						p.mobiletext.green-text= "We allow athletes to be sponsored by their fans!"
+				.span8.video
+					.video-container
+						= content_tag("iframe", "", :src => "http://player.vimeo.com/video/65627895?color=9dff00", :width => "700", :height => "390", :frameborder => "0", :webkitAllowFullScreen => true, :mozallowfullscreen => true, :allowFullScreen => true)
+						= content_tag("p", link_to("The Future of Sports", "http://vimeo.com/65627895") + " from " + link_to("fanfuel TV", "http://vimeo.com/fanfuel") + " on " + link_to("Vimeo", "http://vimeo.com") + "." )
 

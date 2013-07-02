@@ -132,7 +132,7 @@ h1.campaigntitle {
 	// color:#1a1a1a;
 }
 
-@media (max-width: 979px) {
+@media screen and (max-width: 979px) {
 	.bar p {
 		margin-top:4%;
 		font-size:14px;
@@ -144,7 +144,7 @@ h1.campaigntitle {
 
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
 	// Reponsive view
 	.statistics .item {
 		padding:0 10px 0 0;

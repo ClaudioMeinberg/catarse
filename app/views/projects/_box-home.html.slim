@@ -16,26 +16,27 @@
               = image_tag "not_successful.#{I18n.locale}.png"
     / .row-fluid.campaignbox style="background-image:url(#{project.display_image});"
     .row-fluid.campaignbox style="background-image:url('assets/placeholder.png');"
-
-      .span5.offset7
-        h3 = project.headline
-        p = truncate(project.about, length: 400)
-        = link_to "Browse Rewards", project, target: ( defined?(embed_link) ? '__blank' : '' ) , class: "btn btn-large btn-success"
+      .span12.homepage-campaigntext.pull-right
+        h3 = "We want Demarcus Ware on our team"
+        / h3 = project.headline
+        p= "For year the Dallas Cowboys have been flerting with the idea of signing Demarcus but never had the funds. Now, it is up to you to bring the best player in the NFL to our team. The hardest, toughest, fastest player. For year the Dallas Cowboys have been flerting with the idea of signing Demarcus but.For year the Dallas Cowboys have been flerting with the idea funds."
+        / p = truncate(project.about, length: 350)
+        = link_to "View Campaign", project, target: ( defined?(embed_link) ? '__blank' : '' ) , class: "btn btn-browserewards"
     .row-fluid
       .span12
         .stats
           ul.nav
-            li.nav_border_right
+            li.stats1.nav_border_right
               p = "Athletes name"
-            li.nav_border_right.nav_border_left
+            li.stats2.nav_border_right.nav_border_left
               p = "Country"
-            li.nav_border_right.nav_border_left
+            li.stats3.nav_border_right.nav_border_left
               p = "Amount raised"
-            li.double_border_right.nav_border_left
+            li.stats4.double_border_right.nav_border_left
               p = "Backers"
 
-          ul.nav.count
-            li.double_border_left
+          ul.nav.pull-right
+            li.stats5.double_border_left
               - if project.in_time?
                 p
                   = "#{project.time_to_go[:time]} #{project.time_to_go[:unit]} "

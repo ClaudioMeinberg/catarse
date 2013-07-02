@@ -200,6 +200,14 @@
 	.bannertext-mobile {
 		display:none;
 	}
+	.row-fluid .bannertext {
+		float:right;
+	}
+	.row-fluid .video {
+		float:left;
+		margin-left:0;
+	}
+
 }
 
 @media screen and (max-width: 767px) {
@@ -211,7 +219,4 @@
 	}
 
 }
-
-
-
 
