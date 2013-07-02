@@ -1,0 +1,217 @@
+/* fanfuel promo styles
+--------------------------------------------------*/
+
+.promo {
+	border-bottom:1px black solid;
+    background: url('gradient2.png') repeat-x;
+    margin-top:40px;
+    border-bottom:1px solid #666;
+    font-family:'TradeGothicLTPro-Cn20';
+    .headertext {
+    	margin-top:0;
+    	margin-bottom:4%;
+	    font-weight:normal;
+	    font-size:30px;
+	    line-height:1.18em;
+    }
+    .keepuptext {
+    	margin-bottom:3%;
+    }
+}
+
+
+.content{
+	background: url('noise.png') repeat-y;
+    overflow:hidden;
+}
+
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 0;
+	height: 0;
+	overflow: hidden;
+}
+
+.video-container iframe,  
+.video-container object,  
+.video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.homepage-video {
+	margin-top:40px;
+	margin-bottom:40px;
+}
+
+
+.bannertext {
+	text-align:left;
+}
+
+
+.btn-joinrev {
+	font-family: TradeGothicLTPro-Cn20;
+	text-decoration:none;
+	text-align: center;
+	font-size: 26px;
+	color:#fff;
+	margin-top:3%;
+	margin-bottom: 7%;
+	text-transform: uppercase;
+	-moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	box-shadow:inset 0px 0px 0px 0px #ffffff;
+	background: rgb(255,102,0); /* Old browsers */
+	background: -moz-linear-gradient(top, $fforange 0%, $ffdarkorange 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffgreen), color-stop(100%,$ffdarkorange)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* IE10+ */
+	background: linear-gradient(to bottom, $fforange 0%, $ffdarkorange 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$fforange, endColorstr=$ffdarkorange,GradientType=0 ); /* IE6-9 */
+	background-color:#ff9900;
+	-moz-border-radius:0px;
+	-webkit-border-radius:0px;
+	border-radius:0px;
+	display:inline-block;
+	padding:5.5% 0px;
+	width:100%;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	box-shadow: inset 0px 0px 0px 0px #ffffff;
+	border: 1px solid rgba(0, 0, 0, 0.247059);
+}
+
+.btn-joinrev:hover {
+	color:#fff;
+	background: rgb(255,102,0); /* Old browsers */
+	background: -moz-linear-gradient(top, $fforange 0%, $ffdarkorange 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$fforange), color-stop(100%,$ffdarkorange)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* IE10+ */
+	background: linear-gradient(to bottom, $fforange 0%,$ffdarkorange 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$fforange, endColorstr=$ffdarkorange,GradientType=0 ); /* IE6-9 */
+	background-color:$fforange;
+	// color:#1a1a1a;
+
+}
+
+.btn-joinrev:active {
+	position:relative;
+	top:1px;
+	// color:#1a1a1a;
+}
+
+.btn-sm img {
+	height:32px;
+	width:32px;
+	padding-right:8px;
+}
+
+
+@media screen and (max-width: 979px) {
+	.promo {
+		margin-top:0;
+		.headertext {
+		    font-size:28px;
+		}
+	}
+	.btn-joinrev {
+		font-size:22px;
+		margin-bottom: 16px;
+	}
+	.btn-sm img {
+		height:30px;
+		width:30px;
+		padding-right:6px;
+	}
+}
+
+@media screen and (max-width: 920px) {
+	.promo {
+		margin-top:0;
+		.headertext {
+		    font-size:26px;
+		}
+	}
+	.btn-joinrev {
+		font-size:20px;
+		padding:5.5% 0px;
+
+	}
+	.btn-sm img {
+		height:30px;
+		width:30px;
+		padding-right:6px;
+	}
+}
+
+@media screen and (max-width: 870px) {
+	.promo {
+		margin-top:0;
+		.headertext {
+		    font-size:24px;
+		}
+	}
+	.btn-joinrev {
+		font-size:20px;
+		// padding:5.5% 0px;
+
+	}
+	.btn-sm img {
+		height:28px;
+		width:28px;
+		padding-right:6px;
+	}
+}
+
+@media screen and (max-width: 820px) {
+	.promo {
+		margin-top:0;
+		.headertext {
+		    font-size:22px;
+		}
+	}
+	.btn-joinrev {
+		font-size:20px;
+		// padding:5.5% 0px;
+
+	}
+	.btn-sm img {
+		height:28px;
+		width:28px;
+		padding-right:6px;
+	}
+}
+
+.mobiletext {
+	font-size:36px;
+	line-height:1.2em;
+	text-align:center;
+}
+
+
+@media screen and (min-width: 768px) {
+	.bannertext-mobile {
+		display:none;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.bannertext-screen {
+		display:none;
+	}
+	.promo .video-container {
+		margin-bottom:40px;
+	}
+
+}
+
+
+
+

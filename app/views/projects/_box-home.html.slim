@@ -1,85 +1,90 @@
 .campaign[itemscope itemtype="http://schema.org/CreativeWork" class=(custom_class if defined?(custom_class))]
   meta[itemprop="dateCreated" content=project.created_at.to_date]
-  .progress
-    .bar style="width: #{project.display_progress}%;"
-      p = "#{project.display_progress}% fueled"
+    .row-fluid
+      .span12
+          .progress
+            .bar style="width: #{project.display_progress}%;"
+              p = "#{project.display_progress}% fuelled"
+      - if project.expired?
+        .status_image
+          = link_to project_by_slug_path(permalink: project.permalink), target: ( defined?(embed_link) ? '__blank' : '' ) do
+            - if project.successful?
+              = image_tag "successful.#{I18n.locale}.png"
+            - elsif project.waiting_funds?
+              = image_tag "waiting_confirmation.#{I18n.locale}.png"
+            - elsif project.failed?
+              = image_tag "not_successful.#{I18n.locale}.png"
+    / .row-fluid.campaignbox style="background-image:url(#{project.display_image});"
+    .row-fluid.campaignbox style="background-image:url('assets/placeholder.png');"
 
-  - if project.expired?
-    .status_image
-      = link_to project_by_slug_path(permalink: project.permalink), target: ( defined?(embed_link) ? '__blank' : '' ) do
-        - if project.successful?
-          = image_tag "successful.#{I18n.locale}.png"
-        - elsif project.waiting_funds?
-          = image_tag "waiting_confirmation.#{I18n.locale}.png"
-        - elsif project.failed?
-          = image_tag "not_successful.#{I18n.locale}.png"
-  .row
-    .span6
-      = link_to project, target: ( defined?(embed_link) ? '__blank' : '' ) do
-        = image_tag project.display_image, itemprop: 'image', height: '350'
-      .gradient
+      .span5.offset7
+        h3 = project.headline
+        p = truncate(project.about, length: 400)
+        = link_to "Browse Rewards", project, target: ( defined?(embed_link) ? '__blank' : '' ) , class: "btn btn-large btn-success"
+    .row-fluid
+      .span12
+        .stats
+          ul.nav
+            li.nav_border_right
+              p = "Athletes name"
+            li.nav_border_right.nav_border_left
+              p = "Country"
+            li.nav_border_right.nav_border_left
+              p = "Amount raised"
+            li.double_border_right.nav_border_left
+              p = "Backers"
 
-    .span4.campaign-info
-      h3 = project.name
-      p = truncate(project.about, length: 400)
-      = link_to "Browse Rewards", project, target: ( defined?(embed_link) ? '__blank' : '' ) , class: "btn btn-large btn-success browse-rewards-btn"
-      /p = content_tag("button", "Browse Rewards", :class => "btn btn-large btn-success browse-rewards-btn", :type => "button")
-
-  .stats
-    ul.nav
-      li.nav_border_right
-        p = "Athletes name"
-      li.nav_border_right.nav_border_left
-        p = "Country"
-      li.nav_border_right.nav_border_left
-        p = "Amount raised"
-      li.double_border_right.nav_border_left
-        p = "Backers"
-
-    ul.nav.count
-      li.double_border_left
-        - if project.in_time?
-          p
-            = "#{project.time_to_go[:time]} #{project.time_to_go[:unit]} "
-            = "#{project.remaining_text}"
-        - else
-          p
-            = I18n.t("project.display_status.#{project.display_status}").capitalize
-            = project.display_expires_at
+          ul.nav.count
+            li.double_border_left
+              - if project.in_time?
+                p
+                  = "#{project.time_to_go[:time]} #{project.time_to_go[:unit]} "
+                  = "#{project.remaining_text}"
+              - else
+                p
+                  = I18n.t("project.display_status.#{project.display_status}").capitalize
+                  = project.display_expires_at
 
 
+      / .span8
+      /   = link_to project, target: ( defined?(embed_link) ? '__blank' : '' ) do
+      /     = image_tag project.display_image, itemprop: 'image', height: '350'
+
+      / .span4.campaign-info
 
 
-//    p.black_box= project.category
-//    .cover
-//      = link_to project, target: ( defined?(embed_link) ? '__blank' : '' ) do
-//        = image_tag project.display_image, itemprop: 'image'
-//    .project_content
-//      h4= link_to project, target: ( defined?(embed_link) ? '__blank' : '' ), itemprop: 'url' do
-//        span[itemprop="name"]= project.name
-//      p.author
-//        = t('.by')
-//        |&nbsp;
-//        span[itemprop="author"]= project.user.name
-//      p.description[itemprop="description"]= truncate(project.headline, length: 140)
-//      p.where[itemprop="contentLocation"]
-//        - unless project.user.address_city.blank?
-//          = project.user.address_city
-//          - unless project.user.address_state.blank?
-//            | /
-//            = project.user.address_state
+
+
+/    p.black_box= project.category
+/    .cover
+/      = link_to project, target: ( defined?(embed_link) ? '__blank' : '' ) do
+/        = image_tag project.display_image, itemprop: 'image'
+/    .project_content
+/      h4= link_to project, target: ( defined?(embed_link) ? '__blank' : '' ), itemprop: 'url' do
+/        span[itemprop="name"]= project.name
+/      p.author
+/        = t('.by')
+/        |&nbsp;
+/        span[itemprop="author"]= project.user.name
+/      p.description[itemprop="description"]= truncate(project.headline, length: 140)
+/      p.where[itemprop="contentLocation"]
+/        - unless project.user.address_city.blank?
+/          = project.user.address_city
+/          - unless project.user.address_state.blank?
+/            | /
+/            = project.user.address_state
     
-//    ul
-//      li
-//        - if project.in_time?
-//          h6= "#{project.time_to_go[:time]} #{project.time_to_go[:unit]}"
-//          p= "#{project.remaining_text}"
-//        - else
-//          h6= I18n.t("project.display_status.#{project.display_status}").capitalize
-//          p= project.display_expires_at
-//      li
-//        h6= "#{project.display_pledged}"
-//        p= "#{t('projects.project.backed')}"
-//      li
-//        h6= "#{project.progress}%"
-//        p= "#{t('projects.project.reached')}"
+/    ul
+/      li
+/        - if project.in_time?
+/          h6= "#{project.time_to_go[:time]} #{project.time_to_go[:unit]}"
+/          p= "#{project.remaining_text}"
+/        - else
+/          h6= I18n.t("project.display_status.#{project.display_status}").capitalize
+/          p= project.display_expires_at
+/      li
+/        h6= "#{project.display_pledged}"
+/        p= "#{t('projects.project.backed')}"
+/      li
+/        h6= "#{project.progress}%"
+/        p= "#{t('projects.project.reached')}"

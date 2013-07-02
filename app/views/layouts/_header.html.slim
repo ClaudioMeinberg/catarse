@@ -6,10 +6,10 @@
         span.icon-bar
         span.icon-bar
       /= render 'layouts/announcement'
-      = link_to image_tag('fflogo.png', :size => "100x26"), root_url, :class => 'brand', :title => Configuration[:company_name]
+      = link_to image_tag('fflogo.png', :size => "90x24"), root_url, :class => 'brand', :title => Configuration[:company_name]
       .nav-collapse.collapse
         ul.nav
-          li.nav_border_right.double_border_left
+          li.nav_border_right.nav_border_left
             = link_to t('layouts.header.submit_project'), guidelines_start_path
           li.nav_border_right.nav_border_left
             = link_to "ffBLOG", "http://blog.fanfuel.co/", :class => 'lowercase-menu'

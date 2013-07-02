@@ -1,10 +1,14 @@
 / Temporaly using channels banner
-  = render partial: 'recommended_header'
+/ = render partial: 'recommended_header'
+
+
 = render partial: 'channels/projects/banner'
-.wrapper
-  .container
-    h3 = "Campaigns getting fueled now" 
-    / t('sections.selection.title')
+.wrapper.homepage-campaigns
+  .container-fluid
+    .row-fluid
+      .span12
+        h2 = "Campaigns getting fuelled now" 
+        / t('sections.selection.title')
     = render partial: 'project', locals: {project: @first_project, custom_class: 'first' } if @first_project
     = render partial: 'project', locals: {project: @second_project } if @second_project
     = render partial: 'project', locals: {project: @third_project, custom_class: 'last' } if @third_project

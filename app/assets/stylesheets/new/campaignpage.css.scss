@@ -26,6 +26,11 @@ h1.campaigntitle {
 	padding-bottom:50px;
 }
 
+.green-text {
+	color:$ffgreen;
+}
+
+
 .statistics .item {
 	height:0;
 	padding-bottom: 18%;
@@ -68,7 +73,7 @@ h1.campaigntitle {
 	padding-bottom:10%;
 }
 
-.bar p {
+.campaignbar .bar p {
 	font-family:'TradeGothicLTPro-Cn20';
 	font-size: 13px;
 	margin-top:6%;
@@ -80,7 +85,7 @@ h1.campaigntitle {
 	font-family: TradeGothicLTPro-Cn20;
 	text-decoration:none;
 	text-align: center;
-	font-size: 28px;
+	font-size: 26px;
 	color:#333;
 	margin-bottom: 20px;
 	text-transform: uppercase;
@@ -308,6 +313,7 @@ div.pluginConnectButton {
 	text-align:left;
 	padding:16px;
 }
+
 
 p.reward-title {
 	font-family:'TradeGothicLTPro-Cn20';
