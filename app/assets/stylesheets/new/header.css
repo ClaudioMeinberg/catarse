@@ -28,6 +28,24 @@
 .nav_border_left {border-left:1px solid black;height:100%;}
 
 .double_border_right {border-right:1px solid black; position:relative;}
+
+
+@media (max-width: 979px) {
+	.navbar-fixed-top .navbar-inner,
+	.navbar-fixed-bottom .navbar-inner {
+		padding: 0px;
+		margin:0;
+  }
+  .navbar {
+  	width:100%;
+  	margin-left:0;
+  }
+  .nav_border_left, .nav_border_right {
+  	border:none;
+  }
+}
+
+
 /*
 .double_border_right:before{position:absolute; display:block; content:''; border-right:1px solid #4d4d4d; height:100%; width:100%; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box;}
 */
@@ -97,6 +115,11 @@
 	.navbar-fixed-top .navbar-inner,
 	.navbar-fixed-bottom .navbar-inner {
 		padding: 0px;
+		margin:0;
+  }
+  .navbar {
+  	width:100%;
+  	margin-left:0;
   }
 }
 
