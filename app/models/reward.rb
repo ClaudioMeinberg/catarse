@@ -36,10 +36,10 @@ class Reward < ActiveRecord::Base
   end
 
   def name
-    "<div class='reward_minimum_value'>#{minimum_value > 0 ? display_minimum+'+' : I18n.t('reward.dont_want')}</div><div class='reward_description'>#{h description}</div>#{'<div class="sold_out">' + I18n.t('reward.sold_out') + '</div>' if sold_out?}<div class='clear'></div>".html_safe
+    "<div class='reward_image'><img src='dumb.png'></div><div class='reward_minimum_value'>#{minimum_value > 0 ? display_minimum+'+' : I18n.t('reward.dont_want')}</div><div class='reward_sep'>&#8212;</div><div class='reward_description'>#{h description}</div>#{'<div class="sold_out">' + I18n.t('reward.sold_out') + '</div>' if sold_out?}<div class='clear'></div>".html_safe
   end
   def display_minimum
-    number_to_currency minimum_value, unit: 'R$', precision: 2, delimiter: '.'
+    number_to_currency minimum_value, unit: '$', precision: 2, delimiter: '.'
   end
   def short_description
     truncate description, length: 35

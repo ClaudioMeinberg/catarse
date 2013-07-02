@@ -110,7 +110,7 @@ textarea#privacy-policy {
 }
 
 #checkout ol label{
-
+	
 }
 
 #checkout ol li.choice{
@@ -119,21 +119,136 @@ textarea#privacy-policy {
 	width: 95%;
 	padding: 10px;
 	margin-bottom: 10px;
+	height: 112px;
 }
 #checkout ol li.selected{
 	background-color: #99ff00;
 }
 
-#checkout .simbol{
-	font-size: 24px;
+#checkout ol li input[type="radio"] {
+	margin-left: -35px;
+	margin-top: 47px;
 }
 
+#checkout .simbol{
+	font-size: 30px;
+	float: left;
+	margin-top: -62px;
+	margin-left: 5px;
+}
+
+#checkout legend{
+	border: none;
+	background-color: transparent;
+	color: #99ff00;
+	padding: 0;
+	margin-left: -20px;
+
+}
+
+#checkout legend label{
+	font-size: 24px;
+	line-height: 30px;	
+}
 
 #checkout .reward_minimum_value{
-	font-size: 30px;
+	font-size: 34px;
+	font-weight: bold;
+	line-height: 34px;
+}
+
+#checkout .reward_description {
+	font-size: 24px;
+	line-height: 30px;
+	margin-top: 20px;
+}
+
+#checkout .reward_sep {
+	font-size: 35px;
+	font-weight: bold;
+	line-height: 0px;
+	margin-top: 10px;
+	margin-bottom: -8px;
+}
+
+#checkout label[for="backer_value"] {
+	font-size: 24px;
+	line-height: 30px;
+}
+
+#checkout label[for="backer_anonymous"] {
+	font-size: 20px;
+	margin-left: 30px;
+	margin-top: 15px;
+}
+
+#checkout #backer_anonymous{
+	float: left;
+	margin-right: 5px;
 }
 
 
+#checkout input[type="text"]{
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  text-indent:10px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px; 
+  border-radius: 0px;
+  padding:10px 0;
+  background-color:#cbcbcb;
+  border:1px solid #6a6a6a;
+  font-size: 34px;
+  color: black;
+}
+#checkout #backer_value,
+#checkout .inline-hints {
+	margin-left: 25px;
+}
+
+#checkout .inline-hints{
+	text-transform: none;
+	font-size: 10px;
+	font-family: genevaregular;
+	color: #6a6a66;	
+	line-height: 11px;
+}
+
+#checkout .btn{
+	float: right;
+}
+
+#checkout .btn-first {
+	margin-top: -35px;
+}
+
+#checkout .reward_image{
+	float: right;
+	background-color: white;
+	width: 240px;
+	height: 132px;
+	max-height: 132px;
+	margin-top: -10px;
+	margin-right: -20px;
+}
+
+#checkout hr{
+	border: 0;
+	border-bottom: 1px solid #696969;
+}
+
+#checkout .subtitle {
+	text-transform: none;
+	font-family: genevaregular;
+	font-size: 12px;
+	line-height: 12px;
+	color: #696969;
+	margin-top: -12px;
+	margin-bottom: 10px;
+}
 
 #contact .black-box{
 	margin-top: 40px;
@@ -179,7 +294,8 @@ textarea#privacy-policy {
 	color:#999;
 }
 
-#contact .btn {
+#contact .btn,
+#checkout .btn {
 	-moz-border-radius:0px;
 	-webkit-border-radius:0px;
 	border-radius:0px;
@@ -198,7 +314,7 @@ textarea#privacy-policy {
 	box-shadow: inset 0px 0px 0px 0px #ffffff;
 	border: 1px solid rgba(0, 0, 0, 0.247059);
 	font-size: 20px;
-	padding: 8px 30px;
+	padding: 10px 20px;
 }
 
 #contact .btn:hover {
@@ -221,10 +337,3 @@ textarea#privacy-policy {
 
 
 
-.inline-hints{
-	text-transform: none;
-	font-size: 10px;
-	font-family: genevaregular;
-	color: #6a6a66;	
-	line-height: 11px;
-}
