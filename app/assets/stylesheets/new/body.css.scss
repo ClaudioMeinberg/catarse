@@ -87,71 +87,6 @@ a:hover {
 	margin:0;
 }
 
-
-	/* HOW IT WORKS SECTION STYLES
-    --------------------------------------------------*/
-
-.howitworks{
-	margin-top:-10px;
-	border-bottom:1px black solid;
-}
-
-.howitworks h3{
-	padding:40px 0 30px 0;
-	text-align: center;
-}
-
-// .howitworks .cntainer{
-// 	height:250px;
-// }
-
-	/* HOW IT WORKS SECTION STYLES
-    --------------------------------------------------*/
-
-.press-material {
-	background:#1d1d1d;
-
-}
-
-.press-material .container {
-	height:400px;
-}
-
-.press-material .span3 {
-	margin-left: 0;
-}
-
-.press-material h4 {
-	margin-top: 40px;
-	color:#99ff00;
-}
-
-.campaignbox {
-    background:#141414;
-    border:1px solid black;
-    min-height:340px;
-    background-size:auto 340px;
-    background-repeat:no-repeat;
-}
-
-.homepage-campaigntext {
-	text-align:left;
-	padding-right: 40px;
-	min-height:340px;
-	h3 {
-		font-size:32px;
-		font-family: TradeGothicLTPro-Cn20;
-		font-weight: normal;
-		line-height: 40px;
-		padding-top: 4px;
-	}
-	p {
-		text-transform:none;
-		font-family:'genevaregular';
-		text-align: justify
-	}
-}
-
 .btn-browserewards {
 	font-family: TradeGothicLTPro-Cn20;
 	text-decoration:none;
@@ -232,6 +167,117 @@ a:hover {
 		display:none;
 	}
 }
+
+
+
+/* HOW IT WORKS SECTION STYLES
+--------------------------------------------------*/
+
+.howitworks{
+	margin-top:-10px;
+	border-bottom:1px black solid;
+}
+
+.howitworks h3{
+	padding:40px 0 30px 0;
+	text-align: center;
+}
+
+/* PRESS MATERIAL SECTION STYLES
+--------------------------------------------------*/
+
+.press-material {
+	background:#1d1d1d;
+	.row-fluid {
+		text-align:left;
+		padding-top:40px;
+	}
+	h4 {
+		color:$ffgreen;
+		text-transform:none;
+		font-family:'TradeGothicLTPro-Cn20';
+	}
+}
+
+.campaignbox {
+    background:#141414;
+    border:1px solid black;
+    min-height:340px;
+    background-size:auto 340px;
+    background-repeat:no-repeat;
+}
+
+.homepage-campaigntext {
+	text-align:left;
+	padding-right: 20px;
+	min-height:340px;
+	h3 {
+		font-size:32px;
+		font-family: TradeGothicLTPro-Cn20;
+		font-weight: normal;
+		line-height: 40px;
+		padding-top: 4px;
+	}
+	p {
+		text-transform:none;
+		font-family:'genevaregular';
+		text-align: justify
+	}
+}
+.howitworks {
+	padding-bottom:20px;
+	.span3 {
+		background-repeat:no-repeat;
+		background-position: center bottom;
+		height:160px;
+		margin-bottom:40px;
+		float:left;
+		display:inline-block;
+	}
+}
+.howitworks-step1 {
+	background-image:url('howitworks-1.png');
+}
+.howitworks-step2 {
+	background-image:url('howitworks-2.png');
+}
+.howitworks-step3 {
+	background-image:url('howitworks-3.png');
+}
+.howitworks-step4 {
+	background-image:url('howitworks-3.png');
+}
+
+@media screen and (max-width: 979px) {
+	.howitworks {
+		.span3 {
+			width:50%;
+			margin-left:0;
+			margin-right:0;
+		}	
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.howitworks {
+		.span3 {
+			width:100%;
+		}	
+	}
+}
+
+.blog {
+	ul {
+		margin-left:0;
+	}
+	li {
+		list-style-type: none;
+	}
+}
+
+
+
+
 
 
 

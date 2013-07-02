@@ -18,16 +18,19 @@
   h3 = "How it works"
   .container-fluid
     .row-fluid
-       = "How it works section"
+      .span3.howitworks-step1
+      .span3.howitworks-step2
+      .span3.howitworks-step3
+      .span3.howitworks-step4
 
 / PRESS MATERIAL SECTION
 .press-material
-  .container
-    .row.span12
-      .span3.blog1
-        h4 = "ff Blog"
+  .container-fluid
+    .row-fluid
+      .span6.blog1
+        h4 = "ffBLOG"
         .blog
-          h3= t('sidebar.titles.blog')
+          / h3= t('sidebar.titles.blog')
           ul.posts
             - @blog_posts.each do |post|
               li
@@ -38,17 +41,15 @@
                 p.author= "#{t('projects.box.by')} #{post.author}"
                 = link_to post.url, target: '__blank', class: 'resume' do
                   = truncate(post.summary, length: 130).html_safe
-
-      .span3.blog2
       .span3.twtr-feed
-        h4 = "Twitter"
+        h4 = "TWITTER"
         | <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/fanfuelco" data-widget-id="351583796551892992">Tweets by @fanfuelco</a>
         | <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 
       .span3.newsletter
-        h4 = "Facebook"
-        h4 = "Newsletter"
+        h4 = "FACEBOOK"
+        h4 = "NEWSLETTER"
         form.navbar-form
           input.span3[placeholder="Email" type="text"]
           = content_tag("button", "Subscribe", :class => "btn btn-success", :type => "submit")
