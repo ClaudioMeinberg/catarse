@@ -37,7 +37,7 @@
           .video-container
             = content_tag("iframe", "", :src => "#{@project.display_video_embed_url}&color=9dff00", :width => "700", :height => "390", :frameborder => "0", :webkitAllowFullScreen => true, :mozallowfullscreen => true, :allowFullScreen => true)
             #project_about.content= render 'project_about'
-        .span4
+        .span4.campaignbar
           .progress
             .bar style="width: #{@project.display_progress}%;"
               p
@@ -67,7 +67,7 @@
                   = "Share "
                   .fb-like data-href="#{project_path(@project)}" data-layout="button_count" data-send="false" data-show-faces="false" data-width="450"
                   a.twitter-share-button href="#{project_path(@project)}"
-          = link_to "Fund this athlete!", new_project_backer_path(@project), class: "btn btn-large btn-fundathlete"
+          = link_to "Fund this athlete!", new_project_backer_path(@project), class: "btn-fundathlete"
 
 
 #page_content.campaignpage-body

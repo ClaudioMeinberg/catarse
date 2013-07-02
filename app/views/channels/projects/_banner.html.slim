@@ -1,18 +1,33 @@
 .content
 	.promo
-		.container
-			.row
-				.span7.video
+		.container-fluid
+			.row-fluid.homepage-video
+				.span8.video
 					.video-container
 						= content_tag("iframe", "", :src => "http://player.vimeo.com/video/65627895?color=9dff00", :width => "700", :height => "390", :frameborder => "0", :webkitAllowFullScreen => true, :mozallowfullscreen => true, :allowFullScreen => true)
 						= content_tag("p", link_to("The Future of Sports", "http://vimeo.com/65627895") + " from " + link_to("fanfuel TV", "http://vimeo.com/fanfuel") + " on " + link_to("Vimeo", "http://vimeo.com") + "." )
+				.span4.bannertext
+					.bannertext-screen
+						p.headertext
+							= "It's time to change the"
+							br
+							= "sponsorship industry!"
+						p.headertext.green-text
+							= "We allow athletes"
+							br
+							= "to be sponsored"
+							br
+							= "by their fans!"
+						p = link_to "Join the Revolution!", guidelines_start_path, class: "btn btn-joinrev"
+						p.keepuptext = "Keep up with us"
 
-				.span4.offset1
-					h2 = "It is time to change the sponsorship industry."
-					h2.green_title = "We allow athletes to be sponsored by their fans!"
-					p = link_to "Join the Revolution!", guidelines_start_path, class: "btn btn-large btn-success"
-					p = "Keep up with us"
-					= link_to content_tag("i", "", :class => "icon-facebook"), "https://www.facebook.com/fanfuelco", class: "btn sm btn-facebook"
-					= link_to content_tag("i", "", :class => "icon-twitter"), "https://twitter.com/fanfuelco", class: "btn sm btn-twitter"
-					= link_to content_tag("i", "", :class => "icon-google-plus"), "", class: "btn sm btn-google-plus"
-					= link_to content_tag("i", "", :class => "icon-youtube"), "http://www.youtube.com/user/fanfuel", class: "btn sm btn-youtube"
+
+						= link_to image_tag("homepageicon-tw.png"), "https://twitter.com/fanfuelco", class: "btn-sm"
+						= link_to image_tag("homepageicon-fb.png"), "https://www.facebook.com/fanfuelco", class: "btn-sm"
+						= link_to image_tag("homepageicon-gplus.png"), "https://www.facebook.com/fanfuelco", class: "btn-sm"
+						= link_to image_tag("homepageicon-youtube.png"), "http://www.youtube.com/user/fanfuel", class: "btn-sm"
+						= link_to image_tag("homepageicon-vimeo.png"), "https://www.facebook.com/fanfuelco", class: "btn-sm"
+					.bannertext-mobile
+						p.mobiletext= "It's time to change the sponsorship industry!"
+						p.mobiletext.green-text= "We allow athletes to be sponsored by their fans!"
+
