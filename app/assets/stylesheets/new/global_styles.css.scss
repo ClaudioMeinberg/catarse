@@ -1,12 +1,11 @@
 /* GLOBAL STYLES 
 --------------------------------------------------*/
-
-
 body {
-      color: #dddddd;
-      background-color:#0a0a0a;
-      text-transform: uppercase;
-      font-family: TradeGothicLTPro-Cn18;
+  color: #ccc;
+  background-color:#0a0a0a;
+  text-transform: uppercase;
+  font-family: TradeGothicLTPro-Cn18;
+  font-size: 16px;
 }
 body#platform {
   padding:0;
@@ -14,13 +13,13 @@ body#platform {
 
 
 a {
-      color: #dddddd;
+      color: #ccc;
       text-transform: uppercase;
-      font-family: TradeGothicLTPro-Cn20;
+      font-family: TradeGothicLTPro-Cn18;
 }
 
 li {
-      color: #dddddd;
+      color: #ccc;
       text-transform: uppercase;
       font-family: TradeGothicLTPro-Cn18;
 }

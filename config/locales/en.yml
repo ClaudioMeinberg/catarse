@@ -260,7 +260,7 @@ en:
         anonymous: "I want my contribution to be anonymous."
         credits: "I want to use my credits on this back."
         reward: "Choose your reward"
-        value: "Insert amount you want to contribute with?"
+        value: "Insert amount you want to contribute?"
       comment:
         comment: "Leave your comment about this project"
       project:
@@ -385,7 +385,7 @@ en:
         cannot_back: "It's not possible to back this project right now. Please, back other projects."
         header:
           subtitle: "You are very close to contribute to this campaign!"
-          title: "Hell yeah!"
+          title: "Hell yeah!!!"
         no_reward: "Personal email thanking you for your kind support"
         submit: "Review & Pay"
         title: "Back %{name}"

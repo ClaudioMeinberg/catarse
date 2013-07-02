@@ -7,19 +7,18 @@
           .row-fluid
             .span4
               h2= t('.header.title')
-              = t('.header.subtitle')
+              div.subtitle = t('.header.subtitle')
             .span4
               = image_tag @project.display_image, alt: @project.name, class: 'project_image', width: 200
             .span4
               h4#campaign-title = @project.headline
           .row-fluid
             .span12
-              #line-sep
-            .span12
+              hr
               = semantic_form_for @backer, url: @create_url, html: { id: 'backer_form' } do |form|
                 = form.inputs do
                   = hidden_field_tag 'credits', ("%0.0f" % current_user.credits)
-                  = form.label :value, t('formtastic.labels.backer.value')
+                  = form.label :value, t('formtastic.labels.backer.value'), :class => 'ff-green' 
                   - if current_user.credits >= 10
                     .bootstrap-alert
                       .alert.alert-info
@@ -28,11 +27,16 @@
                   = form.input :value, required: false, as: :string, label: false
                   .simbol
                     p.ff-green $
+                  = form.actions do
+                    .bootstrap-twitter
+                      = form.submit t('.submit'), disabled: true, class: 'btn btn-first backer_submit', id: "backer_submit"
+                  hr
                   - @rewards[0].id = 0
                   script
                     |var rewards = new Array();
                     - @rewards.each do |reward|
                       |rewards[#{reward.id || 0}] = #{reward.minimum_value};
+                  / Gera lista de rewards
                   = form.input :reward, as: :radio, collection: @rewards
                   = form.input :anonymous
                   #anonymous_warning.important.hide
@@ -41,11 +45,13 @@
                         = render 'anonymous_warning'
                 = form.actions do
                   .bootstrap-twitter
-                    = form.submit t('.submit'), disabled: true, class: 'btn btn-primary btn-large', id: "backer_submit"
+                    = form.submit t('.submit'), disabled: true, class: 'btn backer_submit', id: "backer_submit"
 
         #back-faq.span3.black-box
           = render 'back_text'
 
+  br
+  br
 
-= content_for :mouseflow do
-  = render 'layouts/mouseflow'
+//= content_for :mouseflow do
+//  = render 'layouts/mouseflow'

@@ -29,12 +29,12 @@ class LogoUploader < CarrierWave::Uploader::Base
 
 
   version :project_thumb do
-    process resize_to_fill: [220,172]
+    process resize_to_fill: [220,172] #[520,340] #[220,172]
     process convert: :png
   end
 
   version :project_thumb_small, from_version: :project_thumb do
-    process resize_to_fill: [85,67]
+    process resize_to_fill: [85,67] #[730,400] #[85,67]
     process convert: :png
   end
 
