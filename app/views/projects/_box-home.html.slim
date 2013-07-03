@@ -23,28 +23,28 @@
         / p = truncate(project.about, length: 350)
         = link_to "View Campaign", project, target: ( defined?(embed_link) ? '__blank' : '' ) , class: "btn btn-browserewards"
     .row-fluid
-      .span12
-        .stats
-          ul.nav
-            li.stats1.nav_border_right
-              p = "Athletes name"
-            li.stats2.nav_border_right.nav_border_left
-              p = "Country"
-            li.stats3.nav_border_right.nav_border_left
-              p = "Amount raised"
-            li.stats4.double_border_right.nav_border_left
-              p = "Backers"
+      .span12.stats
+        / .stats
+        ul.nav
+          li.stats1.nav_border_right
+            div = "Athletes name"
+          li.stats2.nav_border_right.nav_border_left
+            div = "Country"
+          li.stats3.nav_border_right.nav_border_left
+            div = "Amount raised"
+          li.stats4.double_border_right.nav_border_left
+            div = "Backers"
 
-          ul.nav.pull-right
-            li.stats5.double_border_left
-              - if project.in_time?
-                p
-                  = "#{project.time_to_go[:time]} #{project.time_to_go[:unit]} "
-                  = "#{project.remaining_text}"
-              - else
-                p
-                  = I18n.t("project.display_status.#{project.display_status}").capitalize
-                  = project.display_expires_at
+        ul.nav.pull-right
+          li.stats5.double_border_left
+            - if project.in_time?
+              div
+                = "#{project.time_to_go[:time]} #{project.time_to_go[:unit]} "
+                = "#{project.remaining_text}"
+            - else
+              div
+                = I18n.t("project.display_status.#{project.display_status}").capitalize
+                = project.display_expires_at
 
 
       / .span8

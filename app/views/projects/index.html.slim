@@ -27,9 +27,9 @@
 .press-material
   .container-fluid
     .row-fluid
-      .span6.blog1
-        h4 = "ffBLOG"
+      .span4
         .blog
+          h4.lowercase-menu = "ffBLOG"
           / h3= t('sidebar.titles.blog')
           ul.posts
             - @blog_posts.each do |post|
@@ -38,21 +38,26 @@
                   = link_to post.url, target: '__blank' do
                     /= image_tag("catarse/post_title_image.png")
                     = truncate(post.title, length: 80)
-                p.author= "#{t('projects.box.by')} #{post.author}"
+                / p.author= "#{t('projects.box.by')} #{post.author}"
                 = link_to post.url, target: '__blank', class: 'resume' do
                   = truncate(post.summary, length: 130).html_safe
-      .span3.twtr-feed
-        h4 = "TWITTER"
-        | <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/fanfuelco" data-widget-id="351583796551892992">Tweets by @fanfuelco</a>
-        | <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
-      .span3.newsletter
-        h4 = "FACEBOOK"
-        h4 = "NEWSLETTER"
-        form.navbar-form
-          input.span3[placeholder="Email" type="text"]
-          = content_tag("button", "Subscribe", :class => "btn btn-success", :type => "submit")
+      .span4
+        .twtr-feed
+          h4 = "twitter"
+          | <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/fanfuelco" data-widget-id="351583796551892992">Tweets by @fanfuelco</a>
+          | <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+      .span4
+        .newsletter
+          .newsletter1
+            h4 = "facebook"
+            .fb-like data-href="http://www.fanfuel.co" data-send="false" data-show-faces="true" data-colorscheme="dark" data-width="100%"
+          hr
+          .newsletter2
+            h4 = "sign up to our newsletter"
+            form.navbar-form
+              input#newsletter-signup[placeholder="Email" type="text"]
+              br
+              = content_tag("button", "Subscribe", :class => "btn btn-newsletter", :type => "submit")
 
 
 
