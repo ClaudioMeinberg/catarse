@@ -38,3 +38,40 @@ li {
 ul.nav {
   margin-bottom:0;
 }
+
+/* sticky footer */
+html,
+  body {
+    height: 100% !important;
+    padding:0;
+    padding-top:0px;
+    /* The html and body elements cannot have any padding or margin. */
+  }
+
+  /* Wrapper for page content to push down footer */
+  .page-wrap {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    width:100%;
+    /* Negative indent footer by it's height */
+    /* margin: 0px auto -40px; */
+    // padding-bottom:40px;
+  }
+
+  /* Set the fixed height of the footer here */
+  .footer {
+    height: 40px;
+    background-color: #ccc;
+    margin-top:-40px;
+  }
+
+  /* Lastly, apply responsive CSS fixes as necessary */
+  @media (max-width: 767px) {
+    .footer {
+      margin-left: 0px;
+      margin-right: 0px;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  }
