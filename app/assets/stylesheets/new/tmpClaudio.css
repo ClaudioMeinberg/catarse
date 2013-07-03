@@ -3,7 +3,7 @@
 }
 
 .bg-gradient {
-	border-bottom:1px black solid;
+/*	border-bottom:1px black solid;*/
 	background: url('gradient2.png') repeat-x;
 }
 
@@ -14,7 +14,14 @@
 .bg-noise{
 	background: url('noise.png') repeat-y;
 	overflow:hidden;
+	height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+
+
 }
+
 
 .margin-what{
 	margin-top:80px;
