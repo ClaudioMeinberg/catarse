@@ -6,7 +6,10 @@
           .campaign-reward
             div[id="reward_#{reward.id}" data-update_url="#{sort_project_reward_path(@project, reward)}" class="box #{(can?(:update, reward) ? 'clickable_owner sortable' : '')} #{(@project.online? && !reward.sold_out? && !can?(:update, reward)  ? 'clickable'  : '' )}"]
               / TODO: Add actual reward image link here
-              = image_tag "samplerewardimg.png"
+              - if reward.image
+                = image_tag("#{reward.image}")
+              - else
+                = image_tag("#{reward.project.video_thumbnail}")
               .campaign-reward-bar
                 .campaign-reward-bar-price.nav_border_right
                   = reward.display_minimum
@@ -27,6 +30,11 @@
                           = f.input :description
                         - if can? :update, reward, :maximum_backers
                           = f.input :maximum_backers
+                        - if can? :update, reward, :image
+                          = f.input :maximum_backers
+                        - if can? :update, reward, :title
+                          = f.input :maximum_backers
+
                         .bootstrap-twitter
                           = f.submit class: 'btn'
 
@@ -47,12 +55,10 @@
                 / h2= t('projects.rewards.reward_title', minimum: reward.display_minimum).html_safe
                 p.reward-title
                   / TODO: title of reward
-                  = "Reward Title"
-
+                  = reward.title if reward.title
                 .reward-description
                   / TODO: reward description
                   = reward.display_description.html_safe
-                  = p= "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer id ipsum sollicitudin quam faucibus luctus ut non ante. Morbi faucibus neque eu nisl iaculis fermentum. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ligula felis, rhoncus"
                 em
                   = pluralize(reward.backers.confirmed.count, t('backer_singular'), t('backer_plural'))
                 .clearfix
