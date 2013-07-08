@@ -53,13 +53,11 @@
             .fb-like data-href="http://www.fanfuel.co" data-send="false" data-show-faces="true" data-colorscheme="dark" data-width="100%"
           hr
           .newsletter2
-            h4 = "sign up to our newsletter"
-            form.navbar-form
-              input#newsletter-signup[placeholder="Email" type="text"]
+            h4 = t('sidebar.titles.newsletter')
+            = form_tag Configuration['mailchimp_url'], id: 'mailee-form', class: 'navbar-form', method: 'post' do
+              = text_field_tag 'EMAIL', nil, placeholder: 'email@email.com', label: 'email', id: 'newsletter-signup'
               br
-              = content_tag("button", "Subscribe", :class => "btn btn-newsletter", :type => "submit")
-
-
+              = submit_tag t('sidebar.buttons.newsletter'), class: 'btn btn-newsletter'
 
 /        .explore_link
 /          hr
