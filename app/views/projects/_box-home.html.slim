@@ -14,26 +14,30 @@
               = image_tag "waiting_confirmation.#{I18n.locale}.png"
             - elsif project.failed?
               = image_tag "not_successful.#{I18n.locale}.png"
-    / .row-fluid.campaignbox style="background-image:url(#{project.display_image});"
-    .row-fluid.campaignbox style="background-image:url('assets/placeholder.png');"
+
+    /.row-fluid.campaignbox style="background-image:url('assets/placeholder.png');"
+    .row-fluid.campaignbox style="background-image:url(#{project.display_image});"
       .span12.homepage-campaigntext.pull-right
-        h3 = "We want Demarcus Ware on our team"
-        / h3 = project.headline
-        p= "For year the Dallas Cowboys have been flerting with the idea of signing Demarcus but never had the funds. Now, it is up to you to bring the best player in the NFL to our team. The hardest, toughest, fastest player. For year the Dallas Cowboys have been flerting with the idea of signing Demarcus but.For year the Dallas Cowboys have been flerting with the idea funds."
-        / p = truncate(project.about, length: 350)
+        h3 = project.headline
+        p = truncate(project.about, length: 350)
         = link_to "View Campaign", project, target: ( defined?(embed_link) ? '__blank' : '' ) , class: "btn btn-browserewards"
     .row-fluid
       .span12.stats
         / .stats
         ul.nav
           li.stats1.nav_border_right
-            div = "Athletes name"
+            /"Athletes name"
+            div = project.user.name
           li.stats2.nav_border_right.nav_border_left
-            div = "Country"
+            /div = "Country"
+            - unless project.user.address_city.blank?
+              div = project.user.address_city
           li.stats3.nav_border_right.nav_border_left
-            div = "Amount raised"
+            /div = "Amount raised"
+            div = "#{project.display_pledged}"
           li.stats4.double_border_right.nav_border_left
-            div = "Backers"
+            /div = "Backers"
+            div = pluralize(project.backers.confirmed.count, t('backer_singular'), t('backer_plural'))
 
         ul.nav.pull-right
           li.stats5.double_border_left
