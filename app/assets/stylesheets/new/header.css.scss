@@ -16,10 +16,13 @@
 }
 
 .navbar-inverse .nav>li>a:hover {
-	color:white;
+	color:$ffgreen;
 	background-color:#0a0a0a;
 }
 
+.nopadding {
+	padding:0;
+}
 .caret {
 	color:#dddddd;
 }
