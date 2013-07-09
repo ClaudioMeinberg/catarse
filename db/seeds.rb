@@ -61,7 +61,7 @@ end
   facebook_url: "http://facebook.com/fanfuelco",
   facebook_app_id: '514362811950577',
   twitter_username: "fanfuelco",
-  mailchimp_url: "http://catarse.us5.list-manage.com/subscribe/post?u=ebfcd0d16dbb0001a0bea3639&amp;id=149c39709e",
+  mailchimp_url: "http://fanfuel.us7.list-manage.com/subscribe/post?u=627e9bd5c296dbfed2d6a3b52&amp;id=83410e178b",
   catarse_fee: '0.10',
   support_forum: 'http://support.fanfuel.co/',
   base_domain: 'fanfuel.co'
