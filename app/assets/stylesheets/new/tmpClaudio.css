@@ -1,3 +1,7 @@
+.lowercase{
+	text-transform: none;
+}
+
 .bg-yellow{
 	background-color: yellow;
 }
