@@ -57,5 +57,5 @@ pt:
       subject: "O projeto %{project_name} atingiu o prazo"
       header: "O projeto atingiu o prazo"
     credits_warning:
-      subject: "Você tem R$ %{amount} em créditos no Catarse"
+      subject: "Você tem US$ %{amount} em créditos no Catarse"
       header: "Que tal apoiar um novo projeto?"
