@@ -227,6 +227,7 @@ textarea#privacy-policy {
 #checkout .reward_image{
 	float: right;
 	background-color: white;
+	background-size:100% auto;
 	width: 240px;
 	height: 132px;
 	max-height: 132px;
