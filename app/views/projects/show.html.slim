@@ -36,7 +36,7 @@
         .span8.video
           .video-container
             = content_tag("iframe", "", :src => "#{@project.display_video_embed_url}&color=9dff00", :width => "700", :height => "390", :frameborder => "0", :webkitAllowFullScreen => true, :mozallowfullscreen => true, :allowFullScreen => true)
-            #project_about.content= render 'project_about'
+            / #project_about.content= render 'project_about'
         .span4.campaignbar
           .progress
             .bar style="width: #{@project.display_progress}%;"
@@ -75,14 +75,14 @@
       .span12
         .tab_container
           nav#project_menu.campaign-submenu
-            = link_to '#about', id: 'about_link', class: 'item selected' do
+            = link_to '#rewards', id: 'rewards_link', class: 'item selected' do
               = "rewards"
-            = link_to '#updates', id: 'updates_link', class: 'item' do
+            = link_to '#information', id: 'information_link', class: 'item' do
               = "information"
-            = link_to '#comments', id: 'comments_link', class: 'item' do
+            = link_to '#updates', id: 'updates_link', class: 'item' do
               = "updates"
-            / = link_to '#comments', id: 'comments_link', class: 'item double_border_left' do
-            /   = "talk to me"
+            = link_to '#comments', id: 'comments_link', class: 'item' do
+              = "talk to me"
             = link_to '#backers', id: 'backers_link', class: 'item' do
               = "backers"
             - if can? :update, @project
@@ -142,14 +142,14 @@
             - if can? :update, @project
               #project_reports.content.hide= render 'project_reports'
               #project_edit.content.hide= render 'project_edit'
-
-            #project_updates.content.hide= render 'project_about'
+            / 5 navigation tabs
+            #project_updates.content.hide= render 'project_updates'
             .media_content_backers
               #project_backers.content.hide
-            #project_comments.content.hide= render 'project_updates'
+            #project_comments.content.hide= render 'comments'
+            #project_information.content.hide= render 'project_about'
             #rewards
-              #project_about.content= render 'project_rewards'
-            / #rewards= render 'project_rewards'
+              #project_rewards.content= render 'project_rewards'
 
             .clearfix
             #loading= image_tag "loading.gif"
