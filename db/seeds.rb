@@ -64,14 +64,15 @@ end
   mailchimp_url: "http://fanfuel.us7.list-manage.com/subscribe/post?u=627e9bd5c296dbfed2d6a3b52&amp;id=83410e178b",
   catarse_fee: '0.10',
   support_forum: 'http://support.fanfuel.co/',
-  base_domain: 'fanfuel.co'
+  base_domain: 'fanfuel.co',
+  sendgrid_user_name: 'fanfuel',
+  sendgrid: 'SENDGRID PWD'
 }.each do |name, value|
    conf = Configuration.find_or_initialize_by_name name
    conf.update_attributes({
      value: value
    })
 end
-
 
 Channel.find_or_create_by_name!(
   name: "Channel name",
@@ -83,6 +84,6 @@ Channel.find_or_create_by_name!(
 OauthProvider.find_or_create_by_name!(
   name: 'facebook',
   key: '514362811950577',
-  secret: 'b14213c20a0ce3adf5694d4d6fd000ce',
+  secret: 'APP SECRET',
   path: 'facebook'
 )
