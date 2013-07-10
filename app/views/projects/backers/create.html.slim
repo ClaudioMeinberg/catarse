@@ -9,7 +9,7 @@
               .span3
                 = image_tag @project.display_image, id: 'project_image', alt: @project.name, width: '250px'
               .span9
-                h2= "FINAL STEP"
+                h2= "FINAL STEP!"
                 h3
                   = "YOU ARE ABOUT TO FUEL THE ‘" 
                   = link_to(@project.name, project_by_slug_path(permalink: @project.permalink))
@@ -20,7 +20,7 @@
                 h3
                   = "YOU CHOSE THE '"
                   span.ff-green
-                    = @backer.reward.description
+                    = @backer.reward.title
                   = "' AS YOUR REWARD!"
             .row-fluid
               .span12
@@ -40,8 +40,12 @@
                       fieldset.live_in_brazil.hide
                         = check_box_tag 'live_in_brazil', 'live', params[:locale] == 'pt'
                         = label_tag 'live_in_brazil', t('.live_in_brazil'), class: 'inline'
-                      = form.input :full_name, required: true, as: :string
-                      = form.input :email, required: true, as: :string
+                      br
+                      .row-fluid
+                        .span6
+                          = form.input :full_name, required: true, as: :string
+                        .span6
+                          = form.input :email, required: true, as: :string
                       fieldset.address_data
                         .title
                           h2
@@ -62,20 +66,20 @@
                         .bootstrap-twitter
                           = form.submit (@backer.credits ? t('.submit.credits') : t('.submit.moip')), disabled: true, class: 'btn', id: 'user_submit'
                 #payment.hide
-                  hr
-                  .title
-                    = "You are about to be directed to the PayPal website to complete the payment."
-         
+                  hr         
                   .tab_container
                     nav#payment_menu
-        /              - PaymentEngines.engines.each do |engine|
-        /                = link_to "##{engine[:name]}_payment", id: engine[:name], class: 'selected enabled' , :'data-target' => engine[:review_path].call(@backer) do
-        /                  = t("projects.backers.review.#{engine[:name]}")
-        /          - PaymentEngines.engines.each do |engine|
-        /            div[id="#{engine[:name]}_payment" class="payments_type hide"]
-        /    .clearfix
-        /= content_for :mouseflow do
-        /  = render 'layouts/mouseflow'
+                      - PaymentEngines.engines.each do |engine|
+                        = link_to "##{engine[:name]}_payment", id: engine[:name], class: 'selected enabled' , :'data-target' => engine[:review_path].call(@backer) do
+                          = t("projects.backers.review.#{engine[:name]}")
+                  .row-fluid
+                    .span7
+                      = image_tag 'paypal_logo.png', id: 'paypal_logo', alt: 'paypal_logo', width: '250px'
+                      br
+                      = "You are about to be directed to the PayPal website to complete the payment."
+                    .span5
+                      - PaymentEngines.engines.each do |engine|
+                        div[id="#{engine[:name]}_payment" class="payments_type hide"]
 
 
 /#page_content
