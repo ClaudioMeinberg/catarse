@@ -5,22 +5,22 @@
         .span8.black-box
           .row-fluid
             h2 = "Get in touch with us"
-            form
+            form data-validate="parsley"
               p.input
-                label for="first_name" = "First Name:"
-                input#first_name name="contact[first_name]" type="text" autocomplete="off"
+                label for="first_name" = "First Name*:"
+                input#first_name name="contact[first_name]" type="text" autocomplete="off" data-required="required"
               p.input
-                label for="last_name" = "Last Name:"
-                input#last_name name="contact[last_name]" type="text" autocomplete="off"
+                label for="last_name" = "Last Name*:"
+                input#last_name name="contact[last_name]" type="text" autocomplete="off" data-required="required"
               p.input
-                label for="email" = "Email:"
-                input#email name="contact[email]" type="text" autocomplete="off"
+                label for="email" = "Email*:"
+                input#email name="contact[email]" type="text" autocomplete="off" data-required="required" data-type="email"
               p.input
                 label for="sport" = "WHAT SPORTS DO YOU COMPETE IN OR ARE INTERESTED IN?"
                 input#sport.big-text name="contact[sport]" type="text" autocomplete="off"
               p.input
-                label for="message" = "Message:"
-                textarea#message.big-text name="contact[message]" rows="7"  autocomplete="off"
+                label for="message" = "Message*:"
+                textarea#message.big-text name="contact[message]" rows="7"  autocomplete="off" data-required="required"
               p.input
                 input#contact_submit.btn name="contact" type="submit" value="Send"
               
