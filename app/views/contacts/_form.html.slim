@@ -1,0 +1,24 @@
+= form_for @contact, :html => {:'data-validate' => "parsley"} do |f|
+  - if @contact.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@contact.errors.count, "error")} prohibited this contact from being saved:"
+      ul
+        - @contact.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :firstname, 'First Name*:'
+    = f.text_field :firstname, :autocomplete => 'off', :data => {:required => "required"} 
+  .field
+    = f.label :lastname, 'Last Name*:'
+    = f.text_field :lastname, :autocomplete => 'off', :data => {:required => "required"} 
+  .field
+    = f.label :email, 'Email*:'
+    = f.text_field :email, :autocomplete => 'off', :data => {:required => "required"} 
+  .field
+    = f.label :sports, 'What sports do you compete in or are interested in?'
+    = f.text_field :sports, :class => 'big-text', :autocomplete => 'off'
+  .field
+    = f.label :message, 'Message*:'
+    = f.text_area :message, :id => 'message', :class => 'big-text', :autocomplete => 'off', :rows => '5', :data => {:required => "required"} 
+  .actions = f.submit 'Send', :id => 'contact_submit', :class=>'btn'

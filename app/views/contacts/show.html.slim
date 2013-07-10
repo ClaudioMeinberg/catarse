@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Firstname:
+  = @contact.firstname
+p
+  strong Lastname:
+  = @contact.lastname
+p
+  strong Email:
+  = @contact.email
+p
+  strong Sports:
+  = @contact.sports
+p
+  strong Message:
+  = @contact.message
+
+= link_to 'Edit', edit_contact_path(@contact)
+'|
+= link_to 'Back', contacts_path

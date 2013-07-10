@@ -1,0 +1,26 @@
+#contact.container-fluid
+  .row-fluid
+    .span12
+      #page_content.row-fluid
+        .span8.black-box
+          .row-fluid
+            h2 = "Get in touch with us"
+            == render 'form'
+
+        .span4.black-box
+          h3 = "Other ways to reach us"
+          p
+            label= "our email"
+            #contact-item.ff-green = "hello@fanfuel.co"
+          p
+            label= "facebook page"
+            #contact-item.ff-green = "facebook.com/fanfuelco"
+          p
+            label= "twitter feed"
+            #contact-item.ff-green = "twitter.com/fanfuelco"
+          p
+            label= "vimeo channel"
+            #contact-item.ff-green = "vimeo.com/fanfuel"
+          p
+            label= "youtube channel"
+            #contact-item.ff-green = "youtube.com/user/fanfuel"
