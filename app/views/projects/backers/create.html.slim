@@ -71,15 +71,10 @@
                     nav#payment_menu
                       - PaymentEngines.engines.each do |engine|
                         = link_to "##{engine[:name]}_payment", id: engine[:name], class: 'selected enabled' , :'data-target' => engine[:review_path].call(@backer) do
-                          = t("projects.backers.review.#{engine[:name]}")
-                  .row-fluid
-                    .span7
-                      = image_tag 'paypal_logo.png', id: 'paypal_logo', alt: 'paypal_logo', width: '250px'
-                      br
-                      = "You are about to be directed to the PayPal website to complete the payment."
-                    .span5
-                      - PaymentEngines.engines.each do |engine|
-                        div[id="#{engine[:name]}_payment" class="payments_type hide"]
+                          = image_tag 'paypal_logo.png', id: 'paypal_logo', alt: 'paypal_logo', width: '250px'
+
+                  - PaymentEngines.engines.each do |engine|
+                    div[id="#{engine[:name]}_payment" class="payments_type hide"]
 
 
 /#page_content
