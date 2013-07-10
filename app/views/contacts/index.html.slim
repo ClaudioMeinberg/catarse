@@ -7,9 +7,6 @@ table
     th Email
     th Sports
     th Message
-    th
-    th
-    th
 
   - @contacts.each do |contact|
     tr
@@ -18,9 +15,6 @@ table
       td = contact.email
       td = contact.sports
       td = contact.message
-      td = link_to 'Show', contact
-      td = link_to 'Edit', edit_contact_path(contact)
-      td = link_to 'Destroy', contact, :confirm => 'Are you sure?', :method => :delete
 
 br
 

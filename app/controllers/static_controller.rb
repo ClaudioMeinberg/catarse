@@ -24,5 +24,7 @@ class StaticController < ApplicationController
     @successful   ||= Project.includes(:user, :category).visible.successful.order("(online_date + (online_days::text||' days')::interval) DESC").limit(3).all
     return render 'sitemap'
   end
+  def thanks_contact
+  end
 
 end

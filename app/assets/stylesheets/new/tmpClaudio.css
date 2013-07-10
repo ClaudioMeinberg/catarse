@@ -263,13 +263,6 @@ textarea#privacy-policy {
 	text-align: left;
 }
 
-#contact-item {
-	text-transform: none;
-	font-family: genevaregular;
-	margin-bottom: 20px;
-	margin-top: -10px;
-}
-
 #contact input[type="text"],
 #contact textarea {
   -webkit-transition: all 0.30s ease-in-out;

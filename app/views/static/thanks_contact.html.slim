@@ -4,10 +4,8 @@
       #page_content.row-fluid
         .span8.black-box
           .row-fluid
-            h2 = "Get in touch with us"
-            == render 'form'
-
-        .span4.black-box
+            h2 = "Thanks for getting in touch with us. We'll review your message and get back to you shortly"
+        .span4.black-box.contactform
           h3 = "Other ways to reach us"
           p
             label= "our email"
@@ -24,4 +22,6 @@
           p
             label= "youtube channel"
             = link_to 'youtube.com/user/fanfuel', "http://youtube.com/user/fanfuel", :class => 'contact-item', :target => '_blank'
+
+
 
