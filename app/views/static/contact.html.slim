@@ -8,19 +8,19 @@
             form
               p.input
                 label for="first_name" = "First Name:"
-                input#first_name name="contact[first_name]" type="text"
+                input#first_name name="contact[first_name]" type="text" autocomplete="off"
               p.input
                 label for="last_name" = "Last Name:"
-                input#last_name name="contact[last_name]" type="text"
+                input#last_name name="contact[last_name]" type="text" autocomplete="off"
               p.input
                 label for="email" = "Email:"
-                input#email name="contact[email]" type="text"
+                input#email name="contact[email]" type="text" autocomplete="off"
               p.input
                 label for="sport" = "WHAT SPORTS DO YOU COMPETE IN OR ARE INTERESTED IN?"
-                input#sport.big-text name="contact[sport]" type="text"
+                input#sport.big-text name="contact[sport]" type="text" autocomplete="off"
               p.input
                 label for="message" = "Message:"
-                textarea#message.big-text name="contact[message]" rows="7"
+                textarea#message.big-text name="contact[message]" rows="7"  autocomplete="off"
               p.input
                 input#contact_submit.btn name="contact" type="submit" value="Send"
               
