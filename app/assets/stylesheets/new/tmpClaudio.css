@@ -327,6 +327,7 @@ textarea#privacy-policy {
 }
 
 #forgot-password input[type="text"]:focus,
+#forgot-password input[type="password"]:focus,
 #project_review input[type="text"]:focus,
 #contact input[type="text"]:focus,
 #contact textarea:focus {
@@ -336,6 +337,7 @@ textarea#privacy-policy {
 }
 
 #forgot-password input[type="text"],
+#forgot-password input[type="password"],
 #project_review input[type="text"],
 #contact input[type="text"],
 #contact textarea {
