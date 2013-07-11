@@ -29,6 +29,8 @@
 }
 
 .progress .bar {
+	margin-right: 3px; /* outside bar text spacing */
+
 	background: rgb(102,255,0); /* Old browsers */
 	background: -moz-linear-gradient(top,  rgba(102,255,0,1) 0%, rgba(153,255,0,1) 40%, rgba(153,255,0,1) 60%, rgba(102,255,0,1) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(102,255,0,1)), color-stop(40%,rgba(153,255,0,1)), color-stop(60%,rgba(153,255,0,1)), color-stop(100%,rgba(102,255,0,1))); /* Chrome,Safari4+ */
@@ -39,8 +41,16 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66ff00', endColorstr='#66ff00',GradientType=0 ); /* IE6-9 */
 }
 
+.progress p{
+	font-size: 18px;
+	text-align: left;
+	padding: 4px;
+	color:#99ff00;
+}
+
 .bar p {
 	color:#1d1d1d;
+	text-align: right;
 }
 
 a:hover {
@@ -159,7 +169,7 @@ a:hover {
 
 .campaignbox {
     background:#141414;
-    border:1px solid black;
+    border-bottom:1px solid black;
     min-height:340px;
     background-size:auto 340px;
     background-repeat:no-repeat;
