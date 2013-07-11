@@ -17,8 +17,10 @@
     /.row-fluid.campaignbox style="background-image:url('assets/placeholder.png');"
     .row-fluid.campaignbox style="background-image:url(#{project.display_image});"
       .span12.homepage-campaigntext.pull-right
-        h3 = project.headline
-        p = truncate(project.about, length: 350)
+        h3 = project.name
+        /h3 = project.headline
+        p = project.headline
+        /p = truncate(project.about, length: 350)
         = link_to "View Campaign", project, target: ( defined?(embed_link) ? '__blank' : '' ) , class: "btn btn-browserewards"
     .row-fluid
       .span12.stats
