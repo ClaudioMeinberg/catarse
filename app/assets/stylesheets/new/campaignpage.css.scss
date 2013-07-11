@@ -220,19 +220,37 @@ h1.campaigntitle {
 
 
 #project_content {
-	padding-top: 25px;
+	padding: 25px;
 	background-color: #151515;
+	text-align: left;
 }
 
 #project_content .content {
 	background:none;
-	/*
-	padding-top:50px;
-	padding-bottom:50px;
-	*/
 	font-size:20px;
 }
+#project_content ul.collection_list {
+	list-style: none;
+	margin: 0;
+}
+#project_content img{
+	margin: 10px 0;
+}
 
+#project_content hr {
+	border: 0;
+	border-bottom: 1px solid #696969;
+}
+
+#project_content .comment{
+	font-family: genevaregular;
+	font-size: 18px;
+	line-height: 20px;
+}
+
+#project_content .flag {
+	margin: 20px 0;
+}
 
 @media (max-width: 767px) {
 	.campaign-submenu  .item {
