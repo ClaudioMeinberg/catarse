@@ -14,7 +14,9 @@
 .ff-green {
 	color:#99ff00;
 }
-
+.ff-grey-text{
+	color: #6a6a66;
+}
 .bg-noise{
 	background: url('noise.png') repeat-y;
 }
