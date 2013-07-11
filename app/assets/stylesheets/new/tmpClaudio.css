@@ -1,3 +1,7 @@
+.btn:hover {
+	color: black;
+}
+
 .lowercase{
 	text-transform: none;
 }
@@ -276,10 +280,12 @@ textarea#privacy-policy {
 	margin-top: -10px;
 }
 
+#forgot-password .big-text,
 #contact .big-text {
 	width:100%;	
 }
 
+#forgot-password  label,
 #project_review label,
 #contact label {
 	font-family:'TradeGothicLTPro-Cn20';
@@ -287,6 +293,7 @@ textarea#privacy-policy {
 	color:#999;
 }
 
+#forgot-password .btn,
 #project_review .btn,
 #contact .btn,
 #checkout .btn {
@@ -319,6 +326,7 @@ textarea#privacy-policy {
 	width:100%;	
 }
 
+#forgot-password input[type="text"]:focus,
 #project_review input[type="text"]:focus,
 #contact input[type="text"]:focus,
 #contact textarea:focus {
@@ -327,6 +335,7 @@ textarea#privacy-policy {
   box-shadow: 0 0 5px $ffgreen;
 }
 
+#forgot-password input[type="text"],
 #project_review input[type="text"],
 #contact input[type="text"],
 #contact textarea {
@@ -356,4 +365,21 @@ textarea#privacy-policy {
   white-space: nowrap;
   vertical-align: baseline;
   background-color: transparent;
+}
+
+.gradient {
+    background: url('gradient.png') repeat;
+}
+.margin-40{
+	margin-top: 40px;
+}
+
+#forgot-password #error_explanation h2{
+	display: none;
+}
+#forgot-password #error_explanation ul{
+	list-style: none;
+}
+#forgot-password #error_explanation ul li{	
+	color: red;
 }
