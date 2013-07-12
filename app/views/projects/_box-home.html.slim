@@ -2,14 +2,14 @@
   meta[itemprop="dateCreated" content=project.created_at.to_date]
     .row-fluid
       .span12
-          .progress
-            - if project.display_progress > 30
-              .bar style="width: #{project.display_progress}%;"
-                p = "#{project.display_progress}% fuelled"
-            - else
-              .bar style="width: #{project.display_progress}%;"
-              .outside-bar
-                p = "#{project.display_progress}% fuelled"
+        .progress
+          - if project.display_progress > 30
+            .bar style="width: #{project.display_progress}%;"
+              p = "#{project.display_progress}% fuelled"
+          - else
+            .bar style="width: #{project.display_progress}%;"
+            .outside-bar
+              p = "#{project.display_progress}% fuelled"
       - if project.expired?
         .status_image
           = link_to project_by_slug_path(permalink: project.permalink), target: ( defined?(embed_link) ? '__blank' : '' ) do
