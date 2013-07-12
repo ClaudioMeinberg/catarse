@@ -56,7 +56,7 @@ end
   email_contact: 'contact@fanfuel.co',
   email_payments: 'finance@fanfuel.co',
   email_projects: 'projects@fanfuel.co',
-  email_system: 'system@fanfuel.co',
+  email_system: 'hello@fanfuel.co',
   email_no_reply: 'no-reply@fanfuel.co',
   facebook_url: "http://facebook.com/fanfuelco",
   facebook_app_id: '514362811950577',

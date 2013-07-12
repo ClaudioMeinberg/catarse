@@ -9,6 +9,7 @@ class ContactsController <  ApplicationController
     @contact = Contact.new(params[:contact] )
     respond_to do |format|
       if @contact.save
+        ContactMailer.email_contact(@contact).deliver
         format.html { redirect_to thanks_path, notice: 'Thanks for getting in touch.' }
         format.json { render json: @contact, status: :created, location: @contact }
       else
