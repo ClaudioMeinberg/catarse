@@ -6,10 +6,10 @@
           .campaign-reward
             div[id="reward_#{reward.id}" data-update_url="#{sort_project_reward_path(@project, reward)}" class="box #{(can?(:update, reward) ? 'clickable_owner sortable' : '')} #{(@project.online? && !reward.sold_out? && !can?(:update, reward)  ? 'clickable'  : '' )}"]
               / TODO: Add actual reward image link here
-              - if reward.image
-                = image_tag("#{reward.image}")
-              - else
+              - if reward.image.blank?
                 = image_tag("#{reward.project.video_thumbnail}")
+              - else
+                = image_tag("#{reward.image}")
               .campaign-reward-bar
                 .campaign-reward-bar-price.nav_border_right
                   = reward.display_minimum
