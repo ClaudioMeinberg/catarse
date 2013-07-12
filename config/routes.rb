@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Catarse::Application.routes.draw do
+  get "contact" => "contacts#new"
   resources :contacts, :only => [:new, :create]
 
   match '/thanks' => 'static#thanks_contact'
