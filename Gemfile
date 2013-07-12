@@ -25,7 +25,8 @@ gem 'schema_associations'
 gem 'chartkick'
 
 # Payment engine using Paypal
-gem 'catarse_paypal_express', git: 'git://github.com/catarse/catarse_paypal_express.git',  ref: '420fb3a'
+#gem 'catarse_paypal_express', git: 'git://github.com/catarse/catarse_paypal_express.git',  ref: '420fb3a'
+gem 'catarse_paypal_express', git: 'https://github.com/ClaudioMeinberg/catarse_paypal_express.git'
 #gem 'catarse_paypal_express',           path: '../catarse_paypal_express'
 
 # Payment engine using Moip
