@@ -2,19 +2,19 @@
   = t('.site_title')
 
 #page_content.menu-top-padding
-  .container-fluid
-    .row-fluid
-      .span12
-        .devise_content
-          .title
-            h2=t('.title')
-          .bootstrap-form
-            = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:method => :post, :class => 'login_with_email_form'}) do |f|
-              = devise_error_messages!
-              p.input
-                = f.label :email
-                = f.text_field :email
-              p.action
-                .bootstrap-twitter
-                  = f.submit t('.submit'), class: 'btn', id: 'user_submit'
+  #forgot-password.container-fluid.gradient
+    .row-fluid.margin-40
+      h3= "Forgot your password?"
+      .span8.offset2.black-box
+        .title
+          h2=t('.title')
+        .bootstrap-form.text-left
+          = form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:method => :post, :class => 'login_with_email_form'}) do |f|
+            = devise_error_messages!
+            p.input
+              = f.label :email
+              = f.text_field :email, class: 'big-text'
+            p.action
+              .bootstrap-twitter
+                = f.submit t('.submit'), class: 'btn', id: 'user_submit'
         .clearfix

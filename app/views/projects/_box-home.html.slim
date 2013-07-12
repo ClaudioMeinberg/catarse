@@ -3,8 +3,13 @@
     .row-fluid
       .span12
           .progress
-            .bar style="width: #{project.display_progress}%;"
-              p = "#{project.display_progress}% fuelled"
+            - if project.display_progress > 30
+              .bar style="width: #{project.display_progress}%;"
+                p = "#{project.display_progress}% fuelled"
+            - else
+              .bar style="width: #{project.display_progress}%;"
+              .outside-bar
+                p = "#{project.display_progress}% fuelled"
       - if project.expired?
         .status_image
           = link_to project_by_slug_path(permalink: project.permalink), target: ( defined?(embed_link) ? '__blank' : '' ) do
@@ -17,8 +22,10 @@
     /.row-fluid.campaignbox style="background-image:url('assets/placeholder.png');"
     .row-fluid.campaignbox style="background-image:url(#{project.display_image});"
       .span12.homepage-campaigntext.pull-right
-        h3 = project.headline
-        p = truncate(project.about, length: 350)
+        h3 = project.name
+        /h3 = project.headline
+        p = project.headline
+        /p = truncate(project.about, length: 350)
         = link_to "View Campaign", project, target: ( defined?(embed_link) ? '__blank' : '' ) , class: "btn btn-browserewards"
     .row-fluid
       .span12.stats

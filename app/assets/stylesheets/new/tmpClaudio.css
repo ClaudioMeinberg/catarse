@@ -1,3 +1,7 @@
+.btn:hover {
+	color: black;
+}
+
 .lowercase{
 	text-transform: none;
 }
@@ -14,7 +18,9 @@
 .ff-green {
 	color:#99ff00;
 }
-
+.ff-grey-text{
+	color: #6a6a66;
+}
 .bg-noise{
 	background: url('noise.png') repeat-y;
 }
@@ -254,6 +260,10 @@ textarea#privacy-policy {
 	margin-bottom: 10px;
 }
 
+
+
+
+
 #contact .black-box{
 	margin-top: 40px;
 	margin-bottom: 40px;
@@ -281,16 +291,29 @@ textarea#privacy-policy {
 
 
 
+#contact-item {
+	text-transform: none;
+	font-family: genevaregular;
+	margin-bottom: 20px;
+	margin-top: -10px;
+}
+
+#forgot-password .big-text,
+
 #contact .big-text {
 	width:100%;	
 }
 
+#forgot-password  label,
+#project_review label,
 #contact label {
 	font-family:'TradeGothicLTPro-Cn20';
 	font-size:16px;
 	color:#999;
 }
 
+#forgot-password .btn,
+#project_review .btn,
 #contact .btn,
 #checkout .btn {
 	-moz-border-radius:0px;
@@ -318,6 +341,13 @@ textarea#privacy-policy {
 	color: black;
 }
 
+#contact .big-text {
+	width:100%;	
+}
+
+#forgot-password input[type="text"]:focus,
+#forgot-password input[type="password"]:focus,
+#project_review input[type="text"]:focus,
 #contact input[type="text"]:focus,
 #contact textarea:focus {
   border: 1px solid $ffgreen;
@@ -325,12 +355,52 @@ textarea#privacy-policy {
   box-shadow: 0 0 5px $ffgreen;
 }
 
+#forgot-password input[type="text"],
+#forgot-password input[type="password"],
+#project_review input[type="text"],
+#contact input[type="text"],
+#contact textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  text-indent:10px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px; 
+  border-radius: 0px;
+  padding:10px 0;
+  background-color:#cbcbcb;
+  border:1px solid #6a6a6a;
+}
 
+#project_review input[type="text"]{
+	width: 99%;
+}
 
+#project_review label{
+  display: block;
+  padding: 0;
+  font-weight: normal;
+  text-shadow: 0;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: transparent;
+}
 
+.gradient {
+    background: url('gradient.png') repeat;
+}
+.margin-40{
+	margin-top: 40px;
+}
 
-
-
-
-
-
+#forgot-password #error_explanation h2{
+	display: none;
+}
+#forgot-password #error_explanation ul{
+	list-style: none;
+}
+#forgot-password #error_explanation ul li{	
+	color: red;
+}
