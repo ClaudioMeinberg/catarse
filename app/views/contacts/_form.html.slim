@@ -14,7 +14,7 @@
     = f.text_field :lastname, :autocomplete => 'off', :data => {:required => "required"} 
   .field
     = f.label :email, 'Email*:'
-    = f.text_field :email, :autocomplete => 'off', :data => {:required => "required"} 
+    = f.text_field :email, :autocomplete => 'off', :data => {:required => "required", :type => "email"} 
   .field
     = f.label :sports, 'What sports do you compete in or are interested in?'
     = f.text_field :sports, :class => 'big-text', :autocomplete => 'off'
