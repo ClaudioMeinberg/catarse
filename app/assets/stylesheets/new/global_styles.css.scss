@@ -94,6 +94,17 @@ html,
 }
 
 
+/* Static - fix spacing in responsive view */
+
+#terms, #privacy {
+  margin-top:40px;
+}
+
+@media screen and (max-width: 979px) {
+  #terms, #privacy {
+    margin-top:0;
+  }
+}
 
 
 

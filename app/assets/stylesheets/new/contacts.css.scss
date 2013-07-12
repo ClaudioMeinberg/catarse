@@ -2,7 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 .contactform {
 	a {
 		text-transform: none;
@@ -10,5 +9,63 @@
 		margin-bottom: 20px;
 		margin-top: -10px;
 		color:$ffgreen;		
+	}
+}
+
+#contact {
+	margin-top:40px;
+	background: url('gradient.png') repeat;
+}
+
+#contact .black-box{
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+#contact .row-fluid{
+	text-align: left;
+}
+
+#contact input[type="text"],
+#contact textarea {
+  -webkit-transition: all 0.30s ease-in-out;
+  -moz-transition: all 0.30s ease-in-out;
+  -ms-transition: all 0.30s ease-in-out;
+  -o-transition: all 0.30s ease-in-out;
+  outline: none;
+  text-indent:10px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px; 
+  border-radius: 0px;
+  padding:10px 0;
+  background-color:#cbcbcb;
+  border:1px solid #6a6a6a;
+}
+
+
+
+#contact-item {
+	text-transform: none;
+	font-family: genevaregular;
+	margin-bottom: 20px;
+	margin-top: -10px;
+}
+
+
+#contact .big-text {
+	width:100%;	
+}
+
+#contact .btn:hover {
+	color: black;
+}
+
+#contact .big-text {
+	width:100%;	
+}
+
+@media screen and (max-width: 979px) {
+	#contact {
+		margin-top:0;
 	}
 }

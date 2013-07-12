@@ -20,7 +20,7 @@
                 h3
                   = "YOU CHOSE THE '"
                   span.ff-green
-                    = @backer.reward.title
+                    = @backer.reward.title if @backer.reward
                   = "' AS YOUR REWARD!"
             .row-fluid
               .span12
