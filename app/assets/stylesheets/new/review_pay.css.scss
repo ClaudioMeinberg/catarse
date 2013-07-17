@@ -25,12 +25,11 @@
 	label {
 		text-align:left;
 	}
-	h3 {
-		text-align:left;
-		line-height:30px;
-	}
 	div.lowercase {
 		text-align:left;
+		font-family:'genevaregular';
+		color:#999;
+		font-size:14px;
 	}
 	.submit {
 		text-align:left;
@@ -49,6 +48,31 @@
 	input[type='checkbox'], label {
 		display:inline-block;
 		float:left;
+		margin-right:10px;
 	}
 }
+
+.align-label-left {
+	li {
+		text-align:left;
+	}
+}
+
+#payment_menu {
+	text-align:left;
+}
+
+.payments_type {
+	text-align:left;
+	text-transform:none;
+	margin-top:20px;
+	font-family:'genevaregular';
+	color:#999;
+	font-size:14px;
+}
+
+#catarse_paypal_express_form {
+	padding-top:20px;
+}
+
 

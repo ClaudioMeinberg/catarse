@@ -27,7 +27,7 @@
                 hr
                 h3.ff-green= "PLEASE FILL IN YOUR DETAILS TO CONCLUDE THE PAYMENT:"
                 div.lowercase
-                  = "This is the information the campagin creator will use to contact you regarding rewards that require shipping/ sizing/ booking/ etc..."
+                  = "This is the information the campaign creator will use to contact you regarding rewards that require shipping/ sizing/ booking/ etc..."
             .row-fluid
               .bootstrap-form
                 = semantic_form_for current_user, url: credits_checkout_project_backer_path(@backer.project, @backer), html: { id: 'review_form', class: "form-horizontal #{('dont_align' if @backer.credits)}" } do |form|
@@ -41,7 +41,7 @@
                         = check_box_tag 'live_in_brazil', 'live', params[:locale] == 'pt'
                         = label_tag 'live_in_brazil', t('.live_in_brazil'), class: 'inline'
                       br
-                      .row-fluid
+                      .row-fluid.align-label-left
                         .span6
                           = form.input :full_name, required: true, as: :string
                         .span6
@@ -71,7 +71,7 @@
                     nav#payment_menu
                       - PaymentEngines.engines.each do |engine|
                         = link_to "##{engine[:name]}_payment", id: engine[:name], class: 'selected enabled' , :'data-target' => engine[:review_path].call(@backer) do
-                          = image_tag 'paypal_logo.png', id: 'paypal_logo', alt: 'paypal_logo', width: '250px'
+                          = image_tag 'paypal_logo.png', id: 'paypal_logo', alt: 'paypal_logo', width: '140px'
 
                   - PaymentEngines.engines.each do |engine|
                     div[id="#{engine[:name]}_payment" class="payments_type hide"]
