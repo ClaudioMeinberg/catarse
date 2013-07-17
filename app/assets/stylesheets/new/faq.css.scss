@@ -1,1 +1,11 @@
-.faq-section a {display: block; position: relative; top: -40px; visibility: hidden;}
+.faq-section a {
+	display: block; 
+	position: relative; 
+	top: -40px; 
+	visibility: hidden;
+}
+
+.back-to-top-button{
+	visibility: visible !important;
+	top:0px !important;
+}
