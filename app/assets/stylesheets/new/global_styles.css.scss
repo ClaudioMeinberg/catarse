@@ -96,12 +96,12 @@ html,
 
 /* Static - fix spacing in responsive view */
 
-#terms, #privacy {
+#terms, #privacy, #review_pay {
   margin-top:40px;
 }
 
 @media screen and (max-width: 979px) {
-  #terms, #privacy {
+  #terms, #privacy, #review_pay {
     margin-top:0;
   }
 }

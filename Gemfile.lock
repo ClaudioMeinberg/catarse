@@ -17,16 +17,6 @@ GIT
       rails (~> 3.2.13)
 
 GIT
-  remote: git://github.com/catarse/catarse_paypal_express.git
-  revision: 420fb3ae262e5b5a6d701ed4746b05abd9393fab
-  ref: 420fb3a
-  specs:
-    catarse_paypal_express (0.1.0)
-      activemerchant (>= 1.17.0)
-      rails (~> 3.2.6)
-      slim-rails
-
-GIT
   remote: git://github.com/catarse/moip-ruby.git
   revision: 39f9dab38fc33fe9bf614deb8e90ca166ab2d6bf
   specs:
@@ -48,6 +38,15 @@ GIT
   branch: 2.0
   specs:
     cancan (2.0.0.alpha)
+
+GIT
+  remote: https://github.com/ClaudioMeinberg/catarse_paypal_express.git
+  revision: eddd90b680c904650a6db5f278fbfd7aa1290aec
+  specs:
+    catarse_paypal_express (0.1.0)
+      activemerchant (>= 1.17.0)
+      rails (~> 3.2.6)
+      slim-rails
 
 GEM
   remote: https://rubygems.org/

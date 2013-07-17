@@ -1,14 +1,14 @@
-#checkout.container-fluid
-  .row-fluid
+#review_pay.container-fluid
+  .row-fluid.margin-40
     .span12
       h3.text-center = "REVIEW & PAY"
       #page_content.row-fluid 
         #project_review data-thank-you-path=project_backer_path(project_id: @project.id, id: @backer.id)
           .span12.black-box
             .row-fluid
-              .span3
+              .span4
                 = image_tag @project.display_image, id: 'project_image', alt: @project.name, width: '250px'
-              .span9
+              .span8.review_summary
                 h2= "FINAL STEP!"
                 h3
                   = "YOU ARE ABOUT TO FUEL THE ‘" 

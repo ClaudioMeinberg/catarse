@@ -1,0 +1,54 @@
+#project_review input[type="text"]{
+	width: 99%;
+}
+
+#project_review label{
+  padding: 0;
+  font-weight: normal;
+  text-shadow: 0;
+  white-space: nowrap;
+  vertical-align: baseline;
+  background-color: transparent;
+}
+
+
+#project_image {
+	width:100%;
+}
+
+#review_pay {
+	hr {
+		height:1px;
+		border:0;
+		background-color:#999;
+	}
+	label {
+		text-align:left;
+	}
+	h3 {
+		text-align:left;
+		line-height:30px;
+	}
+	div.lowercase {
+		text-align:left;
+	}
+	.submit {
+		text-align:left;
+	}
+}
+
+.review_summary {
+	text-align:left;
+	color:#999;
+	h2 {
+		margin:0;
+	}
+}
+
+.accept_terms {
+	input[type='checkbox'], label {
+		display:inline-block;
+		float:left;
+	}
+}
+

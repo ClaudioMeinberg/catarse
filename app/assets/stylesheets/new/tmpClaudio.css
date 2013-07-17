@@ -172,19 +172,6 @@ textarea#privacy-policy {
   border:1px solid #6a6a6a;
 }
 
-#project_review input[type="text"]{
-	width: 99%;
-}
-
-#project_review label{
-  display: block;
-  padding: 0;
-  font-weight: normal;
-  text-shadow: 0;
-  white-space: nowrap;
-  vertical-align: baseline;
-  background-color: transparent;
-}
 
 .gradient {
     background: url('gradient.png') repeat;
