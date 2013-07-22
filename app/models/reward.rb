@@ -37,9 +37,9 @@ class Reward < ActiveRecord::Base
 
   def reward_img
     if image.blank?
-      #reward.project.video_thumbnail
+      self.image
     else
-      image
+      self.image
     end
   end
 
