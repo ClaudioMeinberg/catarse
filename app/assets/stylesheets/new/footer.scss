@@ -1,0 +1,57 @@
+/* FOOTER STYLES
+=========================== */
+
+.footer {
+  height: 40px;
+  width: 100%;
+  background: #595959;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #595959 0%, #1a1a1a 100%);
+  /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #595959), color-stop(100%, #1a1a1a));
+  /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #595959 0%, #1a1a1a 100%);
+  /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, #595959 0%, #1a1a1a 100%);
+  /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, #595959 0%, #1a1a1a 100%);
+  /* IE10+ */
+  background: linear-gradient(to bottom, #595959 0%, #1a1a1a 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#595959', endColorstr='#1a1a1a',GradientType=0 );
+  /* IE6-9 */
+  border-top: #99ff00 1px solid;
+  .nav {
+    margin-bottom: 0;
+  }
+  li {
+    font-size: 1em;
+    display: inline;
+    float: left;
+    vertical-align: center;
+    p {
+      font-family: 'genevaregular';
+      font-size: 13px;
+      color: #bebebe;
+      padding: 10px 30px 10px 30px;
+      margin: 0;
+    }
+  }
+}
+
+.copyright li {
+  overflow: hidden;
+  float: right;
+  p {
+    font-family: 'genevaregular';
+    font-size: 13px;
+    color: #bebebe;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .footer li p {
+    font-size: 13px;
+    padding: 10px 8px;
+  }
+}
