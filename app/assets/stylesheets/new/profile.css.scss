@@ -1,0 +1,34 @@
+#profile-show {
+	padding-top:40px;
+	h1.profile {
+		text-align:left;
+		font-size:20px;
+		font-family:TradeGothicLTPro-Cn20;
+		color:white;
+	}
+	.user_social {
+		margin-bottom:50px;
+	}
+	.profile_subheading {
+		color: $ffgreen;
+		text-align:left;
+		padding-bottom:10px;
+		font-size:16px;
+	}
+	.facebook, .twitter {
+		text-align:left;
+		display:inline-block;
+		float:left;
+		margin-right:15px;
+		padding-top:0px;
+		padding-bottom:20px;
+	}
+	.bio {
+		font-family:'genevaregular';
+		text-transform:none;
+		font-size:13px;
+		line-height:13px;
+		text-align:left;
+		font-weight:normal;
+	}
+}
