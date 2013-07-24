@@ -47,6 +47,11 @@
             = link_to t('.tabs.settings'), '#settings', id: 'settings_link'
             = link_to t('.tabs.unsubscribes'), '#unsubscribes', id: 'unsubscribes_link'
       .clearfix
+      hr
+      = "lets keep this message - bof"
+      p= render 'profile'
+      = 'lets keep this message - eof'
+      hr
       #user_profile_content
         #user_backed_projects.content
         #user_created_projects.content
