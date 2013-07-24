@@ -38,7 +38,7 @@ class ProjectDecorator < Draper::Decorator
   end
 
   def display_expires_at
-    I18n.l(source.expires_at.to_date)
+    source.expires_at ? I18n.l(source.expires_at.to_date) : ''
   end
 
   def display_pledged
@@ -49,13 +49,21 @@ class ProjectDecorator < Draper::Decorator
     number_to_currency source.goal, unit: 'US$', precision: 0, delimiter: '.'
   end
 
-
-
   def progress_bar
     width = source.progress > 100 ? 100 : source.progress
     content_tag(:div, id: :progress_wrapper) do
       content_tag(:div, nil, id: :progress, style: "width: #{width}%")
     end
+  end
+
+
+  def successful_flag
+    return nil unless source.successful?
+    
+    content_tag(:div, class: [:successful_flag]) do
+      image_tag("channels/successful.png")
+    end
+      
   end
 end
 

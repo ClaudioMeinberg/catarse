@@ -1,0 +1,283 @@
+- content_for :js_templates do
+  = render partial: 'backer'
+  = render partial: 'project_templates'
+  - if can?(:update, @project)
+    = render partial: 'sort_rewards'
+
+= content_for :meta_tags do
+  - if @update
+    meta name="description" content=@update.title
+    meta property="og:title" content=@update.title
+    meta property="og:description" content=@update.comment
+    meta property="og:url" content=project_by_slug_url(@project.permalink, update_id: @update.id, locale: I18n.locale)
+  - else
+    meta name="description" content=@project.headline
+    meta property="og:title" content=@project.name
+    meta property="og:description" content=@project.headline
+    meta property="og:url" content=project_by_slug_url(@project.permalink, locale: I18n.locale)
+  meta property="og:type" content='cause'
+  meta property="og:image" content=@project.display_image('project_thumb_facebook')
+  meta property="og:site_name" content=::Configuration[:company_name]
+  meta property="fb:admins" content="#{fb_admins}"
+
+
+.content
+  .campaignheader
+    .container-fluid
+      .row-fluid
+        .span12
+          /h1.campaigntitle = @project.headline
+          h1.campaigntitle = @project.name
+      .row-fluid
+        .span12.campaignbyline
+          p.campaignbyline
+          = "BY " 
+          = link_to(@project.user.display_name, @project.user)
+      .row-fluid.header-video
+        .span8.video
+          .video-container
+            = content_tag("iframe", "", :src => "#{@project.display_video_embed_url}&color=9dff00", :width => "700", :height => "390", :frameborder => "0", :webkitAllowFullScreen => true, :mozallowfullscreen => true, :allowFullScreen => true)
+            / #project_about.content= render 'project_about'
+        .span4.campaignbar
+          .progress
+            - if @project.display_progress > 30
+              .bar style="width: #{@project.display_progress}%;"
+                p = "#{@project.display_progress}% fuelled"
+            - else
+              .bar style="width: #{@project.display_progress}%;"
+              .outside-bar
+                p = "#{@project.display_progress}% fuelled"
+          #statistics
+            .statistics
+              .item
+                .stat
+                  = @project.display_pledged
+                  span.item-units
+                    = " raised"
+              .item
+                .stat
+                  = @project.display_goal
+                  span.item-units
+                    = " target"
+              .item
+                .stat
+                  - if @project.draft? || @project.rejected?
+                    p= @project.online_days
+                    em #{@project.online_days} #{pluralize_without_number(@project.online_days, I18n.t('datetime.prompts.day').downcase)} #{pluralize_without_number(@project.online_days, t('remaining_singular'), t('remaining_plural'))}
+                  - else
+                    #{@project.remaining_days} #{@project.time_to_go[:unit].capitalize} #{pluralize_without_number(@project.time_to_go[:time], t('remaining_singular'), t('remaining_plural'))}
+              .item
+                .stat
+                  = "Share "
+                  .fb-like data-href="#{url_for(:only_path => false, :overwrite_params=>nil)}" data-layout="button_count" data-send="false" data-show-faces="false" data-width="450"
+                  a.twitter-share-button href="#{project_path(@project)}"
+          = link_to "Fund this athlete!", new_project_backer_path(@project), class: "btn-fundathlete"
+
+#page_content.campaignpage-body
+  .container-fluid
+    .row-fluid
+      .span12
+        .tab_container
+          nav#project_menu.campaign-submenu
+            = link_to '#rewards', id: 'rewards_link', class: 'item selected' do
+              = "rewards"
+            = link_to '#information', id: 'information_link', class: 'item' do
+              = "information"
+            = link_to '#updates', id: 'updates_link', class: 'item' do
+              = "updates"
+            = link_to '#comments', id: 'comments_link', class: 'item' do
+              = "talk to me"
+            = link_to '#backers', id: 'backers_link', class: 'item' do
+              = "backers"
+            - if can? :update, @project
+              = link_to '#edit', id: 'edit_link' do
+                = t('.menu.edit')
+              = link_to '#reports', id: 'reports_link' do
+                = t('.menu.reports')
+
+    - if @project.draft?
+      = render "draft_warning"
+
+    - if @project.rejected?
+      = render "rejected_warning"
+
+    - if @project.online? && can?(:update, @project)
+      = render "online_warning"
+
+    - if @project.waiting_funds? && can?(:update, @project)
+      = render "waiting_funds_warning"
+
+    - if @project.successful? && can?(:update, @project)
+      = render "successful_warning"
+
+    - if @project.failed? && can?(:update, @project)
+      = render "failed_warning"
+
+    #project_description[data-project=@project.to_json]
+<<<<<<< HEAD
+    / .project_image
+    /   = image_tag @project.display_image('project_thumb_small')
+    / .section_header
+    /   h1= @project.name
+    /   h4= t('projects.project_header.without_city', category_name: link_to(@project.category, explore_path(anchor: @project.category.to_s.parameterize)), author: link_to(@project.user.display_name, user_path(@project.user))).html_safe
+    / .tab_container
+    /   nav#project_menu
+    /     = link_to '#about', id: 'about_link', class: 'selected' do
+    /       = t('.menu.about')
+    /     = link_to '#updates', id: 'updates_link' do
+    /       = t('.menu.updates')
+    /       span.count=" (#{@project.updates.count})"
+    /     = link_to '#backers', id: 'backers_link' do
+    /       = t('.menu.backers')
+    /       span.count=" (#{@project.total_backers})"
+    /     = link_to '#comments', id: 'comments_link' do
+    /       = t('.menu.comments')
+    /       | &nbsp; (
+    /       fb:comments-count href="#{request.url}"
+    /       | )
+    /     - if can? :update, @project
+    /       = link_to '#edit', id: 'edit_link' do
+    /         = t('.menu.edit')
+    /       = link_to '#reports', id: 'reports_link' do
+    /         = t('.menu.reports')
+    .row-fluid
+      .span12
+        .main
+          #project_content
+            - if can? :update, @project
+              #project_reports.content.hide= render 'project_reports'
+              #project_edit.content.hide= render 'project_edit'
+            / 5 navigation tabs
+            #project_updates.content.hide= render 'project_updates'
+            .media_content_backers
+              #project_backers.content.hide
+            #project_comments.content.hide= render 'comments'
+            #project_information.content.hide.lowercase= render 'project_about'
+            #rewards
+              #project_rewards.content= render 'project_rewards'
+=======
+    .project_image
+      = image_tag @project.display_image('project_thumb_small')
+    .section_header
+      h1= @project.name
+      h4= t('projects.project_header.without_city', category_name: link_to(@project.category, explore_path(anchor: @project.category.to_s.parameterize)), author: link_to(@project.user.display_name, user_path(@project.user))).html_safe
+    .tab_container
+      nav#project_menu
+        = link_to '#about', id: 'about_link', class: 'selected' do
+          = t('.menu.about')
+        = link_to '#updates', id: 'updates_link' do
+          = t('.menu.updates')
+          span.count=" (#{@updates.count})"
+        = link_to '#backers', id: 'backers_link' do
+          = t('.menu.backers')
+          span.count=" (#{@project.total_backers})"
+        = link_to '#comments', id: 'comments_link' do
+          = t('.menu.comments')
+          | &nbsp; (
+          fb:comments-count href="#{request.url}"
+          | )
+        - if can? :update, @project
+          = link_to '#edit', id: 'edit_link' do
+            = t('.menu.edit')
+          = link_to '#reports', id: 'reports_link' do
+            = t('.menu.reports')
+    .main
+      #project_content
+        - if can? :update, @project
+          #project_reports.content.hide= render 'project_reports'
+          #project_edit.content.hide= render 'project_edit'
+>>>>>>> upstream/master
+
+            .clearfix
+            #loading= image_tag "loading.gif"
+          .clearfix
+    .row-fluid
+      .span12
+        .sidebar
+          .info
+            / #statistics
+            /   .statistics
+            /     .item.backers
+            /       p= @project.total_backers
+            /       em= t('statistics.backers.subtitle')
+            /     .item.goal
+            /       p= @project.display_pledged
+            /       em= t('statistics.goal.subtitle', total: @project.display_goal).html_safe
+            /     .item.time
+            /       - if @project.draft? || @project.rejected?
+            /         p= @project.online_days
+            /         em #{@project.online_days} #{pluralize_without_number(@project.online_days, I18n.t('datetime.prompts.day').downcase)} #{pluralize_without_number(@project.online_days, t('remaining_singular'), t('remaining_plural'))}
+            /       - else
+            /         p= @project.remaining_days
+            /         em #{@project.time_to_go[:unit].capitalize} #{pluralize_without_number(@project.time_to_go[:time], t('remaining_singular'), t('remaining_plural'))}
+
+              #condition[class="#{@project.display_status}"]
+                p
+                  = t("projects.back_project.display_status.#{@project.display_status}", goal: @project.display_goal, date: @project.display_expires_at)
+              - if @project.online? && @project.in_time?
+                #pledge
+                  = form_tag(new_project_backer_path(@project), method: :get, id: 'back_project_form') do
+                    fieldset
+                      = submit_tag t('projects.back_project.submit'), disabled: (not @project.online?)
+            / #creator_profile
+            /   h3= t('project_by')
+            /   .avatar = @project.user.display_image_html width: 80, height: 80
+            /   .personal_info
+            /     p.name
+            /      = link_to @project.user.display_name, user_path(@project.user)
+            /     #bio
+            /       p= @project.user.bio
+            /   #city
+            /     p.backer= t('count_backed_projects', total: @project.user.total_backs)
+            /     p.city
+            /       | #{@project.user.address_city}
+            / .user_social
+            /   ul
+            /     - if @project.user.facebook_link
+            /       li
+            /         = link_to "Perfil no facebook", @project.user.facebook_link, target: '_blank', class: 'facebook'
+            /     - if @project.user.twitter
+            /       li
+            /         = link_to "Perfil no twitter", @project.user.twitter_link, target: '_blank', class: 'twitter'
+            /     - if @project.user.email
+            /       li
+            /         = mail_to @project.user.email, @project.user.email, target: '_blank', class: 'email'
+            /     - if @project.user.other_link
+            /       li.other
+            /         = link_to @project.user.other_link, @project.user.other_link, target: '_blank'
+
+            .clearfix
+<<<<<<< HEAD
+            - if can?(:update, @project)
+              .bootstrap-twitter.bootstrap-form
+                .alert.alert-info
+                  h4.alert-header= t('.no_rewards_warning_title')
+                  p style="margin:0; padding:0;"
+                    = t('.no_rewards_warning')
+                .clearfix
+                = link_to t('.menu.add_reward'), 'javascript:void(0);', class: 'btn btn-success pull-right add_new_reward'
+                .clearfix
+                .well.new_reward_content.hide
+                  = semantic_form_for [@project, Reward.new] do |f|
+                    = f.input :minimum_value
+                    = f.input :description
+                    = f.input :maximum_backers
+                    = f.input :image
+                    = f.input :title
+                    = f.submit class: 'btn'
+            / #rewards= render 'project_rewards'
+=======
+            = link_to t('.menu.add_reward'), 'javascript:void(0);', class: 'btn btn-success pull-right add_new_reward'
+            .clearfix
+            .well.new_reward_content.hide
+              = semantic_form_for [@project, Reward.new] do |f|
+                = f.input :minimum_value
+                = f.input :description
+                = f.input :days_to_delivery
+                = f.input :maximum_backers
+                = f.submit class: 'btn'
+        #rewards= render 'project_rewards'
+>>>>>>> upstream/master
+
+        .clearfix
+= render 'show_embed'

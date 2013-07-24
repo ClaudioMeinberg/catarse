@@ -16,9 +16,8 @@ FactoryGirl.define do
   end
 
   factory :user do |f|
-    f.provider "twitter"
-    f.uid { generate(:uid) }
     f.name "Foo bar"
+    f.password "123456"
     f.email { generate(:email) }
     f.bio "This is Foo bar's biography."
   end
@@ -35,6 +34,7 @@ FactoryGirl.define do
     f.about "Foo bar"
     f.headline "Foo bar"
     f.goal 10000
+    f.online_date Time.now
     f.online_days 5
     f.how_know 'Lorem ipsum'
     f.more_links 'Ipsum dolor'
@@ -64,6 +64,7 @@ FactoryGirl.define do
     f.association :project, factory: :project
     f.minimum_value 10.00
     f.description "Foo bar"
+    f.days_to_delivery 10
   end
 
   factory :backer do |f|

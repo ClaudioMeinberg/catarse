@@ -1,8 +1,12 @@
 en:
+  uservoice_gadget:
+    user:
+      name: 'User'
+      location: 'City / State'
+      confirmed_backers: 'Confirmed backs'
+      created_projects: 'Created projects'
   current_update: 'Last update '
-  'no': "No"
-  'yes': "Yes"
-  or: "or"
+
   site:
     title: "Sport Sponsorship Revolution"
     meta_title:  "%{title} · %{company_name}"
@@ -13,8 +17,8 @@ en:
     confirmed_at: 'Payment confirmed at'
     value: 'Back value'
     service_fee: 'Fanfuel fee'
-    user_email: 'User profile e-mail'
     user_name: 'Backer name'
+    user_email: 'User profile e-mail'
     payer_email: 'Payment gateway user e-mail'
     payment_method: 'Payment method'
     address_street: 'Street'
@@ -33,6 +37,10 @@ en:
         notice: 'Reward successfully created!'
         alert: 'Sorry! The reward could not be created'
   facebook_locale: 'en_US'
+  or: "or"
+  'no': "No"
+  'yes': "Yes"
+
   newsletter_ok_header: "You are subscribed to the newsletter!"
   newsletter_ok_body: "Your email is now in our newsletter list, thanks for subscribing!"
   newsletter_error_header: "Woops! There was an error."
@@ -81,6 +89,7 @@ en:
       selected: "explore more projects selected"
       expiring: "explore more expiring projects"
       recents: "explore more recent projects"
+      near: "explore more near me projects"
   sidebar:
     titles:
       blog: blog
@@ -91,6 +100,8 @@ en:
     buttons:
       newsletter: submit
   sections:
+    near:
+      title: near me
     selection:
       title: selection
     expiring:
@@ -107,6 +118,10 @@ en:
           attributes:
             email:
               not_found: "Your email is not registered, please verify the address or create a new account"
+        project:
+          attributes:
+            permalink:
+              invalid: "Invalid project permalink"
     attributes:
       unsubscribe:
         update: "Receive project updates"
@@ -129,8 +144,6 @@ en:
         maximum_backers: "Maximum backers"
         minimum_value: "Minimum value"
       user:
-        moip_login: 'MoIP login'
-        moip_login_hint: '(How to create an account)'
         address_city: City
         address_complement: Complement
         address_neighbourhood: Neighbourhood
@@ -142,15 +155,18 @@ en:
         cpf_hint_title: 'Invoice will be sent'
         cpf_hint: '(?)'
         state_inscription: 'State inscription'
+        moip_login: 'MoIP Login'
+        moip_login_hint: '(How to create an account)'
         current_password: "Current password"
         email: Email
         full_name: "Full name / Company Name"
         bio: 'Mini Bio'
         name: Nickname
         password: Password
-        password_confirmation: "Confirm password"
+        password_confirmation: "Password Confirmation"
         phone_number: "Mobile phone number"
         id: 'ID'
+
     models:
       backer: Backer
       category: Category
@@ -161,7 +177,7 @@ en:
     reward_must_be_from_project: "must be from the same project"
     should_not_back_if_maximum_backers_been_reached: "has reached its maximum backers"
     value_must_be_at_least_rewards_value: "must be at least %{minimum_value} for the selected reward"
-    project_should_be_online: "You can not back a project that is not online"
+    project_should_be_online: "You cannot back a project that is not online"
   backer_plural: backers
   project_plural: projects
   project_singular: project
@@ -175,7 +191,7 @@ en:
     modal:
       title: "Do you want to confirm your refund request?"
       text: "Check out how our refund process works:"
-      link: "See how works the refund"
+      link: "See how the refund works"
       reject_btn: "I want to keep my credits"
       accept_btn: "I want to request the refund"
     index:
@@ -184,7 +200,8 @@ en:
       important_html: "If you ask for a refund, the value of your payment will be deducted from your credits."
       project: Project
       refund_expration_date: "Refund deadline"
-      refunded: Refund request successfully done. Our team will contact you within two business days.
+      refunded: "Refund request successfully done. Our team will contact you within two business days."
+      insufficient_credits: "You don't have enough credits to request this refund."
       refunds_title: "Payments that can be refunded"
       request_refund: "Request refund"
       requested_refund: "Requested refund"
@@ -219,9 +236,72 @@ en:
     show:
       backed: backed
       reached: reached
+  devise:
+    confirmations:
+      confirmed: "Your account was successfully confirmed. You are now signed in."
+      send_instructions: "You will receive an email with instructions about how to confirm your account in a few minutes."
+      send_paranoid_instructions: "If your e-mail exists on our database, you will receive a password recovery link on your e-mail"
+    failure:
+      already_authenticated: "You are already signed in."
+      inactive: "Your account was not activated yet."
+      invalid: "Invalid email or password."
+      invalid_token: "Invalid authentication token."
+      locked: "Your account is locked."
+      timeout: "Your session expired, please sign in again to continue."
+      unauthenticated: "You need to sign up or sign in to continue."
+      unconfirmed: "You have to confirm your account before continuing."
+    links:
+      forgot_password: "Forgot your password?"
+      sign_in: "Sign in"
+      sign_up: "Sign up"
+    mailer:
+      confirmation_instructions:
+        subject: "Confirmation instructions"
+      reset_password_instructions:
+        subject: "Reset password instructions"
+        alt: "Reset password instructions"
+      unlock_instructions:
+        subject: "Unlock Instructions"
+    omniauth_callbacks:
+      failure: "Could not authorize you from %{kind} because \"%{reason}\"."
+      success: "Successfully authorized from %{kind} account."
+    passwords:
+      send_instructions: "You will receive an email with instructions about how to reset your password in a few minutes."
+      send_paranoid_instructions: "If your e-mail exists on our database, you will receive a password recovery link on your e-mail"
+      updated: "Your password was changed successfully. You are now signed in."
+      updated_not_active: "Your password was changed successfully."
+    registrations:
+      destroyed: "Bye! Your account was successfully cancelled. We hope to see you again soon."
+      inactive_signed_up: "You have signed up successfully. However, we could not sign you in because your account is %{reason}."
+      reasons:
+        inactive: inactive
+        locked: locked
+        unconfirmed: unconfirmed
+      signed_up: "Welcome! You have signed up successfully."
+      updated: "You updated your account successfully."
+    sessions:
+      new:
+        site_title: "Sign in"
+        submit: "Sign in"
+        title: "Sign in using your email"
+        login_title: Login
+        login_subtitle: "If already have an account"
+        register_title: "Sign Up"
+        register_subtitle: "Use your e-mail account"
+        with_facebook: "Sign in with your facebook account"
+        with_facebook_subtitle: "A quick way to access"
+        with_another_social: "Don't have facebook account?"
+        with_another_social_subtitle: "Sign in with another social network"
+      signed_in: "Signed in successfully."
+      signed_out: "Signed out successfully."
+    unlocks:
+      send_instructions: "You will receive an email with instructions about how to unlock your account in a few minutes."
+      send_paranoid_instructions: "If your account exists, you will receive an email with instructions about how to unlock it in a few minutes."
+      unlocked: "Your account was successfully unlocked. You are now signed in."
   error: "Ooops! There was an error. Please try again."
   explore:
     index:
+      near: 'Near me'
       categories: Categories
       expiring: "Final countdown"
       quick_explore: "Quick search"
@@ -255,6 +335,7 @@ en:
         description: "Describe your reward in a way that arouses people's interest to back the project. Don't be shy!"
         maximum_backers: "If your reward is limited, tell us the maximum backers."
         minimum_value: "This is the minimum amount to choose this reward."
+        days_to_delivery: "Total of days to deliver the reward."
     labels:
       backer:
         anonymous: "I want my contribution to be anonymous."
@@ -278,6 +359,7 @@ en:
         uploaded_image: "Project thumbnail"
       reward:
         maximum_backers: "Maximum backers (optional)"
+        days_to_delivery: "Days to delivery"
     optional: " (optional)"
   found_plural: Found
   found_singular: Found
@@ -369,6 +451,8 @@ en:
       anonymous_description: "Opted to remain incognito"
       no_reward: "This backer has not picked a reward"
     backers:
+      review:
+        error: "Ooops. There was an error while registering your back. Please try again."
       show:
         error: "Ooops. You can only access this page after backing a project."
         moip_message: "Your transaction is “Authorized” and you Moip code is “%{code}″.<br>If you have any questions about this transaction, contact Moip directly."
@@ -489,11 +573,13 @@ en:
       empty: "This project didn't have updates yet. But wait and see =D"
       submit: "Send update"
       comment: "Update text"
+      exclusive: "Visible for backers only"
       title: "Title of the update"
       destroy: "Remove update"
       destroy_confirmation: "Do you want to remove the update?"
     rewards:
       reward_title: "For %{minimum} or more"
+      reward_deliver_time: "Estimated delivery: %{prevision}"
       backs_to_confirm:
         one:  "1 backer in time to confirm."
         other: "%{count} backers in time to confirm."
@@ -529,13 +615,28 @@ en:
         take_a_look: "Check out the project"
         title: "Be part of it and share this project"
     new:
+      legend_html: "After completing the form below, you will be directed to the project page in draft format. From there you can add rewards and share it with your friends.<br><br><b>Important</b> <i> Fanfuel is a curated platform. We will assess the focus, feasibility and consistency of your draft project. We choose projects based on our <a href='http://www.fanfuel.co/selectioncriteria' target='_blank' >selection criteria</a>.</i>"
+      permalink_important: 'No underlines, hyphens, etc'
+      permalink_hint: 'A simple URL for your project.'
+      name_important: "Do not exceed 50 characters"
+      online_days_important: "60 days is the maximum"
+      about_important: "Keep it short. Include links so your supporters can explore more of your work."
+      important_html: "Remember, Fanfuel charges 13% if your project is successful. Simply divide the final budget you need by 0.87."
+
+      video_important: "Your video needs to be hosted on Vimeo. Just send us the link!"
+      more_links_important: "It's very important to use social medias to spread the word about your project and engage your network into making it a success"
+      first_backers_important: "These people are fundamental to the success of your project."
+      how_know_important: "The final question!"
+      headline_important: "Summary of your project. 140 characters tops!:D"
+      tags_important: "Check out other campaigns in this category <a href='%{href}' target='_blank'>here!</a>."
       subtitle: "The time to make it happen is now! We really want to know what you're up to..."
       title: "Submit your project"
       introduction_html: "Complete as much information as you can in the form below. The more you tell us, <br/> the faster we can launch your project on Fanfuel"
-      permalink_important: 'No underlines, hyphens, etc'
-      permalink_hint: 'A simple URL for your project.'
-      important_html: "Remember, Fanfuel charges 13% if your project is successful. Simply divide the final budget you need by 0.87."
+
+
+
       about: "Describe your project and how much do you need"
+      category: "Project category"
       how_much_you_need: "How much do you want to raise?"
       how_much_hint_html: "It's important to remember that most of the support comes from people close to you. <a href='%{href}' target='_blank'>Clique aqui!</a> So think about how you can tap into your existing network."
       how_much_important: "Remember, Fanfuel charges 13% if your project is successful. Simply divide the final budget you need by 0.87."
@@ -543,23 +644,17 @@ en:
       days_hint: "On average, projects run for 40 days."
       days_important: "The project can run for a maximum of 60 days"
       about_hint: "Tell us a little about what you want to do, how much you need and what for. Be brief and punctual, but don't forget to give the readers something that moves them. After all, it's your creation and they need to see your passion taking place!"
-      about_important: "Keep it short. Include links so your supporters can explore more of your work."
+
       contact: "Leave us your email address so we can contact you"
       links: "Where can we find more about you and your project?"
       links_important: "Including links will help us get to know you"
       links_hint: "Leave us as many links as you have, so we can get to know your work and your project better. Doesn't have to be something formal or fancy, just a few useful links."
+      video: "Your project already have a video?"
       category: "Project category"
       tags_hint: "Before submitting your project, explore and be inspired by other projects that have gone through the site."
-      tags_important: "Check out other campaigns in this category <a href='%{href}' target='_blank'>here!</a>."
-      video: "Does your project have a video?"
+
+
       video_hint: "A Vimeo link"
-      video_important: "Your video needs to be hosted on Vimeo. Just send us the link!"
-      how_know_important: "The final question!"
-      more_links_important: "It's very important to use social medias to spread the word about your project and engage your network into making it a success"
-      first_backers_important: "These people are fundamental to the success of your project."
-      online_days_important: "60 days is the maximum"
-      headline_important: "Summary of your project. 140 characters tops!:D"
-      name_important: "Do not exceed 50 characters"
       social: "Social media"
       facebook_hint: "http://facebook.com/__________"
       twitter_hint: "http:// twitter.com/____________"
@@ -577,7 +672,7 @@ en:
       send_project: "I want to submit my project."
       subtitle: "The time to make it happen is now! We really want to know what you're up to..."
       title: "Submit your project"
-      legend_html: "After completing the form below, you will be directed to the project page in draft format. From there you can add rewards and share it with your friends.<br><br><b>Important</b> <i> Fanfuel is a curated platform. We will assess the focus, feasibility and consistency of your draft project. We choose projects based on our <a href='http://www.fanfuel.co/selectioncriteria' target='_blank' >selection criteria</a>.</i>"
+
     twitter:
       take_a_look: "Check out the %{name} project on @fanfuelco"
     video_embed:
@@ -844,3 +939,12 @@ en:
       weblink: "View on the web"
       whitelist: "Add contact"
       whitelist_long: "Add our email to your contacts"
+  notifications:
+    backers:
+      to_backer:
+        subject: "Thank you! Your back for %{project} has been confirmed!"
+        text: "Success! <br />Your back has just been confirmed.<br /><br />Check: %{backer_name}<br />%{backer_value}<br />%{reward}<br /><br />%{project_name}"
+    updates:
+      subject: "If the league! Update of %{project_name} by %{project_owner}: %{update_title}"
+      text: "%{update_title}<br />%{update_text}<br />Comments? Send it on in the project page: <a href='%{project_link}'>%{project_name}</a>."
+

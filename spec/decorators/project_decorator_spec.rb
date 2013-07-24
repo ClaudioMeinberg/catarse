@@ -3,6 +3,23 @@ require 'spec_helper'
 describe ProjectDecorator do
   let(:project){ create(:project, about: 'Foo Bar http://www.foo.bar <javascript>xss()</javascript>"Click here":http://click.here') }
 
+  describe "#display_expires_at" do
+    subject{ project.display_expires_at }
+
+    context "when online_date is nil" do
+      let(:project){ create(:project, online_date: nil) }
+      it{ should == '' }
+    end
+
+    context "when we have an online_date" do
+      let(:project){ create(:project, online_date: Time.now) }
+      before do
+        I18n.should_receive(:l).with(project.expires_at.to_date)
+      end
+      it("should call I18n with date"){ subject }
+    end
+  end
+
   describe "#display_image" do
     subject{ project.display_image }
 
@@ -104,6 +121,25 @@ describe ProjectDecorator do
       let(:project) { create(:project, video_url: "") }
 
       it { should be_nil }
+    end
+  end
+
+
+  describe "#successful_flag" do
+    let(:project) { create(:project) }
+
+    context "When the project is successful" do
+      it "should return a successful image flag when the project is successful" do
+        project.stub(:successful?).and_return(true)
+
+        expect(project.successful_flag).to eq('<div class="successful_flag"><img alt="Successful" src="/assets/channels/successful.png" /></div>')
+      end
+    end
+
+    context "When the project was not successful" do
+      it "should not return an image, but nil" do
+        expect(project.successful_flag).to eq(nil)
+      end
     end
   end
 end

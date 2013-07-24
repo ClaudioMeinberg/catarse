@@ -1,5 +1,8 @@
 pt:
   notifications:
+    backer_canceled_after_confirmed:
+      subject: "Apoio cancelado após ser confirmado"
+      header: "Apoio cancelado após ser confirmado"
     project_owner_backer_confirmed:
       subject: "Uhuu! Mais um novo apoiador pro seu projeto"
       header: "Um novo apoio acabou de ser confirmado para o seu projeto"
@@ -59,3 +62,6 @@ pt:
     credits_warning:
       subject: "Você tem US$ %{amount} em créditos no Catarse"
       header: "Que tal apoiar um novo projeto?"
+    backer_confirmed_after_project_was_closed:
+      subject: "Novo apoio confirmado no projeto '%{project_name}' após 7 dias do encerramento"
+      header: "Novo apoio confirmado."

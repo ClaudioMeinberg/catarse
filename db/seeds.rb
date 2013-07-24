@@ -43,7 +43,8 @@
   'backer_project_unsuccessful','project_received', 'project_received_channel', 'updates','project_unsuccessful',
   'project_visible','processing_payment','new_draft_project', 'new_draft_channel', 'project_rejected',
   'pending_backer_project_unsuccessful', 'project_owner_backer_confirmed', 'adm_project_deadline',
-  'project_in_wainting_funds', 'credits_warning'
+  'project_in_wainting_funds', 'credits_warning', 'backer_confirmed_after_project_was_closed', 
+  'backer_canceled_after_confirmed'
 ].each do |name|
   NotificationType.find_or_create_by_name name
 end
@@ -67,6 +68,7 @@ end
   base_domain: 'fanfuel.co',
   sendgrid_user_name: 'fanfuel',
   sendgrid: 'SENDGRID PWD'
+  uservoice_secret_gadget: 'change_this'
 }.each do |name, value|
    conf = Configuration.find_or_initialize_by_name name
    conf.update_attributes({

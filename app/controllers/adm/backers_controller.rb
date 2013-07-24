@@ -13,11 +13,11 @@ class Adm::BackersController < Adm::BaseController
   before_filter :set_title
 
   def self.backer_actions
-    %w[confirm pendent refund hide cancel].each do |action|
+    %w[confirm pendent refund hide cancel push_to_trash].each do |action|
       define_method action do
         resource.send(action)
         flash[:notice] = I18n.t("adm.backers.messages.successful.#{action}")
-        redirect_to adm_backers_path
+        redirect_to adm_backers_path(params[:local_params])
       end
     end
   end
@@ -26,7 +26,7 @@ class Adm::BackersController < Adm::BaseController
   def change_reward
     resource.change_reward! params[:reward_id]
     flash[:notice] = I18n.t('adm.backers.messages.successful.change_reward')
-    redirect_to adm_backers_path
+    redirect_to adm_backers_path(params[:local_params])
   end
 
   protected
@@ -35,6 +35,6 @@ class Adm::BackersController < Adm::BaseController
   end
 
   def collection
-    @backers = end_of_association_chain.order("backers.created_at DESC").page(params[:page])
+    @backers = end_of_association_chain.not_deleted.order("backers.created_at DESC").page(params[:page])
   end
 end

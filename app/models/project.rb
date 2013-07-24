@@ -1,5 +1,5 @@
-require 'state_machine'
 # coding: utf-8
+require 'state_machine'
 class Project < ActiveRecord::Base
   include ActionView::Helpers::TextHelper
   include PgSearch
@@ -9,7 +9,7 @@ class Project < ActiveRecord::Base
   mount_uploader :video_thumbnail, LogoUploader
 
   delegate :display_status, :display_progress, :display_image, :display_expires_at,
-    :display_pledged, :display_goal, :remaining_days, :display_video_embed_url, :progress_bar,
+    :display_pledged, :display_goal, :remaining_days, :display_video_embed_url, :progress_bar, :successful_flag,
     to: :decorator
 
   schema_associations
@@ -35,10 +35,11 @@ class Project < ActiveRecord::Base
     using: {tsearch: {dictionary: "portuguese"}},
     ignoring: :accents
 
+  scope :not_deleted_projects, ->() { where("projects.state <> 'deleted'") }
   scope :by_progress, ->(progress) { joins(:project_total).where("project_totals.pledged >= projects.goal*?", progress.to_i/100.to_f) }
   scope :by_state, ->(state) { where(state: state) }
   scope :by_id, ->(id) { where(id: id) }
-  scope :by_permalink, ->(p) { where(permalink: p) }
+  scope :by_permalink, ->(p) { where("lower(permalink) = lower(?)", p) }
   scope :by_category_id, ->(id) { where(category_id: id) }
   scope :name_contains, ->(term) { where("unaccent(upper(name)) LIKE ('%'||unaccent(upper(?))||'%')", term) }
   scope :user_name_contains, ->(term) { joins(:user).where("unaccent(upper(users.name)) LIKE ('%'||unaccent(upper(?))||'%')", term) }
@@ -52,13 +53,14 @@ class Project < ActiveRecord::Base
     end
   }
 
-  scope :visible, where("state NOT IN ('draft', 'rejected')")
-  scope :financial, where("((coalesce(online_date, current_timestamp) + (online_days::text||' days')::interval) > current_timestamp - '15 days'::interval) AND (state in ('online', 'successful', 'waiting_funds'))")
+  scope :near_of, ->(address_state) { joins(:user).where("lower(users.address_state) = lower(?)", address_state) }
+  scope :visible, where("projects.state NOT IN ('draft', 'rejected', 'deleted')")
+  scope :financial, where("((projects.expires_at) > current_timestamp - '15 days'::interval) AND (state in ('online', 'successful', 'waiting_funds'))")
   scope :recommended, where(recommended: true)
-  scope :expired, where("(coalesce(online_date, current_timestamp) + (online_days::text||' days')::interval) < current_timestamp")
-  scope :not_expired, where("(coalesce(online_date, current_timestamp) + (online_days::text||' days')::interval) >= current_timestamp")
-  scope :expiring, not_expired.where("(coalesce(online_date, current_timestamp) + (online_days::text||' days')::interval) <= (current_timestamp + interval '2 weeks')")
-  scope :not_expiring, not_expired.where("NOT ((coalesce(online_date,current_timestamp) + (online_days::text||' days')::interval) <= (current_timestamp + interval '2 weeks'))")
+  scope :expired, where("(projects.expires_at) < current_timestamp")
+  scope :not_expired, where("(projects.expires_at) >= current_timestamp")
+  scope :expiring, not_expired.where("(projects.expires_at) <= (current_timestamp + interval '2 weeks')")
+  scope :not_expiring, not_expired.where("NOT ((projects.expires_at) <= (current_timestamp + interval '2 weeks'))")
   scope :recent, where("current_timestamp - projects.online_date <= '5 days'::interval")
   scope :successful, where(state: 'successful')
   scope :online, where(state: 'online')
@@ -71,14 +73,14 @@ class Project < ActiveRecord::Base
     limit(4)
   }
   scope :order_for_search, ->{ reorder("
-                                     CASE state
+                                     CASE projects.state
                                      WHEN 'online' THEN 1
                                      WHEN 'waiting_funds' THEN 2
                                      WHEN 'successful' THEN 3
                                      WHEN 'failed' THEN 4
                                      END ASC, created_at DESC, id DESC") }
   scope :expiring_for_home, ->(exclude_ids){
-    includes(:user, :category, :project_total).where("coalesce(id NOT IN (?), true)", exclude_ids).visible.expiring.order("date(online_date + (online_days::text||' days')::interval), random()").limit(3)
+    includes(:user, :category, :project_total).where("coalesce(id NOT IN (?), true)", exclude_ids).visible.expiring.order("projects.expires_at, random()").limit(3)
   }
   scope :recent_for_home, ->(exclude_ids){
     includes(:user, :category, :project_total).where("coalesce(id NOT IN (?), true)", exclude_ids).visible.recent.not_expiring.order('random()').limit(3)
@@ -98,6 +100,7 @@ class Project < ActiveRecord::Base
   validates_uniqueness_of :permalink, allow_blank: true, allow_nil: true, case_sensitive: false
   validates_format_of :permalink, with: /^(\w|-)*$/, allow_blank: true, allow_nil: true
   validates_format_of :video_url, with: /https?:\/\/(www\.)?vimeo.com\/(\d+)/, message: I18n.t('project.video_regex_validation'), allow_blank: true
+  validate :permalink_cant_be_route, allow_nil: true
 
   def self.between_created_at(start_at, ends_at)
     return scoped unless start_at.present? && ends_at.present?
@@ -106,7 +109,7 @@ class Project < ActiveRecord::Base
 
   def self.between_expires_at(start_at, ends_at)
     return scoped unless start_at.present? && ends_at.present?
-    where("(coalesce(online_date, current_timestamp) + (online_days::text||' days')::interval) between to_date(?, 'dd/mm/yyyy') and to_date(?, 'dd/mm/yyyy')", start_at, ends_at)
+    where("projects.expires_at between to_date(?, 'dd/mm/yyyy') and to_date(?, 'dd/mm/yyyy')", start_at, ends_at)
   end
 
   def self.finish_projects!
@@ -117,7 +120,9 @@ class Project < ActiveRecord::Base
   end
 
   def self.state_names
-    self.state_machine.states.map &:name
+    self.state_machine.states.map do |state|
+      state.name if state.name != :deleted
+    end.compact!
   end
 
   def subscribed_users
@@ -128,18 +133,8 @@ class Project < ActiveRecord::Base
     @decorator ||= ProjectDecorator.new(self)
   end
 
-  def number_online_days(date)
-    date = date.to_time if date.kind_of? String
-    (date - (online_date ? online_date : Time.now)).round/1.day
-  end
-
-  def expires_at=(date)
-    #1 day granularity
-    write_attribute(:online_days, number_online_days(date))
-  end
-
   def expires_at
-    (online_date ? online_date : Time.now) + online_days.days
+    online_date && Time.zone.parse((online_date + online_days.days).strftime("%Y-%m-%d 23:59:59"))
   end
 
   def video
@@ -173,7 +168,7 @@ class Project < ActiveRecord::Base
   # NOTE: I think that we just can look the expires_at column
   # the project enter on finished / failed state when expires ;)
   def expired?
-    expires_at < Time.now
+    expires_at && expires_at < Time.now
   end
 
   def in_time_to_wait?
@@ -192,8 +187,8 @@ class Project < ActiveRecord::Base
 
   def time_to_go
     ['day', 'hour', 'minute', 'second'].each do |unit|
-      if expires_at >= 1.send(unit).from_now
-        time = ((expires_at - Time.now).abs/1.send(unit)).round
+      if expires_at.to_i >= 1.send(unit).from_now.to_i
+        time = ((expires_at - Time.zone.now).abs/1.send(unit)).round
         return {time: time, unit: pluralize_without_number(time, I18n.t("datetime.prompts.#{unit}").downcase)}
       end
     end
@@ -251,6 +246,14 @@ class Project < ActiveRecord::Base
     ((pledged + backers.in_time_to_confirm.sum(&:value)) >= (goal*0.3.to_f)) && (4.weekdays_from(expires_at) >= DateTime.now)
   end
 
+  def permalink_cant_be_route
+    errors.add(:permalink, I18n.t("activerecord.errors.models.project.attributes.permalink.invalid")) if Project.permalink_on_routes?(permalink)
+  end
+
+  def self.permalink_on_routes?(permalink)
+    permalink && self.get_routes.include?(permalink.downcase)
+  end
+
   #NOTE: state machine things
   state_machine :state, initial: :draft do
     state :draft, value: 'draft'
@@ -259,9 +262,14 @@ class Project < ActiveRecord::Base
     state :successful, value: 'successful'
     state :waiting_funds, value: 'waiting_funds'
     state :failed, value: 'failed'
+    state :deleted, value: 'deleted'
 
     event :push_to_draft do
       transition all => :draft #NOTE: when use 'all' we can't use new hash style ;(
+    end
+
+    event :push_to_trash do
+      transition [:draft, :rejected] => :deleted
     end
 
     event :reject do
@@ -302,6 +310,11 @@ class Project < ActiveRecord::Base
     after_transition draft: :rejected, do: :after_transition_of_draft_to_rejected
     after_transition any => [:failed, :successful], :do => :after_transition_of_any_to_failed_or_successful
     after_transition :waiting_funds => [:failed, :successful], :do => :after_transition_of_waiting_funds_to_failed_or_successful
+    after_transition [:draft, :rejected] => :deleted, :do => :after_transition_of_draft_or_rejected_to_deleted
+  end
+
+  def after_transition_of_draft_or_rejected_to_deleted
+    update_attributes({ permalink: "deleted_project_#{id}"})
   end
 
   def after_transition_of_online_to_waiting_funds
@@ -348,5 +361,13 @@ class Project < ActiveRecord::Base
 
   def new_project_received_notification_type
     channels.first ? :project_received_channel : :project_received
+  end
+
+  private
+  def self.get_routes
+    routes = Rails.application.routes.routes.map do |r|
+      r.path.spec.to_s.split('/').second.to_s.gsub(/\(.*?\)/, '')
+    end
+    routes.compact.uniq
   end
 end

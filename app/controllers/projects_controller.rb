@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   load_and_authorize_resource only: [ :new, :create, :update, :destroy ]
 
   inherit_resources
-  has_scope :pg_search, :by_category_id, :recent, :expiring, :successful, :recommended, :not_expired
+  has_scope :pg_search, :by_category_id, :recent, :expiring, :successful, :recommended, :not_expired, :near_of
   respond_to :html, except: [:backers]
   respond_to :json, only: [:index, :show, :backers, :update]
   skip_before_filter :detect_locale, only: [:backers]
@@ -27,6 +27,7 @@ class ProjectsController < ApplicationController
         project_ids = collection_projects.map{|p| p.id }
         project_ids << @recommended_projects.last.id if @recommended_projects
 
+        @projects_near = Project.online.near_of(current_user.address_state).order("random()").limit(3) if current_user
         @expiring = Project.expiring_for_home(project_ids)
         @recent   = Project.recent_for_home(project_ids)
         @blog_posts = blog_posts
@@ -34,7 +35,7 @@ class ProjectsController < ApplicationController
 
       format.json do
         @projects = apply_scopes(Project).visible.order_for_search
-        respond_with(@projects.includes(:project_total, :user, :category).page(params[:page]).per(6))
+        respond_with(@projects.includes(:project_total, :category).page(params[:page]).per(6))
       end
     end
   end
@@ -55,7 +56,6 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    params['project']['online_days'] = @project.number_online_days(params['project']['expires_at']) if params['project']['expires_at']
     update! do |success, failure|
       success.html{ return redirect_to project_by_slug_path(@project.permalink, anchor: 'edit') }
       failure.html{ return redirect_to project_by_slug_path(@project.permalink, anchor: 'edit') }
@@ -65,7 +65,7 @@ class ProjectsController < ApplicationController
   def show
     begin
       if params[:permalink].present?
-        @project = Project.where("lower(permalink) = ?", params[:permalink].downcase).last
+        @project = Project.not_deleted_projects.by_permalink(params[:permalink]).last
       else
         return redirect_to project_by_slug_path(resource.permalink)
       end
@@ -75,6 +75,11 @@ class ProjectsController < ApplicationController
         @rewards = @project.rewards.includes(:project).rank(:row_order).all
         @backers = @project.backers.confirmed.limit(12).order("confirmed_at DESC").all
         fb_admins_add(@project.user.facebook_id) if @project.user.facebook_id
+        #TODO find a way to make accessible_by work here
+        @updates = Array.new
+        @project.updates.order('created_at DESC').each do |update|
+          @updates << update if can? :see, update
+        end
         @update = @project.updates.where(id: params[:update_id]).first if params[:update_id].present?
       }
     rescue ActiveRecord::RecordNotFound
@@ -92,8 +97,9 @@ class ProjectsController < ApplicationController
   end
 
   def check_slug
-    project = Project.where("lower(permalink) = ?", params[:permalink].downcase)
-    render json: {available: project.empty?}.to_json
+    valid = false
+    valid = true if !Project.permalink_on_routes?(params[:permalink]) && !Project.by_permalink(params[:permalink]).present?
+    render json: {available: valid}.to_json
   end
 
   def embed
@@ -124,5 +130,11 @@ class ProjectsController < ApplicationController
     rewards.each do |r|
       rewards.delete(r[0]) unless Reward.new(r[1]).valid?
     end
+  end
+
+  protected
+
+  def resource
+    @project ||= Project.not_deleted_projects.find params[:id]
   end
 end

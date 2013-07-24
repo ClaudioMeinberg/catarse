@@ -26,6 +26,8 @@ describe Project do
     it{ should allow_value('http://vimeo.com/12111').for(:video_url) }
     it{ should allow_value('https://vimeo.com/12111').for(:video_url) }
     it{ should_not allow_value('http://www.foo.bar').for(:video_url) }
+    it{ should allow_value('testproject').for(:permalink) }
+    it{ should_not allow_value('users').for(:permalink) }
   end
 
   describe '.state_names' do
@@ -34,6 +36,33 @@ describe Project do
     subject { Project.state_names }
 
     it { should == states }
+  end
+
+  describe '.near_of' do
+    before do
+      mg_user = create(:user, address_state: 'MG')
+      sp_user = create(:user, address_state: 'SP')
+      3.times { create(:project, user: mg_user) }
+      6.times { create(:project, user: sp_user) }
+    end
+
+    let(:state) { 'MG' }
+
+    subject { Project.near_of(state) }
+
+    it { should have(3).itens }
+  end
+
+  describe '.not_deleted_projects' do
+    before do
+      create(:project,  state: 'online')
+      create(:project,  state: 'draft')
+      create(:project,  state: 'deleted')
+    end
+
+    subject { Project.not_deleted_projects }
+
+    it { should have(2).itens }
   end
 
   describe '.by_state' do
@@ -103,9 +132,9 @@ describe Project do
     let(:project_03) { create(:project) }
 
     before do
-      project_01.update_attributes({ expires_at: '19/01/2013'.to_time })
-      project_02.update_attributes({ expires_at: '23/01/2013'.to_time })
-      project_03.update_attributes({ expires_at: '26/01/2013'.to_time })
+      project_01.update_attributes({ online_date: '19/01/2013'.to_time, online_days: 0 })
+      project_02.update_attributes({ online_date: '23/01/2013'.to_time, online_days: 0 })
+      project_03.update_attributes({ online_date: '26/01/2013'.to_time, online_days: 0 })
     end
 
     it { should == [project_01] }
@@ -183,7 +212,7 @@ describe Project do
       Project.should_receive(:includes).with(:user, :category, :project_total).and_return(Project)
       Project.should_receive(:visible).and_return(Project)
       Project.should_receive(:expiring).and_return(Project)
-      Project.should_receive(:order).with("date(online_date + (online_days::text||' days')::interval), random()").and_return(Project)
+      Project.should_receive(:order).with("projects.expires_at, random()").and_return(Project)
       Project.should_receive(:where).with("coalesce(id NOT IN (?), true)", 1).and_return(Project)
       Project.should_receive(:limit).with(3)
     end
@@ -227,8 +256,8 @@ describe Project do
 
   describe ".expiring" do
     before do
-      @p = create(:project, online_days: 14)
-      create(:project, online_days: -1)
+      @p = create(:project, online_date: Time.now, online_days: 13)
+      create(:project, online_date: Time.now, online_days: -1)
     end
     subject{ Project.expiring }
     it{ should == [@p] }
@@ -429,13 +458,18 @@ describe Project do
   describe "#expired?" do
     subject{ project.expired? }
 
+    context "when online_date is nil" do
+      let(:project){ Project.new online_date: nil, online_days: 0 }
+      it{ should be_false }
+    end
+
     context "when expires_at is in the future" do
-      let(:project){ Project.new expires_at: 2.days.from_now }
+      let(:project){ Project.new online_date: 2.days.from_now, online_days: 0 }
       it{ should be_false }
     end
 
     context "when expires_at is in the past" do
-      let(:project){ Project.new expires_at: 2.seconds.ago }
+      let(:project){ Project.new online_date: 2.days.ago, online_days: 0 }
       it{ should be_true }
     end
   end
@@ -443,55 +477,50 @@ describe Project do
   describe "#in_time?" do
     subject{ project.in_time? }
     context "when expires_at is in the future" do
-      let(:project){ Project.new expires_at: 2.days.from_now }
+      let(:project){ Project.new online_date: 2.days.from_now, online_days: 0 }
       it{ should be_true }
     end
 
     context "when expires_at is in the past" do
-      let(:project){ Project.new expires_at: 2.seconds.ago }
+      let(:project){ Project.new online_date: 2.days.ago, online_days: 0 }
       it{ should be_false }
     end
   end
 
-  it "should return time_to_go acording to expires_at" do
-    p = build(:project)
-    time = Time.now
-    Time.stub(:now).and_return(time)
-    p.expires_at = 30.days.from_now
-    p.time_to_go[:time].should == 30
-    p.time_to_go[:unit].should == pluralize_without_number(30, I18n.t('datetime.prompts.day').downcase)
-    p.expires_at = 1.day.from_now
-    p.time_to_go[:time].should == 1
-    p.time_to_go[:unit].should == pluralize_without_number(1, I18n.t('datetime.prompts.day').downcase)
-=begin
-    p.expires_at = 23.hours.from_now + 59.minutes + 59.seconds
-    p.time_to_go[:time].should == 24
-    p.time_to_go[:unit].should == pluralize_without_number(24, I18n.t('datetime.prompts.hour').downcase)
-    p.expires_at = 1.hour.from_now
-    p.time_to_go[:time].should == 1
-    p.time_to_go[:unit].should == pluralize_without_number(1, I18n.t('datetime.prompts.hour').downcase)
-    p.expires_at = 59.minutes.from_now
-    p.time_to_go[:time].should == 59
-    p.time_to_go[:unit].should == pluralize_without_number(59, I18n.t('datetime.prompts.minute').downcase)
-    p.expires_at = 1.minute.from_now
-    p.time_to_go[:time].should == 1
-    p.time_to_go[:unit].should == pluralize_without_number(1, I18n.t('datetime.prompts.minute').downcase)
-    p.expires_at = 59.seconds.from_now
-    p.time_to_go[:time].should == 59
-    p.time_to_go[:unit].should == pluralize_without_number(59, I18n.t('datetime.prompts.second').downcase)
-    p.expires_at = 1.second.from_now
-    p.time_to_go[:time].should == 1
-    p.time_to_go[:unit].should == pluralize_without_number(1, I18n.t('datetime.prompts.second').downcase)
-    p.expires_at = 0.seconds.from_now
-    p.time_to_go[:time].should == 0
-    p.time_to_go[:unit].should == pluralize_without_number(0, I18n.t('datetime.prompts.second').downcase)
-    p.expires_at = 1.second.ago
-    p.time_to_go[:time].should == 0
-    p.time_to_go[:unit].should == pluralize_without_number(0, I18n.t('datetime.prompts.second').downcase)
-    p.expires_at = 30.days.ago
-    p.time_to_go[:time].should == 0
-    p.time_to_go[:unit].should == pluralize_without_number(0, I18n.t('datetime.prompts.second').downcase)
-=end
+  describe "#expires_at" do
+    subject{ project.expires_at }
+    context "when we do not have an online_date" do
+      let(:project){ build(:project, online_date: nil, online_days: 0) }
+      it{ should be_nil }
+    end
+    context "when we have an online_date" do
+      let(:project){ build(:project, online_date: Time.now, online_days: 0) }
+      it{ should == Time.zone.parse("23:59:59") }
+    end
+  end
+
+  describe "#time_to_go" do
+    let(:project){ build(:project) }
+    let(:expires_at){ Time.zone.parse("23:00:00") }
+    subject{ project.time_to_go }
+    before do
+      project.stub(:expires_at).and_return(expires_at)
+    end
+
+    context "when there is more than 1 day to go" do
+      let(:expires_at){ Time.zone.now + 2.days }
+      it{ should == {:time=>2, :unit=>"dias"} }
+    end
+
+    context "when there is less than 1 day to go" do
+      let(:expires_at){ Time.zone.now + 13.hours }
+      it{ should == {:time=>13, :unit=>"horas"} }
+    end
+
+    context "when there is less than 1 hour to go" do
+      let(:expires_at){ Time.zone.now + 59.minutes }
+      it{ should == {:time=>59, :unit=>"minutos"} }
+    end
   end
 
   describe '#selected_rewards' do
@@ -623,6 +652,18 @@ describe Project do
       its(:rejected?){ should be_true }
     end
 
+    describe '#push_to_trash' do
+      let(:project) { FactoryGirl.create(:project, permalink: 'my_project', state: 'draft') }
+
+      subject do
+        project.push_to_trash
+        project
+      end
+
+      its(:deleted?) { should be_true }
+      its(:permalink) { should == "deleted_project_#{project.id}" }
+    end
+
     describe '#approve' do
       subject do
         project.should_receive(:after_transition_of_draft_to_online)
@@ -687,7 +728,8 @@ describe Project do
           main_project.update_attributes state: 'waiting_funds'
           subject.stub(:pending_backers_reached_the_goal?).and_return(true)
           subject.stub(:reached_goal?).and_return(true)
-          subject.expires_at = 2.weeks.ago
+          subject.online_date = 2.weeks.ago
+          subject.online_days = 0
           subject.finish
         end
         its(:successful?) { should be_true }
@@ -710,7 +752,8 @@ describe Project do
 
         before do
           backer
-          subject.expires_at = 2.weeks.ago
+          subject.online_date = 2.weeks.ago
+          subject.online_days = 0
           subject.finish
         end
 
@@ -726,4 +769,13 @@ describe Project do
 
   end
 
+  describe '#permalink_on_routes?' do
+    it 'should allow a unique permalink' do
+      Project.permalink_on_routes?('permalink_test').should be_false
+    end
+
+    it 'should not allow a permalink to be one of catarse\'s routes' do
+      Project.permalink_on_routes?('projects').should be_true
+    end
+  end
 end

@@ -7,8 +7,6 @@ Catarse::Application.routes.draw do
   match '/thanks' => 'static#thanks_contact'
   match '/thank_you' => "static#thank_you"
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
-
-  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   check_user_admin = lambda { |request| request.env["warden"].authenticate? and request.env['warden'].user.admin }
 
   filter :locale, exclude: /\/auth\//
@@ -30,7 +28,7 @@ Catarse::Application.routes.draw do
   constraints subdomain: 'asas' do
     namespace :channels, path: '' do
       namespace :adm do
-        resources :projects, only: [ :index, :update ] do
+        resources :projects, only: [ :index, :update] do
           member do
             put 'approve'
             put 'reject'
@@ -97,6 +95,9 @@ Catarse::Application.routes.draw do
     end
   end
   resources :users do
+    collection do
+      get :uservoice_gadget
+    end
     resources :backers, only: [:index] do
       member do
         match :request_refund
@@ -122,7 +123,7 @@ Catarse::Application.routes.draw do
   end
 
   namespace :adm do
-    resources :projects, only: [ :index, :update ] do
+    resources :projects, only: [ :index, :update, :destroy ] do
       member do
         put 'approve'
         put 'reject'
@@ -141,6 +142,7 @@ Catarse::Application.routes.draw do
         put 'refund'
         put 'hide'
         put 'cancel'
+        put 'push_to_trash'
       end
     end
     resources :users, only: [ :index ]
