@@ -1,0 +1,60 @@
+- if !@user.projects.visible.blank?
+	.heading
+		= "Live campaigns"
+	.body
+		- @user.projects.visible.each do |project|
+			.campaign[itemscope itemtype="http://schema.org/CreativeWork" class=(custom_class if defined?(custom_class))]
+			  meta[itemprop="dateCreated" content=project.created_at.to_date]
+			    .row-fluid
+			      .span12
+			        .progress
+			          - if project.display_progress > 30
+			            .bar style="width: #{project.display_progress}%;"
+			              p = "#{project.display_progress}% fuelled"
+			          - else
+			            .bar style="width: #{project.display_progress}%;"
+			            .outside-bar
+			              p = "#{project.display_progress}% fuelled"
+			      - if project.expired?
+			        .status_image
+			          = link_to project_by_slug_path(permalink: project.permalink), target: ( defined?(embed_link) ? '__blank' : '' ) do
+			            - if project.successful?
+			              = image_tag "successful.#{I18n.locale}.png"
+			            - elsif project.waiting_funds?
+			              = image_tag "waiting_confirmation.#{I18n.locale}.png"
+			            - elsif project.failed?
+			              = image_tag "not_successful.#{I18n.locale}.png"
+			    /.row-fluid.campaignbox style="background-image:url('assets/placeholder.png');"
+			    .row-fluid.campaignbox style="background-image:url(#{project.display_image});"
+			      .span12.profile-campaigntext.pull-right
+			        h3 = project.name
+		    	    p = truncate(project.about, length: 300)
+			        = link_to "View Campaign", project, target: ( defined?(embed_link) ? '__blank' : '' ) , class: "btn btn-browserewards"
+			    .row-fluid
+			      .span12.stats
+			        / .stats
+			        ul.nav
+			          li.stats1.nav_border_right
+			            /"Athletes name"
+			            div = project.user.name
+			          li.stats2.nav_border_right.nav_border_left
+			            /div = "Country"
+			            - unless project.user.address_city.blank?
+			              div = project.user.address_city
+			          li.stats3.nav_border_right.nav_border_left
+			            /div = "Amount raised"
+			            div = "#{project.display_pledged}"
+			          li.stats4.double_border_right.nav_border_left
+			            /div = "Backers"
+			            div = pluralize(project.backers.confirmed.count, t('backer_singular'), t('backer_plural'))
+
+			        ul.nav.pull-right
+			          li.stats5.double_border_left
+			            - if project.in_time?
+			              div
+			                = "#{project.time_to_go[:time]} #{project.time_to_go[:unit]} "
+			                = "#{project.remaining_text}"
+			            - else
+			              div
+			                = I18n.t("project.display_status.#{project.display_status}").capitalize
+			                = project.display_expires_at

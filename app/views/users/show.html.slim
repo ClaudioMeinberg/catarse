@@ -46,10 +46,9 @@
                     .profile_subheading = "BIO"
                     .bio
                       = @user.bio
-
-
-
             .span10
+              = render 'users/profile'
+              hr
               .tab_container
                 nav#user_profile_menu
                   = link_to t('.tabs.backed_projects'), '#backs', id: 'backed_projects_link', class: 'selected'
@@ -62,7 +61,7 @@
               .clearfix
               #user_profile_content
                 #user_backed_projects.content
-                #user_created_projects.content
+                #user_created_projects.content.hide
                 - if can? :manage, @user
                   #user_unsubscribes.content.hide
                     = render 'unsubscribes'
