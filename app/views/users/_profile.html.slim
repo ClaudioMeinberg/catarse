@@ -58,3 +58,18 @@
 			              div
 			                = I18n.t("project.display_status.#{project.display_status}").capitalize
 			                = project.display_expires_at
+.heading
+	= "Backed campaigns"
+.body
+	- @user.projects.each_slice(3) do |slice|
+		.row-fluid
+			= "this is 1 row"
+			- slice.each do |project|
+				= "this is a project"
+
+
+
+
+
+
+
