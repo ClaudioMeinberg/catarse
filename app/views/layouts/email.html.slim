@@ -4,23 +4,26 @@ html
     meta content="text/html; charset=utf-8" http-equiv="Content-Type"
     title= message.subject
   body[style='overflow: hidden']
-    div style="background-image: url(http://gallery.mailchimp.com/9d9950758917a323093e71034/images/background.jpg); background-repeat:repeat; margin:0px;padding: 0px; width: 700px;float: left"
-      div style="width: 600px;padding-left: 18px; float:left"
-        img src="http://gallery.mailchimp.com/ebfcd0d16dbb0001a0bea3639/images/logo_system.png" width="179px" height="45px" style="float: left; margin-left: 20px; margin-top: 30px"
+    div style="background-image: url(http://gallery.mailchimp.com/627e9bd5c296dbfed2d6a3b52/images/noise2.png); background-repeat:repeat; margin:0px;padding: 0px; width: 700px;float: left; background-color: black; overflow: hidden"
+      div style="bacground-image: url(http://gallery.mailchimp.com/627e9bd5c296dbfed2d6a3b52/images/gradient2.png); background-repeat:repeat-x; margin:0px;padding: 0px; width: 700px; float: left;"   
+        div style="width: 600px;padding-left: 18px; float:left"
+          img src="http://gallery.mailchimp.com/627e9bd5c296dbfed2d6a3b52/images/logo_light_text.png" width="128px" height="62px" style="float: left; margin-left: 33px; margin-top: 30px"
 
-        div style="width: 599px;height: 68px;float: left; background:url(http://gallery.mailchimp.com/ebfcd0d16dbb0001a0bea3639/images/header_system.png); margin-top: 30px;margin-left: 6px"
-          h3 style="color: #ee5192; font-size: 18px;margin-left: 60px;float: left;font-family:Helvetica, Arial, Sans-serif;margin-top: 32px; margin-bottom: 0px; font-style: normal; "
-            = @header || message.subject
-        div style="background: url(http://gallery.mailchimp.com/9d9950758917a323093e71034/images/back_box.jpg);background-repeat: repeat-y; width: 620px; float: left;"
-          #content
-            div style="font-family: Helvetica, Arial, Sans-serif;color: #5d5d5d; font-size: 13px; line-height: 21px;width: 513px; margin-left: 60px; font-style:normal; "
-              br
-              = yield
-        div style="background: url(http://gallery.mailchimp.com/9d9950758917a323093e71034/images/close_box2.png); width: 589px; height: 19px;float: left;margin-left: 15px"
-        div style="float: right; margin-top: 10px; margin-bottom: 30px; height: 25px;width: 100px;"
-          a href="http://www.facebook.com/Catarse.me" style="float: right; width: 25px; height: 25px; margin-left: 5px; margin-right: 5px;" target="_blank"
-            img alt="Facebook" height="25" src="http://gallery.mailchimp.com/9d9950758917a323093e71034/images/icon_facebook.gif" width="25"
-          a href="http://twitter.com/catarse" style="float: right; width: 25px; height: 25px; margin-left: 5px; margin-right: 5px;" target="_blank"
-            img alt="Twitter" height="25" src="http://gallery.mailchimp.com/9d9950758917a323093e71034/images/icon_twitter.gif" width="25"
-      p
-        br
+          div style="width: 599px;float: left; background-color:#333333; border: 1px #5f5f5f solid; margin-top: 30px; margin-left: 30px; margin-bottom: 60px"
+            h3 style="font-family: Helvetica, Arial, Sans-serif;color: #99ff00; font-size: 18px;margin-left: 60px;float: left; margin-top: 32px; margin-bottom: 0px; font-style: normal"
+              = @header || message.subject
+            #content
+              div style="font-family: Helvetica, Arial, Sans-serif;color: #f5f5f5; font-size: 14px; line-height: 21px;width: 480px; margin-left: 60px; font-style:normal; margin-top: 60px"
+                br
+                = yield
+            div style="float: right; margin-top: 10px; margin-bottom: 30px; height: 25px;width: 250px;"
+              a href="http://vimeo.com/fanfuel" style="float: right; width: 25px; height: 25px; margin-left: 5px; margin-right: 5px;" target="_blank"
+                img alt="Vimeo" height="25" src="http://gallery.mailchimp.com/627e9bd5c296dbfed2d6a3b52/images/vimeo.png" width="25"
+              a href="http://www.youtube.com/user/fanfuel" style="float: right; width: 25px; height: 25px; margin-left: 5px; margin-right: 5px;" target="_blank"
+                img alt="Youtube" height="25" src="http://gallery.mailchimp.com/627e9bd5c296dbfed2d6a3b52/images/youtube.png" width="25"
+              a href="http://twitter.com/fanfuelco" style="float: right; width: 25px; height: 25px; margin-left: 5px; margin-right: 5px;" target="_blank"
+                img alt="Twitter" height="25" src="http://gallery.mailchimp.com/627e9bd5c296dbfed2d6a3b52/images/twitter.png" width="25"
+              a href="http://www.facebook.com/fanfuelco" style="float: right; width: 25px; height: 25px; margin-left: 5px; margin-right: 35px;" target="_blank"
+                img alt="Facebook" height="25" src="http://gallery.mailchimp.com/627e9bd5c296dbfed2d6a3b52/images/fb.png" width="25"
+        p
+          br
