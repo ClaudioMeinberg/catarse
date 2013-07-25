@@ -56,7 +56,7 @@ html,
     width:100%;
     /* Negative indent footer by it's height */
     /* margin: 0px auto -40px; */
-    // padding-bottom:40px;
+    /* // padding-bottom:40px; */
   }
 
   /* Set the fixed height of the footer here */
@@ -96,12 +96,12 @@ html,
 
 /* Static - fix spacing in responsive view */
 
-#terms, #privacy, #review_pay {
+#terms, #privacy, #review_pay, #profile-show {
   margin-top:40px;
 }
 
 @media screen and (max-width: 979px) {
-  #terms, #privacy, #review_pay {
+  #terms, #privacy, #review_pay, #profile-show {
     margin-top:0;
   }
 }

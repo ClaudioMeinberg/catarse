@@ -291,7 +291,7 @@ class User < ActiveRecord::Base
   # Returns a Gravatar URL associated with the email parameter, uses local avatar if available
   def gravatar_url
     return unless email
-    "https://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?default=#{::Configuration[:base_url]}/assets/user.png"
+    "https://gravatar.com/avatar/#{Digest::MD5.new.update(email)}.jpg?default=#{::Configuration[:base_url]}/assets/user.png&s=200"
   end
 
   protected

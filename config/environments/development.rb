@@ -30,7 +30,7 @@ Catarse::Application.configure do
   config.active_record.auto_explain_threshold_in_seconds = 0.5
 
   # Do not compress assets
-  config.assets.compress = false
+  config.assets.compress = true #false
 
   # Expands the lines which load the assets
   config.assets.debug = true
@@ -38,6 +38,6 @@ Catarse::Application.configure do
   # mailcatcher configs
   config.action_mailer.delivery_method = :letter_opener
 
-  config.action_mailer.asset_host = "http://localhost:3000"
+  config.action_mailer.asset_host = "http://localhost:8080"
 end
 
