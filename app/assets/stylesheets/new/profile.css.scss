@@ -37,13 +37,13 @@
 	}
 	.profile-campaigntext {
 		text-align:left;
-		padding:0 20px 0 200px;
-		min-height:340px;
+		padding:0 20px 0 240px;
+		min-height:265px;
 		h3 {
-			font-size:32px;
+			font-size:26px;
+			line-height: 26px;
 			font-family: TradeGothicLTPro-Cn20;
 			font-weight: normal;
-			line-height: 40px;
 			padding-top: 4px;
 		}
 		p {
@@ -51,6 +51,14 @@
 			font-family:'genevaregular';
 			text-align: justify;
 			font-size:14px;
+			line-height:14px;
+		}
+		.btn-browserewards {
+			height:16px;
+			padding-top:14px;
+			padding-bottom:14px;
+			margin-top:3px;
+			font-size:20px !important;
 		}
 	}
 	.heading {
@@ -106,14 +114,16 @@
 		margin-right:15px;
 	}
 	.campaignbox {
-    min-height:265px;
+    	min-height:265px;
+    	height:265px;
+    	background-size:auto 100%;
 	}
 }
 
 @media screen and (max-width: 767px) {
 	#profile-show {
 		.profile-campaigntext {
-			padding:340px 0 20px 0;
+			padding:265px 0 20px 0;
 		}
 	}
 }
