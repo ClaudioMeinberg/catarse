@@ -1,7 +1,10 @@
-- if !@user.projects.visible.blank?
-	.heading
-		= "Live campaigns"
-	.body
+.heading
+	= "Live campaigns"
+.body
+	- if @user.projects.visible.blank?
+		.comment
+			= "#{@user.name.humanize} has no live campaigns"
+	- else
 		- @user.projects.visible.each do |project|
 			.campaign[itemscope itemtype="http://schema.org/CreativeWork" class=(custom_class if defined?(custom_class))]
 			  meta[itemprop="dateCreated" content=project.created_at.to_date]
@@ -62,42 +65,46 @@
 .heading
 	= "Backed campaigns"
 .body
-	- @user.projects.each_slice(3) do |slice|
-		.row-fluid
-			- slice.each do |project|
-				.span4
-			        .backed
-			        	.row-fluid
-			        		.span12
-						        .progress
-						          - if project.display_progress > 30
-						            .bar style="width: #{project.display_progress}%;"
-						              p = "#{project.display_progress}% fuelled"
-						          - else
-						            .bar style="width: #{project.display_progress}%;"
-						            .outside-bar
-						              p = "#{project.display_progress}% fuelled"
-					    .row-fluid
-					    	.span12.project_image_box
-						    	= image_tag project.video_thumbnail
-					    .row-fluid
-					    	.span12.project_desc_box
-					      		.name
-					        		= "By "
-					        		span.largetext
-					        			= project.user.name
-					        	.raised
-					        		= "raised "
-					        		span.largetext
-					        			= "$"
-					        			= project.pledged.round(0)
-					        	.backers
-					        		= " backers "
-					        		span.largetext
-										= project.total_backers
-					        	.daysleft
-					        		= project.remaining_days
-					        		= " days left"
+	- if @user.backed_projects.count == 0
+		.comment
+			= "#{@user.name.humanize} has no backed campaigns"
+	- else
+		- @user.backed_projects.each_slice(3) do |slice|
+			.row-fluid
+				- slice.each do |project|
+					.span4
+				        .backed
+				        	.row-fluid
+				        		.span12
+							        .progress
+							          - if project.display_progress > 30
+							            .bar style="width: #{project.display_progress}%;"
+							              p = "#{project.display_progress}% fuelled"
+							          - else
+							            .bar style="width: #{project.display_progress}%;"
+							            .outside-bar
+							              p = "#{project.display_progress}% fuelled"
+						    .row-fluid
+						    	.span12.project_image_box
+							    	= image_tag project.video_thumbnail
+						    .row-fluid
+						    	.span12.project_desc_box
+						      		.name
+						        		= "By "
+						        		span.largetext
+						        			= project.user.name
+						        	.raised
+						        		= "raised "
+						        		span.largetext
+						        			= "$"
+						        			= project.pledged.round(0)
+						        	.backers
+						        		= " backers "
+						        		span.largetext
+											= project.total_backers
+						        	.daysleft
+						        		= project.remaining_days
+						        		= " days left"
 - if can? :manage, @user
 	.heading
 		= "settings"
