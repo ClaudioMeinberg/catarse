@@ -63,10 +63,66 @@
 .body
 	- @user.projects.each_slice(3) do |slice|
 		.row-fluid
-			= "this is 1 row"
 			- slice.each do |project|
-				= "this is a project"
+				.span4
+			        .backed
+			        	.row-fluid
+			        		.span12
+						        .progress
+						          - if project.display_progress > 30
+						            .bar style="width: #{project.display_progress}%;"
+						              p = "#{project.display_progress}% fuelled"
+						          - else
+						            .bar style="width: #{project.display_progress}%;"
+						            .outside-bar
+						              p = "#{project.display_progress}% fuelled"
+					    .row-fluid
+					    	.span12.project_image_box
+						    	= image_tag project.video_thumbnail
+					    .row-fluid
+					    	.span12.project_desc_box
+					      		.name
+					        		= "By "
+					        		span.largetext
+					        			= project.user.name
+					        	.raised
+					        		= "raised "
+					        		span.largetext
+					        			= "$"
+					        			= project.pledged.round(0)
+					        	.backers
+					        		= " backers "
+					        		span.largetext
+										= project.total_backers
+					        	.daysleft
+					        		= project.remaining_days
+					        		= " days left"
+- if can? :manage, @user
+	.heading
+		= "settings"
+	.body
+		p= "The User is logged in"
+					        /   li.stats2.nav_border_right.nav_border_left
+					        /     /div = "Country"
+					        /     - unless project.user.address_city.blank?
+					        /       div = project.user.address_city
+					        /   li.stats3.nav_border_right.nav_border_left
+					        /     /div = "Amount raised"
+					        /     div = "#{project.display_pledged}"
+					        /   li.stats4.double_border_right.nav_border_left
+					        /     /div = "Backers"
+					        /     div = pluralize(project.backers.confirmed.count, t('backer_singular'), t('backer_plural'))
 
+					        / ul.nav.pull-right
+					        /   li.stats5.double_border_left
+					        /     - if project.in_time?
+					        /       div
+					        /         = "#{project.time_to_go[:time]} #{project.time_to_go[:unit]} "
+					        /         = "#{project.remaining_text}"
+					        /     - else
+					        /       div
+					        /         = I18n.t("project.display_status.#{project.display_status}").capitalize
+					        /         = project.display_expires_at
 
 
 
