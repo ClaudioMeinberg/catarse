@@ -168,7 +168,7 @@
 		background: linear-gradient(to bottom, #ff6600 0%,#ff3300 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$fforange, endColorstr=$ffdarkorange,GradientType=0 );
 		background-color: #f60;
-		padding: 10px;
+		padding: 10px 20px;
 		border-radius:0;
 		-moz-border-radius:0;
 		-webkit-border-radius:0;
@@ -233,6 +233,9 @@
 	input#user_twitter, input#user_facebook_link {
 		width:50%;
 		margin-right:50%;
+		border-radius:0;
+		-moz-border-radius:0;
+		-webkit-border-radius:0;
 	}
 	.current_credits, 
 	.table_title, {
@@ -240,6 +243,24 @@
 			font-size: 18px;
 		}
 	}
+	.normaltext {
+		font-family:'genevaregular';
+		text-transform:none;
+		font-size:14px;
+		color:#e6e6e6;
+	}
+	#user_bio_input {
+		label {
+			display:none;
+		}
+		textarea#user_bio {
+			width:100%;
+			border-radius:0;
+			-webkit-border-radius:0;
+			-moz-border-radius:0;
+		}
+	}
+
 
 }
 
