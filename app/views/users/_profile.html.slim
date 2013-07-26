@@ -109,7 +109,36 @@
 	.heading
 		= "settings"
 	.body
-		p= "The User is logged in"
+		.row-fluid
+			.span3
+				.profile_subheading
+					= "my avatar"
+				#my_avatar
+					.bootstrap-form
+						= semantic_form_for @user do |f|
+							.upload-picture = "Choose your picture"
+							= f.inputs do
+								= f.input :uploaded_image, as: :file, label: I18n.t('users.current_user_fields.submit_text')
+							= f.actions do
+								.bootstrap-twitter
+									= f.action :submit, button_html: {value: I18n.t('users.current_user_fields.submit'), class: 'btn', id: 'image_upload_btn'}
+					#gravatar_hint.alert.alert-info
+						= link_to 'http://gravatar.com/', target: :_blank do
+							= image_tag 'gravatar.png', id: 'gravatar_logo'
+						/******* hardcoded link
+						/ p= I18n.t('users.current_user_fields.gravatar_hint_html', link: link_to('Gravatar', 'http://gravatar.com/', target: '_blank'))
+						p
+							= "Want to change your picture? Use"
+							= link_to 'Gravatar', 'http://gravatar.com'
+							= "with your email. It's as simple as uploading an image and works for other sites as well"
+						.clearfix
+				- unless @user.has_facebook_authentication?
+					#my_facebook
+						h1= t('.my_facebook')
+						= link_to I18n.t('layouts.login.login_with_facebook'), user_omniauth_authorize_path(provider: 'facebook', locale: nil), class: 'facebook_start'
+
+			.span9
+				p= "RHS"
 					        /   li.stats2.nav_border_right.nav_border_left
 					        /     /div = "Country"
 					        /     - unless project.user.address_city.blank?
@@ -131,7 +160,10 @@
 					        /       div
 					        /         = I18n.t("project.display_status.#{project.display_status}").capitalize
 					        /         = project.display_expires_at
-
+	.heading
+		= "credits"
+	.body
+		p="credits"
 
 
 
