@@ -130,7 +130,7 @@
 		background:none;
 		margin-left:0;
 	}
-	label {
+	.label {
 		font-family:'TradeGothicLTPro-Cn18';
 		font-weight:bold;
 		color:#999;
@@ -188,9 +188,12 @@
 	    padding:0;
 	    left:0;
 	}
-	input[type="file"]{
+	#user_uploaded_image {
+		font-size:16px;
 	}
-
+	#gravatar_hint {
+		display:none;
+	}
 
 	.add-photo-btn{
 	    position:relative;
@@ -213,7 +216,24 @@
 		font-family:'genevaregular';
 		text-align:left;
 	}
-
+	hr {
+		border-top: 1px solid #5A5A5A;
+		border-bottom:0;
+	}
+	.social_networks {
+		text-align:left;
+		border-left: 1px solid #5A5A5A;
+		height:100%;
+		padding-left:30px;
+	}
+	.socialmidia label {
+		text-align:left;
+		width:100%;
+	}
+	input#user_twitter, input#user_facebook_link {
+		width:50%;
+		margin-right:50%;
+	}
 
 }
 
