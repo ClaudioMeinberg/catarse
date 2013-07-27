@@ -1,7 +1,10 @@
-- if !@user.projects.visible.blank?
-	.heading
-		= "Live campaigns"
-	.body
+.heading
+	= "Live campaigns"
+.body
+	- if @user.projects.visible.blank?
+		.comment
+			= "#{@user.name.humanize} has no live campaigns"
+	- else
 		- @user.projects.visible.each do |project|
 			.campaign[itemscope itemtype="http://schema.org/CreativeWork" class=(custom_class if defined?(custom_class))]
 			  meta[itemprop="dateCreated" content=project.created_at.to_date]
@@ -28,7 +31,8 @@
 			    .row-fluid.campaignbox style="background-image:url(#{project.display_image});"
 			      .span12.profile-campaigntext.pull-right
 			        h3 = project.name
-		    	    p = truncate(project.about, length: 300)
+			        p = project.headline
+		    	    / p = truncate(project.about, length: 300)
 			        = link_to "View Campaign", project, target: ( defined?(embed_link) ? '__blank' : '' ) , class: "btn btn-browserewards"
 			    .row-fluid
 			      .span12.stats
@@ -61,15 +65,240 @@
 .heading
 	= "Backed campaigns"
 .body
-	- @user.projects.each_slice(3) do |slice|
-		.row-fluid
-			= "this is 1 row"
-			- slice.each do |project|
-				= "this is a project"
+	- if @user.backed_projects.count == 0
+		.comment
+			= "#{@user.name.humanize} has no backed campaigns"
+	- else
+		- @user.backed_projects.each_slice(3) do |slice|
+			.row-fluid
+				- slice.each do |project|
+					.span4
+				        .backed
+				        	.row-fluid
+				        		.span12
+							        .progress
+							          - if project.display_progress > 30
+							            .bar style="width: #{project.display_progress}%;"
+							              p = "#{project.display_progress}% fuelled"
+							          - else
+							            .bar style="width: #{project.display_progress}%;"
+							            .outside-bar
+							              p = "#{project.display_progress}% fuelled"
+						    .row-fluid
+						    	.span12.project_image_box
+							    	= image_tag project.video_thumbnail
+						    .row-fluid
+						    	.span12.project_desc_box
+						      		.name
+						        		= "By "
+						        		span.largetext
+						        			= project.user.name
+						        	.raised
+						        		= "raised "
+						        		span.largetext
+						        			= "$"
+						        			= project.pledged.round(0)
+						        	.backers
+						        		= " backers "
+						        		span.largetext
+											= project.total_backers
+						        	.daysleft
+						        		= project.remaining_days
+						        		= " days left"
+- if can? :manage, @user
+	.heading
+		= "settings"
+	.body
+		= semantic_form_for @user do |f|
+			.row-fluid
+				.span4
+					.profile_subheading
+						= "my avatar:"
+					#my_avatar
+						.bootstrap-form
+							.upload-picture = "Choose your picture"
+							= f.inputs do
+								= f.input :uploaded_image, as: :file, label: I18n.t('users.current_user_fields.submit_text'), class: 'btn-upload'
+							= f.actions do
+								.bootstrap-twitter
+									= f.action :submit, button_html: {value: I18n.t('users.current_user_fields.submit'), class: 'btn', id: 'image_upload_btn'}
+					/ #gravatar_hint.alert.alert-info
+					/ 	= link_to 'http://gravatar.com/', target: :_blank do
+					/ 		= image_tag 'gravatar.png', id: 'gravatar_logo'
+					/ 	/******* hardcoded link
+					/ 	/ p= I18n.t('users.current_user_fields.gravatar_hint_html', link: link_to('Gravatar', 'http://gravatar.com/', target: '_blank'))
+					/ 	p
+					/ 		= "Want to change your picture? Use"
+					/ 		= link_to 'Gravatar', 'http://gravatar.com'
+					/ 		= "with your email. It's as simple as uploading an image and works for other sites as well"
+					/ 	.clearfix
+					/ - unless @user.has_facebook_authentication?
+					/ 	#my_facebook
+					/ 		h1= t('.my_facebook')
+					/ 		= link_to I18n.t('layouts.login.login_with_facebook'), user_omniauth_authorize_path(provider: 'facebook', locale: nil), class: 'facebook_start'
+				.span8.social_networks
+					.profile_subheading
+						= "my social networks:"
+					.socialmidia
+		            	.social_twitter
+		              		= f.label :twitter, I18n.t('users.current_user_fields.twitter')
+		             		= f.text_field :twitter, placeholder: 'http://www.twitter.com/'
+		            	.social_facebook
+		             		= f.label :facebook_link, I18n.t('users.current_user_fields.facebook_link')
+		             		= f.text_field :facebook_link, placeholder: 'http://www.facebook.com/'
+			hr
+			.profile_subheading.bio-section
+				p.bio-heading = "my bio:"
+				= raw('&nbsp;&nbsp;')
+				/ span.normaltext
+				/ 	= "140 words max"
+	            = f.input :bio, hint: I18n.t('users.current_user_fields.bio_limit'), as: :text, input_html: { rows: 5, cols: 20, maxlength: 140  }
+	            hr
+				p.bio-heading = "my details:"
+				.row-fluid
+					.span6
+			            = f.input :email, as: :string
+			            = f.input :full_name, required: true, as: :string
+					.span6
+			            = f.input :phone_number, required: false, as: :string
+			            = f.input :name, required: false, as: :string
+            hr
+			.profile_subheading
+				p.bio-heading  = "my address:"
+				.row-fluid
+					.span8
+			            / = f.input :address_number, as: :string
+			            = f.input :address_street, as: :string
+					.span4
+			            = f.input :address_state, as: :select, collection: State.array
+				.row-fluid
+					.span8
+						p= "Country"
+					.span4
+			            / = f.input :address_complement, required: false, as: :string
+			            = f.input :address_zip_code, as: :string, input_html: {autocomplete: 'off'}
+	        hr
+				/ #my_data
+				/   ul
+				/     li
+				/       .bootstrap-form
+				/         = semantic_form_for @user, html: {method: :put, id: 'user_form'}  do |f|
+				/           .profile
+				/             = f.input :id, as: :string, input_html: { disabled:  'disabled'}
+				/             = f.input :cpf, as: :string, input_html: {autocomplete: 'off'}, label: (t('activerecord.attributes.user.cpf') + link_to(t('activerecord.attributes.user.cpf_hint'), 'http://suporte.catarse.me/knowledgebase/articles/162312-o-catarse-emite-nota-fiscal', {title: t('activerecord.attributes.user.cpf_hint_title') })).html_safe
+				/             / = f.input :address_street, as: :string
+				/             / = f.input :address_number, as: :string
+				/             = f.input :address_complement, required: false, as: :string
+				/             = f.input :state_inscription, as: :string						
+				/             = f.input :address_neighbourhood, as: :string
+				/             = f.input :address_city, as: :string
+				/           .socialmidia
+				/             .div
+				/               = f.label :twitter, t('.twitter')
+				/               = f.text_field :twitter
+				/             .div
+				/               = f.label :facebook_link, t('.facebook_link')
+				/               = f.text_field :facebook_link
+				/             .div
+				/               = f.label :other_link, t('.other_link')
+				/               = f.text_field :other_link
+				/             = f.input :moip_login, label: (t('activerecord.attributes.user.moip_login') + '  ' +  link_to(t('activerecord.attributes.user.moip_login_hint'), "http://suporte.catarse.me/knowledgebase/articles/153570-como-criar-uma-conta-no-moip")).html_safe
+				/             = f.input :email, as: :string
+				/             = hidden_field_tag 'id', @user.id
+				/             = f.input :newsletter, as: :boolean, label: t('.newsletter')
+				/           .bootstrap-twitter
+				/             p= f.submit t('.update_social_info'), class: 'btn', id: "user_submit"
+				/ #change_password
+				/   h1= t('.change_password')
+				/   ul
+				/     li
+				/       .bootstrap-form
+				/         = form_for(@user, url: {action: "update_password"}, html: { method: :put, class: 'skip_feed_event', id: 'password_form' }) do |f|
+				/           span.hint= t('.current_password_hint').html_safe
+				/           br
+				/           .div
+				/             = f.label :current_password
+				/             = f.password_field :current_password, class:'empty'
+				/           .div
+				/             = f.label :password, t('passwords.edit.label_new_password')
+				/             = f.password_field :password, class:'empty'
+				/           .div
+				/             = f.label :password_confirmation
+				/             = f.password_field :password_confirmation, class:'empty'
+				/           .bootstrap-twitter
+				/             p= f.submit 'OK', class: 'btn', id: 'password_submit'
 
+				.heading
+					= "notifications"
+				.body
+					#my_data
+					  ul
+					    = I18n.t('users.unsubscribes.title')
+					    hr
+					  ul
+					    li
+					      .bootstrap-form
+					      = semantic_form_for(@user, url: user_unsubscribes_path(user_id: @user.id), html:{ method: :post}) do |f|
+					        = f.inputs do
+					          = f.semantic_fields_for :unsubscribes, @subscribed_to_updates do |u|
+					            - u.object.created_at.nil? ? (checked = { checked: 'checked' }) : (checked = nil)
+					            #subscribed_check
+					              = u.input :subscribed, as: :boolean, input_html: checked, label: I18n.t('users.unsubscribes.updates')
+					          - if @unsubscribes
+					            = f.semantic_fields_for :unsubscribes, @unsubscribes do |u|
+					              = u.inputs do
+					                - u.object.created_at.nil? ? (checked = { checked: 'checked' }) : (checked = nil)
+					                .subscribed_projects
+					                  = u.input :subscribed, as: :boolean, input_html: checked, label: Project.find(u.object.project_id).name
+					                = u.input :project_id, as: :hidden
+					                = u.input :user_id, as: :hidden
+					                = u.input :notification_type_id, as: :hidden
 
+					        p= f.submit t('users.current_user_fields.update_social_info'), class: 'btn', id: "unsubscribe_submit"
 
-
-
-
-
+				.heading
+					= "credits"
+				.body
+				  .current_credits.lowercase.align-left
+				    p= t('credits.index.current_credits_html', credits: @user.display_credits)
+					hr
+				  .table_title.lowercase.align-left
+				    p= I18n.t('credits.index.refunds_title')	
+				  .table_content.lowercase 
+				    table.table.table-striped
+				      thead
+				        th= t('credits.index.project')
+				        th= t('credits.index.back_date')
+				        th= t('credits.index.value')
+				        th= t('credits.index.refund_expration_date')
+				        th= t('credits.index.status')
+				      - @credits.each do |credit|
+				        tr[id="back_#{credit.id}"]
+				          td.project_name
+				            = link_to credit.project.name, credit.project, class: 'link_project'
+				          td.date= I18n.l(credit.created_at.to_date)
+				          td.value= credit.display_value
+				          td.term= I18n.l(credit.refund_deadline.to_date)
+				          td.status
+				            - if credit.requested_refund?
+				              = t('credits.index.requested_refund')
+				            - elsif credit.refunded?
+				              = t('credits.index.refunded')
+				            - else
+				              - if can? :request_refund, credit
+				                .bootstrap-twitter
+				                  div id="requestRefundModal#{credit.id}" class="hide modal"
+				                    .modal-header
+				                      h3= t('credits.modal.title')
+				                    .modal-body
+				                      p= t('credits.modal.text')
+				                      = link_to t('credits.modal.link'), 'http://suporte.catarse.me/knowledgebase/articles/164746-regras-e-funcionamento-dos-reembolsos-estornos', target: '_blank'
+				                    .modal-footer
+				                      button type='button' data-dismiss="modal" class="btn"
+				                        = t('credits.modal.reject_btn')
+				                      = link_to request_refund_user_backer_path(@user, credit), class: 'btn' do
+				                        = t('credits.modal.accept_btn')
+				                = link_to t('credits.index.request_refund'), "#requestRefundModal#{credit.id}", data: {toggle: 'modal'}, class: 'link_project'
+				  .bootstrap-alert.hide
+				    .alert.alert-info
+				      = t('credits.index.important_html')
