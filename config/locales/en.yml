@@ -144,7 +144,7 @@ en:
         state_inscription: 'State inscription'
         current_password: "Current password"
         email: Email
-        full_name: "Full name / Company Name"
+        full_name: "Full name or Company Name"
         bio: 'Mini Bio'
         name: Nickname
         password: Password

@@ -1,5 +1,5 @@
 #review_pay.container-fluid
-  .row-fluid.margin-40
+  .row-fluid
     .span12
       h3.text-center = "REVIEW & PAY"
       #page_content.row-fluid 
@@ -59,13 +59,13 @@
                         = form.input :phone_number, as: :string, input_html: {autocomplete: 'off'}, required: true
                   .submit
                     fieldset.accept_terms
-                      = check_box_tag 'accept'
+                      = check_box_tag 'accept', 1, true
                       = label_tag 'accept', t('accept_terms_html', link: link_to(t('terms'), '/terms-and-conditions', target: :_blank)), class: 'inline lowercase'
                     - if @backer.credits
                       = form.actions do
                         .bootstrap-twitter
                           = form.submit (@backer.credits ? t('.submit.credits') : t('.submit.moip')), disabled: true, class: 'btn', id: 'user_submit'
-                #payment.hide
+                #payment
                   hr         
                   .tab_container
                     nav#payment_menu
