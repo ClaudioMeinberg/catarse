@@ -33,7 +33,7 @@ class Projects::BackersController < ApplicationController
 
     @title = t('projects.backers.new.title', name: @project.name)
     @backer = @project.backers.new(user: current_user)
-    empty_reward = Reward.new(id: 0, minimum_value: 0, description: t('projects.backers.new.no_reward'))
+    empty_reward = Reward.new(id: 0, minimum_value: 0, title: t('projects.backers.new.no_reward'))
     @rewards = [empty_reward] + @project.rewards.order(:minimum_value)
     @reward = @project.rewards.find params[:reward_id] if params[:reward_id]
     @reward = nil if @reward and @reward.sold_out?
