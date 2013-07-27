@@ -1,6 +1,11 @@
 
 /* ========== homepage fixes from 2013.21.07 PDF ========= */
 
+.progress p {
+font-size: 15px;
+margin-top: -3px;
+}
+
 .navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
 	border:0;
 }
@@ -120,6 +125,9 @@ padding: 4px 20px 10px 20px;
 }
 
 .span4.black-box {
+	h3 {
+		margin-top: 20px;
+	}
 	h1,h2,h3 {
 		margin-bottom: 0;
 	}
@@ -129,11 +137,60 @@ padding: 4px 20px 10px 20px;
 	}
 }
 
+.btn {
+	padding-top:16px;
+	padding-bottom:10px;
+}
+
 #forgot-password .btn, #project_review .btn, #contact .btn, #checkout .btn {
 	padding: 14px 20px 8px 20px;
 	margin-top:10px;
 }
 
-#contact form {
-margin: 0 0 10px;
+#contact {
+	.span4.black-box {
+		padding: 4px 20px 23px 20px;
+	}
+	form {
+		margin: 0 0 10px;
+	}
+}
+
+#checkout {
+	img {
+		margin-top: 15px;
+	}
+	h4 {
+		margin: 15px 0;
+	}
+	h3 {
+		margin: 20px 0 10px 0;
+	}
+	h2 {
+		margin: 9px 0;
+	}
+	.subtitle {
+		padding-top: 20px;
+		font-family: genevaregular;
+		font-size: 12px;
+		line-height: 17px;
+	}
+	label {
+		margin-bottom: 15px;
+	}
+	.black-box {
+		border: 1px solid #6a6a6a;
+		background: #0d0d0d;
+	}
+	h4.ff-green {
+	margin: 15px 0 5px 0;
+	}
+}
+
+.span8.black-box {
+	padding: 15px 30px 20px 30px;
+}
+
+.black-box {
+	background: #0d0d0d;
 }
