@@ -17,10 +17,10 @@
 //= require ./lib/underscore-min.js
 //= require ./lib/backbone-min.js
 //= require_tree ./lib
+//= require ./masonry-base
 //= require ./app/catarse.js
 //= require ./app/views/model.js
 //= require ./app/views/paginated.js
 //= require ./app/collections/paginated.js
 //= require_tree ./app
 //= require ./init.js
-

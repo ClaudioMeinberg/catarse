@@ -8,7 +8,7 @@
 	border:1px solid #6a6a6a;
 	margin-top:50px;
 	margin-bottom:50px;
-	background:#292929;
+	background: $ff-dark-grey;
 }
 
 .new_session {
@@ -61,6 +61,7 @@
 		font-weight:normal;
 		font-size:30px;
 		line-height:36px;
+		margin-bottom: 0px;
 	}
 	h3 {
 		font-family:'genevaregular';

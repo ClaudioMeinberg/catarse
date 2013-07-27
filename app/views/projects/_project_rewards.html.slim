@@ -1,90 +1,89 @@
 .container-fluid.reward-container
-  - @rewards.each_slice(3) do |slice|
-    .row-fluid
-      - slice.each do |reward|
-        .span4
-          .campaign-reward
-            div[id="reward_#{reward.id}" data-update_url="#{sort_project_reward_path(@project, reward)}" class="box #{(can?(:update, reward) ? 'clickable_owner sortable' : '')} #{(@project.online? && !reward.sold_out? && !can?(:update, reward)  ? 'clickable'  : '' )}"]
-              / TODO: Add actual reward image link here
-              - if reward.image.blank?
-                = image_tag("#{reward.project.video_thumbnail}")
+  .row-fluid
+    #masonry-container
+      - @rewards.each do |reward|
+        .campaign-reward.masonry-box
+          div[id="reward_#{reward.id}" data-update_url="#{sort_project_reward_path(@project, reward)}" class="box #{(can?(:update, reward) ? 'clickable_owner sortable' : '')} #{(@project.online? && !reward.sold_out? && !can?(:update, reward)  ? 'clickable'  : '' )}"]
+            / TODO: Add actual reward image link here
+            - if reward.image.blank?
+              = image_tag("#{reward.project.video_thumbnail}")
+            - else
+              = image_tag("#{reward.image}")
+            .campaign-reward-bar
+              .campaign-reward-bar-price.nav_border_right
+                = reward.display_minimum
+              .campaign-reward-bar-middle.nav_border_left
+              .campaign-reward-bar-buynow.double_border_left
+                p
+                  = "buy"
+                  br
+                  = "now"
+            .campaign-reward-text
+              - if can?(:update, @project)
+                .hide id="reward#{reward.id}Editor"
+                  .bootstrap-form
+                    = semantic_form_for [@project, reward] do |f|
+                      - if can? :update, reward, :minimum_value
+                        = f.input :minimum_value
+                      - if can? :update, reward, :description
+                        = f.input :description
+                      - if can? :update, reward, :maximum_backers
+                        = f.input :maximum_backers
+                      - if can? :update, reward, :image
+                        = f.input :image
+                      - if can? :update, reward, :title
+                        = f.input :title
+
+                      .bootstrap-twitter
+                        = f.submit class: 'btn'
+
+                      .clearfix.bootstrap-twitter
+                        = link_to [@project, reward], class: 'btn btn-danger', method: :delete, confirm: 'Are you sure?' do
+                          i.icon-trash.icon-white
+                - if can?(:update, reward)
+                  .bootstrap-twitter
+                    = link_to "#reward#{reward.id}Editor", class: 'edit_reward btn btn-mini pull-right btn-primary' do
+                      i.icon-pencil.icon-white
+
+
+              = hidden_field_tag 'url', "#{new_project_backer_path(@project)}/?reward_id=#{reward.id}"
+              - if reward.sold_out?
+                span.icon.sold_out
               - else
-                = image_tag("#{reward.image}")
-              .campaign-reward-bar
-                .campaign-reward-bar-price.nav_border_right
-                  = reward.display_minimum
-                .campaign-reward-bar-middle.nav_border_left
-                .campaign-reward-bar-buynow.double_border_left
-                  p
-                    = "buy"
-                    br
-                    = "now"
-              .campaign-reward-text
-                - if can?(:update, @project)
-                  .hide id="reward#{reward.id}Editor"
-                    .bootstrap-form
-                      = semantic_form_for [@project, reward] do |f|
-                        - if can? :update, reward, :minimum_value
-                          = f.input :minimum_value
-                        - if can? :update, reward, :description
-                          = f.input :description
-                        - if can? :update, reward, :maximum_backers
-                          = f.input :maximum_backers
-                        - if can? :update, reward, :image
-                          = f.input :image
-                        - if can? :update, reward, :title
-                          = f.input :title
-
-                        .bootstrap-twitter
-                          = f.submit class: 'btn'
-
-                        .clearfix.bootstrap-twitter
-                          = link_to [@project, reward], class: 'btn btn-danger', method: :delete, confirm: 'Are you sure?' do
-                            i.icon-trash.icon-white
-                  - if can?(:update, reward)
-                    .bootstrap-twitter
-                      = link_to "#reward#{reward.id}Editor", class: 'edit_reward btn btn-mini pull-right btn-primary' do
-                        i.icon-pencil.icon-white
-
-
-                = hidden_field_tag 'url', "#{new_project_backer_path(@project)}/?reward_id=#{reward.id}"
-                - if reward.sold_out?
-                  span.icon.sold_out
-                - else
-                  span.icon.avaliable
-                / h2= t('projects.rewards.reward_title', minimum: reward.display_minimum).html_safe
-                p.reward-title
-                  / TODO: title of reward
-                  = reward.title if reward.title
-                .reward-description
-                  / TODO: reward description
-                  = reward.display_description.html_safe
-                em
-                  = pluralize(reward.backers.confirmed.count, t('backer_singular'), t('backer_plural'))
+                span.icon.avaliable
+              / h2= t('projects.rewards.reward_title', minimum: reward.display_minimum).html_safe
+              p.reward-title
+                / TODO: title of reward
+                = reward.title if reward.title
+              .reward-description
+                / TODO: reward description
+                = reward.display_description.html_safe
+              em
+                = pluralize(reward.backers.confirmed.count, t('backer_singular'), t('backer_plural'))
+              .clearfix
+              / p
+              /   = reward.display_description
+              - if reward.maximum_backers
+                .maximum_backers.clearfix
+                  - if reward.sold_out?
+                    .sold_out= t('reward.sold_out')
+                  - else
+                    .limited= t('reward.limited')
+                    .remaining
+                      = reward.display_remaining
+                - in_time_to_confirm = reward.backers.in_time_to_confirm.count
+                - if in_time_to_confirm > 0
+                  .maximum_backers.in_time_to_confirm.clearfix
+                    .pending= t('projects.rewards.backs_to_confirm', count: in_time_to_confirm)
                 .clearfix
-                / p
-                /   = reward.display_description
-                - if reward.maximum_backers
-                  .maximum_backers.clearfix
-                    - if reward.sold_out?
-                      .sold_out= t('reward.sold_out')
-                    - else
-                      .limited= t('reward.limited')
-                      .remaining
-                        = reward.display_remaining
-                  - in_time_to_confirm = reward.backers.in_time_to_confirm.count
-                  - if in_time_to_confirm > 0
-                    .maximum_backers.in_time_to_confirm.clearfix
-                      .pending= t('projects.rewards.backs_to_confirm', count: in_time_to_confirm)
-                  .clearfix
-                - if current_user && current_user.admin
-                  div class="reward_updated_at"
-                    p= "Modificado em: #{I18n.l(reward.updated_at.to_date)} #{@project.online_date.nil? ? '' : ((@project.online_date > reward.updated_at)? '(draft)' : '(online)')}"
-                  - if reward.has_modification?
-                    div class="description_version rewardVersioning#{reward.id}"
-                      p= reward.last_description
-                    .maximum_backers.in_time_to_confirm.clearfix
-                      .updated_reward
-                        span id="rewardVersioning#{reward.id}"
-                          = 'Veja a versão anterior.'
+              - if current_user && current_user.admin
+                div class="reward_updated_at"
+                  p= "Modificado em: #{I18n.l(reward.updated_at.to_date)} #{@project.online_date.nil? ? '' : ((@project.online_date > reward.updated_at)? '(draft)' : '(online)')}"
+                - if reward.has_modification?
+                  div class="description_version rewardVersioning#{reward.id}"
+                    p= reward.last_description
+                  .maximum_backers.in_time_to_confirm.clearfix
+                    .updated_reward
+                      span id="rewardVersioning#{reward.id}"
+                        = 'Veja a versão anterior.'
 .clearfix
