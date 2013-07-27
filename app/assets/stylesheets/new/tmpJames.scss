@@ -64,3 +64,14 @@ background: -ms-linear-gradient(top, #fe8100 0%,#fdb200 100%); /* IE10+ */
 background: linear-gradient(to bottom, #fe8100 0%,#fdb200 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe8100', endColorstr='#fdb200',GradientType=0 ); /* IE6-9 */
 }
+
+
+.span12.stats span.small-text {
+	font-size:13px;
+	line-height:0;
+	padding-right:5px;
+}
+
+
+/* ========== homepage fixes from 2013.21.07 PDF ========= */
+

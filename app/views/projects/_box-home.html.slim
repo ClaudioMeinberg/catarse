@@ -33,17 +33,25 @@
         ul.nav
           li.stats1.nav_border_right
             /"Athletes name"
-            div = project.user.name
+            div
+              span.small-text = 'By' 
+              = project.user.name
           li.stats2.nav_border_right.nav_border_left
             /div = "Country"
             - unless project.user.address_city.blank?
-              div = project.user.address_city
+              div 
+                span.small-text = 'City'
+                = project.user.address_city
           li.stats3.nav_border_right.nav_border_left
             /div = "Amount raised"
-            div = "#{project.display_pledged}"
+            div 
+              span.small-text = 'Raised'
+              = "#{project.display_pledged}"
           li.stats4.double_border_right.nav_border_left
             /div = "Backers"
-            div = pluralize(project.backers.confirmed.count, t('backer_singular'), t('backer_plural'))
+            div 
+              span.small-text = 'Backers'
+              = project.backers.confirmed.count
 
         ul.nav.pull-right
           li.stats5.double_border_left
