@@ -263,13 +263,13 @@
 	p.inline-hints {
 		text-transform:normal;
 	}
-	input#user_email, input#user_address_street, input#user_address_number, input#user_state_inscription, input#user_address_zip_code, input#user_address_city {
+	input#user_email, input#user_address_street, input#user_address_number, input#user_state_inscription, input#user_address_city {
 		border-radius:0;
 		-moz-border-radius:0;
 		-webkit-border-radius:0;
 		width:98%;
 	}
-	input#user_email, input#user_full_name, input#user_phone_number, input#user_name {
+	input#user_email, input#user_full_name, input#user_phone_number, input#user_name, input#user_address_zip_code {
 		border-radius:0;
 		-moz-border-radius:0;
 		-webkit-border-radius:0;
@@ -314,6 +314,7 @@
 	#profile-show {
 		.profile-campaigntext {
 			padding:265px 0 20px 0;
+			background-color: rgba(0, 0, 0, 0);
 		}
 	}
 }
