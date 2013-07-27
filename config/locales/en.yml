@@ -17,7 +17,7 @@ en:
     user_name: 'Backer name'
     payer_email: 'Payment gateway user e-mail'
     payment_method: 'Payment method'
-    address_street: 'Street'
+    address_street: 'Street address'
     address_complement: 'Complement'
     address_number: 'Number'
     address_neighbourhood: 'Neighbourhood'
@@ -803,7 +803,7 @@ en:
       updates: "I want to receive project updates"
     current_user_fields:
       my_facebook: 'connect with Facebook'
-      bio_limit: 'only 140 characters'
+      bio_limit: '140 characters max'
       updated: "Your information has been updated"
       update_social_info: "Update info"
       social_info: "Contact info"

@@ -254,13 +254,31 @@
 			display:none;
 		}
 		textarea#user_bio {
-			width:100%;
+			width:98%;
 			border-radius:0;
 			-webkit-border-radius:0;
 			-moz-border-radius:0;
 		}
 	}
+	p.inline-hints {
+		text-transform:normal;
+	}
+	input#user_email, input#user_phone_number, input#user_full_name, input#user_name, input#user_address_street, input#user_address_number, input#user_state_inscription, input#user_address_zip_code {
+		border-radius:0;
+		-moz-border-radius:0;
+		-webkit-border-radius:0;
+		width:98%%;
+	}
 
+	.bio-section, #user_address_street_input, #user_address_number_input, #user_state_inscription_input, #user_address_zip_code_input {
+		label {
+			background:none;
+			padding-left: 0;
+		}
+	}
+	#mydata ul{
+		text-align:left;
+	}
 
 }
 
