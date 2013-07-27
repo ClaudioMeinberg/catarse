@@ -30,7 +30,6 @@
 
 .progress .bar {
 	margin-right: 3px; /* outside bar text spacing */
-
 	background: rgb(102,255,0); /* Old browsers */
 	background: -moz-linear-gradient(top,  rgba(102,255,0,1) 0%, rgba(153,255,0,1) 40%, rgba(153,255,0,1) 60%, rgba(102,255,0,1) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(102,255,0,1)), color-stop(40%,rgba(153,255,0,1)), color-stop(60%,rgba(153,255,0,1)), color-stop(100%,rgba(102,255,0,1))); /* Chrome,Safari4+ */
