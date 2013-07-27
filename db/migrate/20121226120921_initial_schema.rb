@@ -208,7 +208,7 @@ CREATE TABLE projects (
     state character varying(255),
     online_days integer DEFAULT 0,
     CONSTRAINT projects_about_not_blank CHECK ((length(btrim(about)) > 0)),
-    CONSTRAINT projects_headline_length_within CHECK (((length(headline) >= 1) AND (length(headline) <= 140))),
+    CONSTRAINT projects_headline_length_within CHECK ((length(headline) >= 1)),
     CONSTRAINT projects_headline_not_blank CHECK ((length(btrim(headline)) > 0)),
     CONSTRAINT projects_video_url_not_blank CHECK ((length(btrim(video_url)) > 0))
 );
