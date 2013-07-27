@@ -47,7 +47,7 @@
                 .alert
                   .important= t('.headline_important')
               = form.label :headline, t('formtastic.labels.project.headline')
-              = form.text_field :headline, { maxlength: 140, class: "#{'error' if @project.errors[:headline].present?}" }
+              = form.text_area :headline, { class: "#{'error' if @project.errors[:headline].present?}" }
               p.inline-hints= t('formtastic.hints.project.headline')
 
             .input
