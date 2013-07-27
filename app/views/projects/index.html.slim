@@ -57,7 +57,7 @@
             = form_tag Configuration['mailchimp_url'], id: 'mailee-form', class: 'navbar-form', method: 'post' do
               = text_field_tag 'EMAIL', nil, placeholder: 'email@email.com', label: 'email', id: 'newsletter-signup'
               br
-              = submit_tag t('sidebar.buttons.newsletter'), class: 'btn btn-newsletter'
+              = submit_tag t('sidebar.buttons.newsletter'), class: 'btn btn-newsletter pull-right'
 
 /        .explore_link
 /          hr
