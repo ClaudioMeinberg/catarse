@@ -8,7 +8,8 @@
           .flag
           .time.ff-green= l(update.created_at, format: :updates)
           .clearfix
-          h3= link_to "#updates/#{update.id}", id: "updates/#{update.id}" do
+          =link_to("", {}, :id => "updates/#{update.id}", :class => "anchorHack")
+          h3= link_to "#updates/#{update.id}" do
             = update.title
           .comment.lowercase.ff-grey-text= raw(update.comment_html)
           .midia.row-fluid

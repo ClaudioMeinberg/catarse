@@ -223,6 +223,13 @@ h1.campaigntitle {
 	padding: 25px;
 	background-color: #151515;
 	text-align: left;
+
+	.anchorHack {
+		display: block;
+		position: relative;
+		top: -80px;
+		visibility: hidden;
+	}
 }
 
 #project_content .content {
