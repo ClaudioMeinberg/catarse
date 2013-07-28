@@ -23,6 +23,11 @@
 	text-align:left;
 }
 
+.btn-signup {
+	margin-bottom:20px;
+	text-shadow:none;
+}
+
 .login_with_social {
 	margin-right:20px;
 }
@@ -55,6 +60,10 @@
 	margin:0px;
 }
 
+p.input {
+	margin-bottom:14px;
+}
+
 .form_login {
 	h1 {
 		font-family:'TradeGothicLTPro-Cn20';
@@ -82,6 +91,7 @@
 		display:inline;
 		margin-bottom:0;
 		margin-left:5px;
+		text-transform:none;
 	}
 	.btn {
 		-moz-border-radius:0px;
@@ -101,6 +111,17 @@
 		text-shadow: 0 -1px 0 black;
 		font-size: 20px;
 		padding: 8px 30px;
+	}
+	.terms {
+		text-transform:none;
+		font-family:'genevaregular';
+		font-size:13px;
+		line-height:15px;
+		a {
+			color:$ffgreen;
+			font-family:'genevaregular';
+			text-transform:none;
+		}
 	}
 }
 

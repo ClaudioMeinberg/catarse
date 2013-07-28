@@ -819,7 +819,7 @@ en:
       submit_text: "upload photo"
       submit: "Submit"
       my_data: "My profile"
-      newsletter: "I want to receive news from fanfuel via email"
+      newsletter: "I want to receive news from fanfuel"
       password_hint: "<i>Leave blank if you don't want to change it.</i>"
     header:
       bio_tooltip: "Click here to write about yourself..."

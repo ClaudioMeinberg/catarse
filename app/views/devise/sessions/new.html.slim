@@ -50,8 +50,13 @@
                   = f.check_box :newsletter
                   = f.label :newsletter, t('users.current_user_fields.newsletter'), :class => 'check-label'
                 p.action
-                  .bootstrap-twitter
+                  .bootstrap-twitter.btn-signup
                     = f.submit t('registrations.new.submit'), class: 'btn', id: 'user_submit'
+                p.terms
+                  ="By signing up to this website you are agreeing to our " 
+                  = link_to 'Terms & Conditions', terms_conditions_path, target: '_blank'
+                  = " and "
+                  = link_to 'Privacy Policy', privacy_policy_path, target: '_blank'
         .span4
           .form_login.login_with_social
             .content_form
