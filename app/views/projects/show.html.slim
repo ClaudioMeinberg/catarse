@@ -21,7 +21,7 @@
   meta property="fb:admins" content="#{fb_admins}"
 
 
-.content
+#campaign-page.content
   .campaignheader
     .container-fluid
       .row-fluid
@@ -66,7 +66,7 @@
                     em #{@project.online_days} #{pluralize_without_number(@project.online_days, I18n.t('datetime.prompts.day').downcase)} #{pluralize_without_number(@project.online_days, t('remaining_singular'), t('remaining_plural'))}
                   - else
                     #{@project.remaining_days} #{@project.time_to_go[:unit].capitalize} #{pluralize_without_number(@project.time_to_go[:time], t('remaining_singular'), t('remaining_plural'))}
-              .item
+              .item.share
                 .stat
                   = "Share "
                   .fb-like data-href="#{url_for(:only_path => false, :overwrite_params=>nil)}" data-layout="button_count" data-send="false" data-show-faces="false" data-width="450"
@@ -234,6 +234,24 @@
             / #rewards= render 'project_rewards'
 
         .clearfix
+      p.align-left
+        .font-tb20.align-left = " Selling terms:"
+        .lowercase.align-left= "All items offered as rewards should be carefully reviewed by the buyer to insure that the item being purchased is in good condition. If the item being purchased is not new please get in touch with me through the ‘Talk to me’ section to understand what are the conditions of that product."
+        .lowercase.align-left= "All sales are conditional to my campaign achieving its final target"
+        .lowercase.align-left= "Once the campaign reaches its target all sales are considered final"
+        br
+        .font-tb20.align-left= "Shipping time:"
+        .lowercase.align-left= "All items offered as rewards will usually be shipped within 15 days of the campaign ending and is dependent on the Campaign reaching the target"
+        br
+        .font-tb20.align-left= "Returns:"
+        .lowercase.align-left= "I do not accept returns due to change of mind. Faulty or damaged in transit items will be replaced if possible."
+        br
+        .font-tb20.align-left= "Refunds:"
+        .lowercase.align-left= "A refund may be provided under exceptional circumstances. Please contact me and let me know why do you require a refund."
+        br
+        .font-tb20.align-left= "Payment:"
+        .lowercase.align-left= "I only accept PayPal and through it, all major credit cards. Fanfuel at the moment only allows this form of payment for safety and security reasons. "
+
 = render 'show_embed'
 
 
