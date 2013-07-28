@@ -78,7 +78,7 @@
     .margin-what
 
 #faq.wrapper.faq-section
-  .container.lowercase-menu
+  .container.lowercase-menu.black-box
     .row
       .span12
         h2.ff-green = "NUTS & BOLTS"
@@ -126,7 +126,7 @@
         h4 = "What are the platform fees?"
         p = "It is free to sign up to fanfuel and it is also free to launch your campaign. Fanfuel only charges a 5% fee on top of successful campaigns so if you don’t reach your target, we will not charge you anything for that. Credit card fees and international money transfers fees are also charged but can vary from campaign to campaign depending on which country the project is being launched from. Please get in touch with us if you need more information on that. Our aim is to help athletes become professionals of their sport so we only win when you win."
 
-        h4.ff-blue = "Still not sure about this? Get in touch with us."
+        h4.ff-blue = link_to "Still not sure about this? Get in touch with us.", "/contact" 
 
         h2.ff-green = "GETTING FUELLED"
 
@@ -162,7 +162,7 @@
         h4 = "Where can I find the fanfuel logo and animation to edit into my video and use in my campaign?"
         p = "Go to the top of the page and click on the ‘get fueled’ button. A tab will open and you will see the fanfuel assets button. Click on it to be directed to our download page, you will find everything you need in there."
 
-        h4.ff-blue = "Still not sure about this? Get in touch with us."
+        h4.ff-blue = link_to "Still not sure about this? Get in touch with us.", "/contact" 
 
         
         h2.ff-green = "ACCOUNTABILITY"
@@ -189,7 +189,7 @@
         p = "Our aim is for athletes to continuously create campaigns on our platform so we’ve created a system to weed out the dishonest people. Once an athlete receives the cash from a successful campaign to compete in an event or series, he or she will have to validate that campaign in order to create a new one. Validating a campaign means he or she will have to supply us with proof that they in fact participated in the event they were asking funds for before starting a new campaign. "
         p = "This is also a great way for them to keep their backers informed of their results and make it easier to raise funds from them the second time around. People want to feel part of athlete’s careers when they support them on fanfuel so the more transparent the athletes are the more loyal their backers will be."
 
-        h4.ff-blue = "Still not sure about this? Get in touch with us."
+        h4.ff-blue = link_to "Still not sure about this? Get in touch with us.", "/contact" 
 
 
         h2.ff-green = "LEGAL REQUIREMENTS"
@@ -210,8 +210,8 @@
         h4 = "Do I have to accept the Terms & Condition of use and Privacy Policy to create a campaign?"
         p = "Yes."
 
-        h4.ff-blue = "Still not sure about this? Get in touch with us."
+        h4.ff-blue = link_to "Still not sure about this? Get in touch with us.", "/contact" 
 
-        h3.text-center
-            = image_tag("arrow_up.png")
-            = link_to("BACK TO TOP", "#top", class: "back-to-top-button")
+  h3.text-center
+      = image_tag("arrow_up.png")
+      = link_to("BACK TO TOP", "#top", class: "back-to-top-button")
