@@ -40,6 +40,42 @@ ul.nav {
   margin-bottom:0;
 }
 
+/* Fanfuel generic buttons */
+.btn-fforange {
+  font-family:'TradeGothicLTPro-Cn20';
+  // line-height:1em;
+  border:0;
+  margin:0;
+  background: rgb(255,102,0); /* Old browsers */
+  background: -moz-linear-gradient(top, $fforange 0%, $ffdarkorange 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffgreen), color-stop(100%,$ffdarkorange)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* IE10+ */
+  background: linear-gradient(to bottom, $fforange 0%, $ffdarkorange 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$fforange, endColorstr=$ffdarkorange,GradientType=0 ); /* IE6-9 */
+  background-color:#ff9900;
+  color:white;
+  text-transform:uppercase;
+  text-shadow: none;
+  border-radius:0;
+  -moz-border-radius:0;
+  -webkit-border-radius:0;
+}
+.btn-fforange:hover {
+  background: rgb(255,102,0); /* Old browsers */
+  background: -moz-linear-gradient(top, $fforange 0%, $ffdarkorange 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffgreen), color-stop(100%,$ffdarkorange)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* IE10+ */
+  background: linear-gradient(to bottom, $fforange 0%, $ffdarkorange 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$fforange, endColorstr=$ffdarkorange,GradientType=0 ); /* IE6-9 */
+  background-color:#ff9900;
+
+}
+
+
 /* sticky footer */
 html,
   body {
