@@ -155,7 +155,7 @@
 				/ 	= "140 words max"
 	            = f.input :bio, hint: I18n.t('users.current_user_fields.bio_limit'), as: :text, input_html: { rows: 5, cols: 20, maxlength: 140  }
 	            hr
-				p.bio-heading = "my details:"
+				p.bio-heading2 = "my details:"
 				.row-fluid
 					.span6
 			            = f.input :email, as: :string
@@ -165,7 +165,7 @@
 			            = f.input :name, required: false, as: :string
             hr
 			.profile_subheading
-				p.bio-heading  = "my address:"
+				p.bio-heading2  = "my address:"
 				.row-fluid
 					.span12
 			            = f.input :address_street, as: :string

@@ -18,6 +18,13 @@
 		text-align:left;
 		padding-bottom:10px;
 		font-size:16px;
+		font-family:'TradeGothicLTPro-Cn20';
+	}
+	p.bio-heading {
+		margin-bottom:0;
+	}
+	p.bio-heading2 {
+		margin-bottom:16px;
 	}
 	.facebook, .twitter {
 		text-align:left;
@@ -74,10 +81,12 @@
 		line-height:42px;
 		text-align:left;
 		padding-left:20px;
+		font-family:'TradeGothicLTPro-Cn20';
 	}
 	.body {
 		padding:26px;
 		background-color:#1E1E1E;
+		font-family:'genevaregular';
 	}
 	.project_desc_box {
 		background: rgb(45,45,45); /* Old browsers */
@@ -130,12 +139,17 @@
 		background:none;
 		margin-left:0;
 	}
+	#my_data, #my_data label {
+		font-family:'genevaregular';
+		text-transform:none;
+	}
 	.label {
-		font-family:'TradeGothicLTPro-Cn18';
-		font-weight:bold;
+		// display:none;
+		font-family:'genevaregular';
+		font-weight:normal;
 		color:#999;
 		background:none;
-		text-transform:uppercase;
+		text-transform:none;
 		font-size:14px;
 		text-shadow: none;
 		font-weight: normal;
@@ -150,13 +164,17 @@
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#2d2d2d', endColorstr='#000000',GradientType=0 );		
 		padding: 10px;
 	}
+	#user_uploaded_image_input .label {
+		display:none;
+	}
 	#image_upload_btn {
 		font-family:'TradeGothicLTPro-Cn18';
 		font-weight:bold;
 		color:#999;
 		background:none;
 		text-transform:uppercase;
-		font-size:14px;
+		font-size: 18px;
+		line-height: 18px;
 		text-shadow: none;
 		font-weight: normal;
 		background: #f60;
@@ -188,8 +206,12 @@
 	    padding:0;
 	    left:0;
 	}
-	#user_uploaded_image {
+	input#user_uploaded_image {
 		font-size:16px;
+		line-height:16px;
+		font-family: 'genevaregular';
+		-webkit-font-smoothing: antialiased;
+		font-smoothing:antialiased;
 	}
 	#gravatar_hint {
 		display:none;
@@ -215,6 +237,7 @@
 		text-transform:none;
 		font-family:'genevaregular';
 		text-align:left;
+		margin-bottom:10px;
 	}
 	hr {
 		border-top: 1px solid #5A5A5A;
@@ -229,6 +252,8 @@
 	.socialmidia label {
 		text-align:left;
 		width:100%;
+		font-family:'genevaregular';
+		text-transform:none;
 	}
 	input#user_twitter, input#user_facebook_link {
 		width:50%;
@@ -240,7 +265,7 @@
 	.current_credits, 
 	.table_title, {
 		p {
-			font-size: 18px;
+			font-size: 16px;
 		}
 	}
 	.normaltext {
@@ -261,7 +286,9 @@
 		}
 	}
 	p.inline-hints {
-		text-transform:normal;
+		text-transform:none;
+		font-family:'genevaregular';
+
 	}
 	input#user_email, input#user_address_street, input#user_address_number, input#user_state_inscription, input#user_address_city {
 		border-radius:0;
@@ -283,8 +310,10 @@
 			padding-left: 0;
 		}
 	}
-	#mydata ul{
+	ul, ol{
 		text-align:left;
+		margin-left:0;
+		padding-left:0;
 	}
 	#password_submit, #unsubscribe_submit {
 		background: #f60;
@@ -302,9 +331,22 @@
 		-moz-border-radius:0;
 		-webkit-border-radius:0;
 		border:none;
+		font-family:'TradeGothicLTPro-Cn20';
+		text-transform: uppercase;
+		font-size: 18px;
+		-webkit-font-smoothing: antialiased;
+		padding:10px 20px;
 	}
 	.left {
 		text-align:left;
+	}
+	input[type='checkbox'] { 
+		margin-right:10px;
+	}
+	fieldset.inputs {
+		ol {
+			margin-bottom:14px;
+		}
 	}
 
 }
