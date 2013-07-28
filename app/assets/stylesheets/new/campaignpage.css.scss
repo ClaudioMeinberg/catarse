@@ -364,3 +364,35 @@ p.reward-title {
 .clickable {
 	cursor: pointer;
 }
+
+.masonry-backers-box {
+	display:inline-block;
+}
+
+
+.backer_profile_image {
+	float:left;
+}
+
+.back_info {
+	float:right;
+	padding-left:20px;
+	.text {
+		a {
+			color:$ffgreen;
+			font-family: 'TradeGothicLTPro-Cn20';
+		}
+	}
+	.confirmed {
+		font-family: 'TradeGothicLTPro-Cn20';
+
+	}
+	.backed {
+		font-family: 'genevaregular';
+		text-transform: none;
+		font-size: 12px;
+	}
+
+}
+
+

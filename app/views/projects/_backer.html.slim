@@ -2,28 +2,29 @@ script type="text/template" id="empty_backers_template"
   p= t('projects.project_backers.empty')
 
 script type="text/template" id="backers_template"
-  ul.collection_list
+  div#masonry-backers-container
 
 script type="text/template" id="backer_template"
   .backer
     | <% if(anonymous) { %>
     img src="/assets/user.png" class="backer_avatar"
     .back_info
-      p#text
+      p.text
         em.anon=" #{t('.anonymous_backer')}"
-      p#confirmed
+      p.confirmed
         | <%= confirmed_at %>
       p#backed= t('.anonymous_description')
     | <% } else { %>
-    a href="<%= user['url'] %>"
-      img src="<%= user['image'] %>" class="backer_avatar"
+    .backer_profile_image
+      a href="<%= user['url'] %>"
+        img src="<%= user['image'] %>" class="backer_avatar" style="width:70px; height:70px;"
     .back_info
-      p#text
+      p.text
         a href="<%= user['url'] %>"
          | <%= user['short_name'] %>
-      p#confirmed
+      p.confirmed
         | <%= confirmed_at %>
-      p#backed
+      p.backed
         | <%= user['backs_text'] %>
     | <% } %>
     - if current_user and (current_user == @project.user or current_user.admin)
@@ -43,6 +44,6 @@ script type="text/template" id="backer_template"
         = t('not_informed')
         |.
         | <% } %>
-        
+
     .clear
 

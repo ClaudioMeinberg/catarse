@@ -120,7 +120,8 @@ class Backer < ActiveRecord::Base
   end
 
   def display_confirmed_at
-    I18n.l(confirmed_at.to_date) if confirmed_at
+    #I18n.l(confirmed_at.to_date) if confirmed_at
+    confirmed_at.strftime("%d/%m/%Y") if confirmed_at
   end
 
   def as_json(options={})
