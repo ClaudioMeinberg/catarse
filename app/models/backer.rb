@@ -206,6 +206,6 @@ class Backer < ActiveRecord::Base
   end
 
   def define_payment_method
-    self.update_attributes({ payment_method: 'MoIP' })
+    self.update_attributes({ payment_method: 'PayPal' })
   end
 end
