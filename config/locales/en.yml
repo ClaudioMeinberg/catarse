@@ -767,9 +767,9 @@ en:
   terms: "terms of use"
   user:
     backs_text:
-      many: "Backed this and other %{total} projects"
+      many: "Backed this and %{total} other projects"
       one: "Backed only this project until now"
-      two: "Backed this and 1 other project"
+      two: "Backed 2 projects"
     no_name: Unnamed
     google_account: "Google Account"
   users:
