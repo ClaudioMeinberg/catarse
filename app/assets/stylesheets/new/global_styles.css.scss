@@ -51,34 +51,103 @@ ul.nav {
   // line-height:1em;
   border:0;
   margin:0;
-  background: rgb(255,102,0); /* Old browsers */
+  background: $fforange; /* Old browsers */
   background: -moz-linear-gradient(top, $fforange 0%, $ffdarkorange 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffgreen), color-stop(100%,$ffdarkorange)); /* Chrome,Safari4+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$fforange), color-stop(100%,$ffdarkorange)); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Opera 11.10+ */
   background: -ms-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* IE10+ */
   background: linear-gradient(to bottom, $fforange 0%, $ffdarkorange 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$fforange, endColorstr=$ffdarkorange,GradientType=0 ); /* IE6-9 */
-  background-color:#ff9900;
+  background-color:$fforange;
   color:white;
   text-transform:uppercase;
   text-shadow: none;
   border-radius:0;
   -moz-border-radius:0;
   -webkit-border-radius:0;
+  -moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
+  box-shadow:inset 0px 0px 0px 0px #ffffff;
+
+
 }
 .btn-fforange:hover {
-  background: rgb(255,102,0); /* Old browsers */
+  background: $fforange; /* Old browsers */
   background: -moz-linear-gradient(top, $fforange 0%, $ffdarkorange 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffgreen), color-stop(100%,$ffdarkorange)); /* Chrome,Safari4+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$fforange), color-stop(100%,$ffdarkorange)); /* Chrome,Safari4+ */
   background: -webkit-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Chrome10+,Safari5.1+ */
   background: -o-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Opera 11.10+ */
   background: -ms-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* IE10+ */
   background: linear-gradient(to bottom, $fforange 0%, $ffdarkorange 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$fforange, endColorstr=$ffdarkorange,GradientType=0 ); /* IE6-9 */
-  background-color:#ff9900;
+  background-color:$fforange;
+}
+.btn-fforange:active {
+  background: $ffmidorange; /* Old browsers */
+  background: -moz-linear-gradient(top, $ffmidorange 0%, $ffdarkorange 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffmidorange), color-stop(100%,$ffdarkorange)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $ffmidorange 0%,$ffdarkorange 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $ffmidorange 0%,$ffdarkorange 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $ffmidorange 0%,$ffdarkorange 100%); /* IE10+ */
+  background: linear-gradient(to bottom, $ffmidorange 0%, $ffdarkorange 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$ffmidorange, endColorstr=$ffdarkorange,GradientType=0 ); /* IE6-9 */
+  background-color:$ffmidorange;
+}
+
+.btn-ffgreen {
+  font-family:'TradeGothicLTPro-Cn20';
+  // line-height:1em;
+  border:0;
+  margin:0;
+  background: $ffgreen; /* Old browsers */
+  background: -moz-linear-gradient(top, $ffgreen 0%, $ffdarkgreen 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffgreen), color-stop(100%,$ffdarkgreen)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $ffgreen 0%,$ffdarkgreen 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $ffgreen 0%,$ffdarkgreen 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $ffgreen 0%,$ffdarkgreen 100%); /* IE10+ */
+  background: linear-gradient(to bottom, $ffgreen 0%, $ffdarkgreen 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$ffgreen, endColorstr=$ffdarkgreen,GradientType=0 ); /* IE6-9 */
+  background-color:$ffgreen;
+  color:#333;
+  text-transform:uppercase;
+  text-shadow: none;
+  border-radius:0;
+  -moz-border-radius:0;
+  -webkit-border-radius:0;
+  -moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
+  -webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
+  box-shadow:inset 0px 0px 0px 0px #ffffff;
+
 
 }
+.btn-ffgreen:hover {
+  background: $ffgreen; /* Old browsers */
+  background: -moz-linear-gradient(top, $ffgreen 0%, $ffdarkgreen 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffgreen), color-stop(100%,$ffdarkgreen)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $ffgreen 0%,$ffdarkgreen 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $ffgreen 0%,$ffdarkgreen 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $ffgreen 0%,$ffdarkgreen 100%); /* IE10+ */
+  background: linear-gradient(to bottom, $ffgreen 0%, $ffdarkgreen 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$ffgreen, endColorstr=$ffdarkgreen,GradientType=0 ); /* IE6-9 */
+  background-color:$ffgreen;
+  color:black;
+  text-decoration:none;
+}
+.btn-ffgreen:active {
+  background: $ffmidgreen; /* Old browsers */
+  background: -moz-linear-gradient(top, $ffmidgreen 0%, $ffdarkgreen 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffmidgreen), color-stop(100%,$ffdarkgreen)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, $ffmidgreen 0%,$ffdarkgreen 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, $ffmidgreen 0%,$ffdarkgreen 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, $ffmidgreen 0%,$ffdarkgreen 100%); /* IE10+ */
+  background: linear-gradient(to bottom, $ffmidgreen 0%, $ffdarkgreen 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$ffmidgreen, endColorstr=$ffdarkgreen,GradientType=0 ); /* IE6-9 */
+  background-color:$ffmidgreen;
+}
+
+
+
 
 
 /* sticky footer */

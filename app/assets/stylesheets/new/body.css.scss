@@ -134,46 +134,16 @@ a:hover {
 	-moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
 	-webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
 	box-shadow:inset 0px 0px 0px 0px #ffffff;
-	background: rgb(255,102,0); /* Old browsers */
-	background: -moz-linear-gradient(top, $fforange 0%, $ffdarkorange 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffgreen), color-stop(100%,$ffdarkorange)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* IE10+ */
-	background: linear-gradient(to bottom, $fforange 0%, $ffdarkorange 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$fforange, endColorstr=$ffdarkorange,GradientType=0 ); /* IE6-9 */
-	background-color:#ff9900;
-	-moz-border-radius:0px;
-	-webkit-border-radius:0px;
-	border-radius:0px;
 	display:inline-block;
-	padding:18px 0px;
+	padding: 20px 0 18px 0;
 	width:100%;
 	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
 	box-shadow: inset 0px 0px 0px 0px #ffffff;
 	border: 1px solid rgba(0, 0, 0, 0.247059);
 }
 
-.btn-browserewards:hover {
-	color:#fff;
-	background: rgb(255,102,0); /* Old browsers */
-	background: -moz-linear-gradient(top, $fforange 0%, $ffdarkorange 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$fforange), color-stop(100%,$ffdarkorange)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, $fforange 0%,$ffdarkorange 100%); /* IE10+ */
-	background: linear-gradient(to bottom, $fforange 0%,$ffdarkorange 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$fforange, endColorstr=$ffdarkorange,GradientType=0 ); /* IE6-9 */
-	background-color:$fforange;
-	// color:#1a1a1a;
 
-}
 
-.btn-browserewards:active {
-	position:relative;
-	top:1px;
-	// color:#1a1a1a;
-}
 
 .campaign {
 	padding-bottom:50px;

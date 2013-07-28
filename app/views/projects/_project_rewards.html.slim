@@ -58,32 +58,30 @@
               .reward-description
                 / TODO: reward description
                 = reward.display_description.html_safe
-              em
+
+              .reward-backers-info.font-tg-20
                 = pluralize(reward.backers.confirmed.count, t('backer_singular'), t('backer_plural'))
-              .clearfix
-              / p
-              /   = reward.display_description
-              - if reward.maximum_backers
-                .maximum_backers.clearfix
-                  - if reward.sold_out?
-                    .sold_out= t('reward.sold_out')
-                  - else
-                    .limited= t('reward.limited')
-                    .remaining
-                      = reward.display_remaining
-                - in_time_to_confirm = reward.backers.in_time_to_confirm.count
-                - if in_time_to_confirm > 0
-                  .maximum_backers.in_time_to_confirm.clearfix
-                    .pending= t('projects.rewards.backs_to_confirm', count: in_time_to_confirm)
-                .clearfix
-              - if current_user && current_user.admin
-                div class="reward_updated_at"
-                  p= "Modificado em: #{I18n.l(reward.updated_at.to_date)} #{@project.online_date.nil? ? '' : ((@project.online_date > reward.updated_at)? '(draft)' : '(online)')}"
-                - if reward.has_modification?
-                  div class="description_version rewardVersioning#{reward.id}"
-                    p= reward.last_description
-                  .maximum_backers.in_time_to_confirm.clearfix
-                    .updated_reward
-                      span id="rewardVersioning#{reward.id}"
-                        = 'Veja a versão anterior.'
+                - if reward.maximum_backers
+                  .maximum_backers.clearfix
+                    - if reward.sold_out?
+                      .sold_out= t('reward.sold_out')
+                    - else
+                      .limited= t('reward.limited')
+                      .remaining
+                        = reward.display_remaining
+                  - in_time_to_confirm = reward.backers.in_time_to_confirm.count
+                  - if in_time_to_confirm > 0
+                    .maximum_backers.in_time_to_confirm.clearfix
+                      .pending= t('projects.rewards.backs_to_confirm', count: in_time_to_confirm)
+                  .clearfix
+                - if current_user && current_user.admin
+                  div class="reward_updated_at"
+                    p= "Modificado em: #{I18n.l(reward.updated_at.to_date)} #{@project.online_date.nil? ? '' : ((@project.online_date > reward.updated_at)? '(draft)' : '(online)')}"
+                  - if reward.has_modification?
+                    div class="description_version rewardVersioning#{reward.id}"
+                      p= reward.last_description
+                    .maximum_backers.in_time_to_confirm.clearfix
+                      .updated_reward
+                        span id="rewardVersioning#{reward.id}"
+                          = 'Veja a versão anterior.'
 .clearfix
