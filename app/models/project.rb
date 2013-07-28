@@ -8,7 +8,7 @@ class Project < ActiveRecord::Base
   mount_uploader :uploaded_image, LogoUploader
   mount_uploader :video_thumbnail, LogoUploader
 
-  delegate :display_status, :display_progress, :display_image, :display_expires_at,
+  delegate :display_status, :display_progress, :display_image, :display_image_small, :display_expires_at,
     :display_pledged, :display_goal, :remaining_days, :display_video_embed_url, :progress_bar,
     to: :decorator
 
@@ -223,6 +223,7 @@ class Project < ActiveRecord::Base
       user: user,
       category: category,
       image: display_image,
+      image_small: display_image_small,
       headline: headline,
       progress: progress,
       display_progress: display_progress,
