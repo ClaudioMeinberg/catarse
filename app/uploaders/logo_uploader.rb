@@ -29,14 +29,15 @@ class LogoUploader < CarrierWave::Uploader::Base
 
 
   version :project_thumb do
-    process resize_to_fill: [220,172] #[520,340] #[220,172]
+    process resize_to_fill: [960,340] #[520,340] #[220,172]
     process convert: :png
   end
 
   version :project_thumb_small, from_version: :project_thumb do
-    process resize_to_fill: [85,67] #[730,400] #[85,67]
+    process resize_to_fill: [220,172, ::Magick::NorthWestGravity] #[730,400] #[85,67]
     process convert: :png
   end
+
 
   #facebook requires a minimum thumb size
   version :project_thumb_facebook do
@@ -51,7 +52,8 @@ class LogoUploader < CarrierWave::Uploader::Base
   end
 
   version :thumb_avatar do
-    process resize_to_fit: [300,300]
+
+    process resize_to_fill: [300,300]
     process convert: :png
   end
 

@@ -9,7 +9,7 @@
               h2= t('.header.title')
               div.subtitle = t('.header.subtitle')
             .span4
-              = image_tag @project.display_image, alt: @project.name, class: 'project_image', width: 200
+              = image_tag @project.display_image_small, alt: @project.name, class: 'project_image', width: 200
             .span4
               h4#campaign-title = @project.headline
           .row-fluid
