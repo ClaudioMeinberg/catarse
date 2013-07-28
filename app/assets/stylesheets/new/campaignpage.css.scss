@@ -88,25 +88,18 @@ h1.campaigntitle {
 }
 
 .btn-fundathlete {
-	font-family: TradeGothicLTPro-Cn20;
 	text-decoration:none;
-	text-align: center;
 	font-size: 26px;
-	color:#333;
 	margin-bottom: 20px;
-	text-transform: uppercase;
-	-moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
-	-webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
-	box-shadow:inset 0px 0px 0px 0px #ffffff;
-	background: rgb(255,102,0); /* Old browsers */
-	background: -moz-linear-gradient(top, $ffgreen 0%, $ffdarkergreen 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffgreen), color-stop(100%,$ffdarkergreen)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, $ffgreen 0%,$ffdarkergreen 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, $ffgreen 0%,$ffdarkergreen 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, $ffgreen 0%,$ffdarkergreen 100%); /* IE10+ */
-	background: linear-gradient(to bottom, $ffgreen 0%, $ffdarkergreen 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$ffgreen, endColorstr=$ffdarkergreen,GradientType=0 ); /* IE6-9 */
-	background-color:#ff9900;
+	// background: rgb(255,102,0); /* Old browsers */
+	// background: -moz-linear-gradient(top, $ffgreen 0%, $ffdarkgreen 100%); /* FF3.6+ */
+	// background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffgreen), color-stop(100%,$ffdarkgreen)); /* Chrome,Safari4+ */
+	// background: -webkit-linear-gradient(top, $ffgreen 0%,$ffdarkgreen 100%); /* Chrome10+,Safari5.1+ */
+	// background: -o-linear-gradient(top, $ffgreen 0%,$ffdarkgreen 100%); /* Opera 11.10+ */
+	// background: -ms-linear-gradient(top, $ffgreen 0%,$ffdarkgreen 100%); /* IE10+ */
+	// background: linear-gradient(to bottom, $ffgreen 0%, $ffdarkgreen 100%); /* W3C */
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$ffgreen, endColorstr=$ffdarkgreen,GradientType=0 ); /* IE6-9 */
+	// background-color:#ff9900;
 	-moz-border-radius:0px;
 	-webkit-border-radius:0px;
 	border-radius:0px;
@@ -118,25 +111,6 @@ h1.campaigntitle {
 	border: 1px solid rgba(0, 0, 0, 0.247059);
 }
 
-.btn-fundathlete:hover {
-	background: rgb(255,102,0); /* Old browsers */
-	background: -moz-linear-gradient(top, $ffgreen 0%, $ffdarkergreen 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffgreen), color-stop(100%,$ffdarkergreen)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, $ffgreen 0%,$ffdarkergreen 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, $ffgreen 0%,$ffdarkergreen 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, $ffgreen 0%,$ffdarkergreen 100%); /* IE10+ */
-	background: linear-gradient(to bottom, $ffgreen 0%,$ffdarkergreen 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$ffgreen, endColorstr=$ffdarkergreen,GradientType=0 ); /* IE6-9 */
-	background-color:#57d000;
-	color:#333;
-	text-decoration:none;
-}
-
-.btn-fundathlete:active {
-	position:relative;
-	top:1px;
-	// color:#1a1a1a;
-}
 
 @media screen and (max-width: 979px) {
 	.bar p {
