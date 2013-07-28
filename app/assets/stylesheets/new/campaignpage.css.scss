@@ -187,6 +187,7 @@ h1.campaigntitle {
 	display:block;
 	color:#595959;
 	font-size:16px;
+	text-decoration: none;
 }
 
 .campaign-submenu .item {
@@ -205,8 +206,26 @@ h1.campaigntitle {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#292929', endColorstr='#0a0a0a',GradientType=0 ); /* IE6-9 */
 }
 
+.campaign-submenu .item:hover{
+	color:#333;
+	-moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	-webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
+	box-shadow:inset 0px 0px 0px 0px #ffffff;
+	background: rgb(255,102,0); /* Old browsers */
+	background: -moz-linear-gradient(top, $ffgreen 0%, $ffdarkergreen 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffgreen), color-stop(100%,$ffdarkergreen)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, $ffgreen 0%,$ffdarkergreen 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, $ffgreen 0%,$ffdarkergreen 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top, $ffgreen 0%,$ffdarkergreen 100%); /* IE10+ */
+	background: linear-gradient(to bottom, $ffgreen 0%, $ffdarkergreen 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$ffgreen, endColorstr=$ffdarkergreen,GradientType=0 ); /* IE6-9 */
+	background-color:#ff9900;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+	box-shadow: inset 0px 0px 0px 0px #ffffff;
+}
 
-.campaign-submenu .selected {
+.campaign-submenu .selected,
+.campaign-submenu .selected:hover  {
 	color:white;
 	background: $fforange; /* Old browsers */
 	background: -moz-linear-gradient(top, $fforange 0%, $ffdarkorange 100%); /* FF3.6+ */

@@ -4,7 +4,7 @@
 
 $(document).ready(function(){
     //Init jQuery Masonry layout
-    init_masonry_rewards();
+    //init_masonry_rewards();
 
     //Select menu init
     // $("#collapsed-navbar ."+$('body').attr('class')).attr('selected', 'selected');

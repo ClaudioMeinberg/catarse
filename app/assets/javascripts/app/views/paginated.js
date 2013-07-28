@@ -47,6 +47,7 @@ CATARSE.PaginatedView = Backbone.View.extend({
   },
 
   afterUpdate: function(){
+    init_masonry_backers()
   },
   
   beforeUpdate: function(){
