@@ -47,6 +47,7 @@ CATARSE.PaginatedView = Backbone.View.extend({
   },
 
   afterUpdate: function(){
+    init_masonry_backers()
   },
   
   beforeUpdate: function(){
@@ -55,10 +56,10 @@ CATARSE.PaginatedView = Backbone.View.extend({
   update: function(){
     this.beforeUpdate()
     this.loading.children().hide()
-		ul_element = this.el.find("ul.collection_list")
+		ul_element = this.el.find("div#masonry-backers-container")
     if(!this.collection.isEmpty()) {
       this.collection.each(function(model, i){
-        var item = $("<li class='"+(i%3==0?'first':'')+""+(i%3==2?'last':'')+"'>")
+        var item = $("<div class='masonry-backers-box "+(i%3==0?'first':'')+""+(i%3==2?'last':'')+"'>")
         ul_element.append(item)
         new this.modelView({el: item, model: model})
       }, this)

@@ -87,9 +87,22 @@ textarea {
 
 .black-box {
   border: 1px solid #6a6a6a;
-  background: black;
+  background: $ff-dark-grey;
   padding: 20px;
 }
+
+#project_review {
+  .black-box {
+    padding: 20px;
+    margin-bottom: 40px;
+  }
+  .review_summary h3{
+    line-height: 30px;
+  }
+  li {
+    list-style: none;
+  }
+} 
 
 .fake-img {
   width: 200px;
@@ -244,4 +257,12 @@ textarea {
       color: red;
     }
   }
+}
+
+.update_share{
+  .facebook_share, 
+  .twitter_share {
+    float: left;
+  }
+  margin-top: 20px;
 }
