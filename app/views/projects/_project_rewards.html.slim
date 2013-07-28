@@ -59,7 +59,7 @@
                 / TODO: reward description
                 = reward.display_description.html_safe
 
-              .reward-backers-info
+              .reward-backers-info.font-tg-20
                 = pluralize(reward.backers.confirmed.count, t('backer_singular'), t('backer_plural'))
                 - if reward.maximum_backers
                   .maximum_backers.clearfix
