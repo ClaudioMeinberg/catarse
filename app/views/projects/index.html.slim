@@ -54,7 +54,7 @@
           hr
           .newsletter2
             h4 = t('sidebar.titles.newsletter')
-            = form_tag Configuration['mailchimp_url'], id: 'mailee-form', method: 'post' do
+            = form_tag Configuration['mailchimp_url'], id: 'mailee-form', class: 'navbar-form', method: 'post' do
               = text_field_tag 'EMAIL', nil, placeholder: 'email@email.com', label: 'email', id: 'newsletter-signup'
               br
               = submit_tag t('sidebar.buttons.newsletter'), class: 'btn btn-fforange btn-newsletter pull-right'
