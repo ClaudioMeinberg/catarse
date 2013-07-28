@@ -11,7 +11,7 @@
 
 .homepage-campaigns {
 	h2 {
-		font-size:28px;
+		font-size:34px;
 		margin-top: 50px;
 		margin-bottom:40px;
 	}
@@ -40,17 +40,23 @@
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66ff00', endColorstr='#66ff00',GradientType=0 ); /* IE6-9 */
 }
 
+.outside-bar {
+	height: 25px;
+	margin-top: 1px;
+}
 .progress p{
 	font-size: 18px;
 	text-align: left;
 	padding: 4px;
 	color:#99ff00;
 	font-family:'TradeGothicLTPro-Cn20';
+	margin:0;
 }
 
 .bar p {
 	color:#1d1d1d;
 	text-align: right;
+	text-indent:8px;
 }
 
 a:hover {
@@ -203,7 +209,7 @@ a:hover {
 		font-size:32px;
 		font-family: TradeGothicLTPro-Cn20;
 		font-weight: normal;
-		line-height: 40px;
+		line-height: 32px;
 		padding-top: 4px;
 	}
 	p {
@@ -262,6 +268,7 @@ a:hover {
 .howitworks h3{
 	padding:40px 0 30px 0;
 	text-align: center;
+	font-size:34px;
 }
 
 .howitworks {
