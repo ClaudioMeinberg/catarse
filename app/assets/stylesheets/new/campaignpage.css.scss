@@ -3,14 +3,20 @@
     background: url('gradient2.png') repeat-x;
     margin-top:40px;
     border-bottom:1px solid #666;
+    .container-fluid {
+    	margin-bottom: 25px;
+    }
 }
 
 h1.campaigntitle {
 	text-align:center;
-	font-size:30px;
-	color:#fff;
+	font-size:34px;
+	color: #ccc;
 	margin-top:50px;
 	margin-bottom:0;
+	font-family: 'TradeGothicLTPro-Cn20';
+	font-weight: normal;
+	line-height: 1em;
 }
 .campaignbyline {
 	text-align:center;
@@ -58,7 +64,7 @@ h1.campaigntitle {
 
 .statistics .item-units {
 	font-family:'TradeGothicLTPro-Cn18';
-	font-size:18px;
+	font-size:22px;
 	margin-left:3px;
 }
 
@@ -71,15 +77,15 @@ h1.campaigntitle {
 
 .header-video .bar {
 	padding-bottom:10%;
+	margin-right: 5px;
 }
 
-.campaignbar .bar p {
+.campaignbar .progress .bar p {
 	font-family:'TradeGothicLTPro-Cn20';
 	font-size: 13px;
 	margin-top:6%;
+	padding: 6px;
 }
-
-
 
 .btn-fundathlete {
 	font-family: TradeGothicLTPro-Cn20;
@@ -158,7 +164,7 @@ h1.campaigntitle {
 	}
 	.header-video .progress {
 		padding:0;
-		height:20px;
+		height:30px;
 		margin:15px 0;
 		// line-height:30px;
 	}
@@ -207,21 +213,8 @@ h1.campaigntitle {
 }
 
 .campaign-submenu .item:hover{
-	color:#333;
-	-moz-box-shadow:inset 0px 0px 0px 0px #ffffff;
-	-webkit-box-shadow:inset 0px 0px 0px 0px #ffffff;
-	box-shadow:inset 0px 0px 0px 0px #ffffff;
-	background: rgb(255,102,0); /* Old browsers */
-	background: -moz-linear-gradient(top, $ffgreen 0%, $ffdarkergreen 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffgreen), color-stop(100%,$ffdarkergreen)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, $ffgreen 0%,$ffdarkergreen 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, $ffgreen 0%,$ffdarkergreen 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(top, $ffgreen 0%,$ffdarkergreen 100%); /* IE10+ */
-	background: linear-gradient(to bottom, $ffgreen 0%, $ffdarkergreen 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$ffgreen, endColorstr=$ffdarkergreen,GradientType=0 ); /* IE6-9 */
-	background-color:#ff9900;
-	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-	box-shadow: inset 0px 0px 0px 0px #ffffff;
+	color:$ffgreen;
+	background: #0a0a0a;
 }
 
 .campaign-submenu .selected,
@@ -312,6 +305,27 @@ div.pluginConnectButton {
 
 /* Rewards CSS */
 
+#project_rewards {
+	.double_border_left {
+		border-left:1px solid rgba(45,45,45,1); 
+		padding-left:1px; 
+		background-color:black;
+	}
+	.double_border_right {
+		border-right:1px solid black; 
+		padding-right:1px; 
+		background-color:rgba(45,45,45,1);
+	}
+	.nav_border_right {
+		border-right: 1px solid rgba(45,45,45,1); 
+		height:100%;
+	}
+	.nav_border_left {
+		border-left:1px solid black; 
+		height:100%;
+	}
+}
+
 .reward-container {
 	padding:0;
 }
@@ -355,6 +369,7 @@ div.pluginConnectButton {
 	float:right;
 	display:inline-block;
 	padding:10px 20px;
+	width: 43px;
 	p {
 		margin:0;
 	}
@@ -391,11 +406,10 @@ p.reward-title {
 
 .backer_profile_image {
 	float:left;
+	margin-right: 10px;
 }
 
 .back_info {
-	float:right;
-	padding-left:20px;
 	.text {
 		a {
 			color:$ffgreen;
@@ -411,7 +425,85 @@ p.reward-title {
 		text-transform: none;
 		font-size: 12px;
 	}
+}
 
+#rewards {
+	.reward-backers-info {
+		font-size: 14px;
+	}
+}
+
+/*****/
+#campaign-page{
+	h1.campaigntitle {
+		margin-top: 25px;
+	}
+
+	.header-video {
+		padding-top: 20px;
+	}
+
+	.progress p {
+		padding: 6px;
+	}
+
+	.row-fluid .span4 {
+		/* margin-left: 10px; */
+	}
+
+	.statistics .item {
+		font-size: 34px;
+	}
+
+	.btn-fundathlete {
+		margin-bottom: 0px;
+		padding: 21px 0px 13px;
+		border:0;
+		bottom: 0;
+	}
+
+	.header-video {
+		padding-bottom: 30px;
+	}
+
+	.fb-like.fb_edge_widget_with_comment.fb_iframe_widget {
+		margin-right:10px;
+	}
+
+	a.item {
+		font-family: TradeGothicLTPro-Cn20;
+	} 
+
+	.share{
+		padding-right:0;
+		z-index: 9999;
+		.stat{
+			font-size:28px;	
+		}
+	}
 }
 
 
+/* UPDATES */
+#project_updates {
+	.time{
+		font-size: 18px;
+	}
+
+	.comment p {
+
+	}
+
+	img {
+		margin: 10px 0;
+	}
+}
+
+/* backers */
+#project_backers {
+	.back_info {
+		p {
+			margin:0 0 7px;
+		}
+	}
+}

@@ -4,7 +4,7 @@
 
 #checkout {
 	margin-top:40px;
-	background: url('gradient.png') repeat;
+	background: url('gradient.png') repeat-x;
 }
 
 #checkout ol {
@@ -152,6 +152,68 @@
 	color: #696969;
 	margin-top: -12px;
 	margin-bottom: 10px;
+}
+
+
+/*final changes from dan (28.07) */
+#checkout {
+	h3.text-center {
+		font-family: tradegothicltpro-cn20;
+		font-weight: 100;
+		font-size: 34px;
+		padding: 8px inherit;
+	}	
+	.black-box {
+		h2 {
+			margin: 11px 0;
+		}
+		.ff-green, label {
+			font-family: tradegothicltpro-cn20;
+			font-weight: 100;
+		}
+		.label {
+			margin-bottom: 14px;
+		}
+		h4 {
+			margin: 16px 0;
+			font-size: 24.5px;
+			line-height: 24.5px;
+		}
+		.subtitle {
+			padding-right: 25px;
+			font-family: genevaregular;
+			padding-top: 0px;
+			font-size: 14px;
+			line-height: 17px;
+		}
+		.reward_minimum_value {
+			font-family: tradegothicltpro-cn20;
+			font-weight: 100;
+		}
+		.reward_description {
+			font-family: tradegothicltpro-cn18;
+			padding-top: 10px;
+			line-height: 20px;
+			font-size: 20px;
+		}
+	}
+	#back-faq {
+		h3 {
+			margin-top: 8px;
+			font-family: TradeGothicLTPro-Cn20;
+			font-weight: 100;
+		}
+		p {
+			font-size: 14px;
+			line-height: 16px;
+		}
+		.ff-green {
+			font-family: TradeGothicltpro-cn20;
+			font-weight: 100;
+			font-size: 16px;
+			line-height: 16px;
+		}
+	}	
 }
 
 

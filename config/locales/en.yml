@@ -384,8 +384,8 @@ en:
       new:
         cannot_back: "It's not possible to back this project right now. Please, back other projects."
         header:
-          subtitle: "You are very close to contribute to this campaign!"
-          title: "Hell yeah!!!"
+          subtitle: "You are very close to contributing to this campaign!"
+          title: "Hell yeah!"
         no_reward: "Personal email thanking you for your kind support"
         submit: "Review & Pay"
         title: "Back %{name}"

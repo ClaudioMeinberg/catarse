@@ -6,12 +6,12 @@
       - for update in @project.updates.includes(:project).order('created_at DESC')
         li
           .flag
-          .time.ff-green= l(update.created_at, format: :updates)
+          .time.ff-grey-text.font-tg-18= l(update.created_at, format: :updates)
           .clearfix
           =link_to("", {}, :id => "updates/#{update.id}", :class => "anchorHack")
-          h3= link_to "#updates/#{update.id}" do
+          h3= link_to "#updates/#{update.id}", class: "ff-green font-tg-20" do
             = update.title
-          .comment.lowercase.ff-grey-text= raw(update.comment_html)
+          .comment.lowercase.font-geneva= raw(update.comment_html)
           .midia.row-fluid
             .update_share
               - url = project_by_slug_url(@project.permalink, update_id: update.id, locale: I18n.locale)
