@@ -17,6 +17,42 @@
 }
 
 #review_pay {
+	h3 {
+		padding: 18px inherit;
+		font-size: 34px;
+		margin: 0;
+	}
+	h2 {
+		font-size: 34px;
+	}
+	h2, h3, .ff-green, label.label{
+		font-family: tradegothicltpro-cn20;
+		font-weight: normal;
+	}
+	.review_summary {
+		h3 {
+			font-family: tradegothicltpro-cn20;
+			font-weight: normal;
+			padding: 24px inherit;
+			font-size: 24.5px;
+			line-height: 24.5px;
+			margin: 0;
+			padding: 16px inherit;
+		}
+		a {
+			font-family: tradegothicltpro-cn20;
+			font-weight: normal;
+			font-size: 24.5px;
+		}
+	}
+	.inputs {
+		ol {
+			margin-left: 0;
+		}
+	}
+	.submit fieldset {
+		padding-top: 16px;
+	}
 	hr {
 		height:1px;
 		border:0;
