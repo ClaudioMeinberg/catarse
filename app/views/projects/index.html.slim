@@ -3,61 +3,60 @@
 
 
 = render partial: 'channels/projects/banner'
-.wrapper.homepage-campaigns
-  .container-fluid
-    .row-fluid
-      .span12
-        h2 = "Campaigns getting fuelled now" 
-        / t('sections.selection.title')
-    = render partial: 'project', locals: {project: @first_project, custom_class: 'first' } if @first_project
-    = render partial: 'project', locals: {project: @second_project } if @second_project
-    = render partial: 'project', locals: {project: @third_project, custom_class: 'last' } if @third_project
+.container-fluid.wrapper.homepage-campaigns
+  .row-fluid
+    .span12
+      h2 = "Campaigns getting fuelled now" 
+      / t('sections.selection.title')
+  = render partial: 'project', locals: {project: @first_project, custom_class: 'first' } if @first_project
+  = render partial: 'project', locals: {project: @second_project } if @second_project
+  = render partial: 'project', locals: {project: @third_project, custom_class: 'last' } if @third_project
 
 / HOW IT WORKS SECTION
-.howitworks.content
-  h3 = "How it works"
-  .container-fluid
-    .row-fluid
-      .span3.howitworks-step1
-      .span3.howitworks-step2
-      .span3.howitworks-step3
-      .span3.howitworks-step4
+.container-fluid.howitworks.content
+  .row-fluid
+    .span12
+      h3 = "How it works"
+  .row-fluid
+    .span3.howitworks-step1
+    .span3.howitworks-step2
+    .span3.howitworks-step3
+    .span3.howitworks-step4
 
 / PRESS MATERIAL SECTION
-.press-material
-  .container-fluid
-    .row-fluid
-      .span4
-        .blog
-          h4.lowercase-menu = "ffBLOG"
-          / h3= t('sidebar.titles.blog')
-          ul.posts
-            - @blog_posts.each do |post|
-              li
-                h2
-                  = link_to post.url, target: '__blank' do
-                    /= image_tag("catarse/post_title_image.png")
-                    = truncate(post.title, length: 80)
-                / p.author= "#{t('projects.box.by')} #{post.author}"
-                = link_to post.url, target: '__blank', class: 'resume' do
-                  = truncate(post.summary, length: 130).html_safe
-      .span4
-        .twtr-feed
-          h4 = "twitter"
-          | <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/fanfuelco" data-widget-id="351583796551892992">Tweets by @fanfuelco</a>
-          | <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-      .span4
-        .newsletter
-          .newsletter1
-            h4 = "facebook"
-            .fb-like data-href="http://www.fanfuel.co" data-send="false" data-show-faces="true" data-colorscheme="dark" data-width="100%"
-          hr
-          .newsletter2
-            h4 = t('sidebar.titles.newsletter')
-            = form_tag Configuration['mailchimp_url'], id: 'mailee-form', class: 'navbar-form', method: 'post' do
-              = text_field_tag 'EMAIL', nil, placeholder: 'email@email.com', label: 'email', id: 'newsletter-signup'
-              br
-              = submit_tag t('sidebar.buttons.newsletter'), class: 'btn btn-fforange btn-newsletter pull-right'
+.container-fluid.press-material
+  .row-fluid
+    .span4
+      .blog
+        h4.lowercase-menu = "ffBLOG"
+        / h3= t('sidebar.titles.blog')
+        ul.posts
+          - @blog_posts.each do |post|
+            li
+              h2
+                = link_to post.url, target: '__blank' do
+                  /= image_tag("catarse/post_title_image.png")
+                  = truncate(post.title, length: 80)
+              / p.author= "#{t('projects.box.by')} #{post.author}"
+              = link_to post.url, target: '__blank', class: 'resume' do
+                = truncate(post.summary, length: 130).html_safe
+    .span4
+      .twtr-feed
+        h4 = "twitter"
+        | <a class="twitter-timeline" data-dnt="true" href="https://twitter.com/fanfuelco" data-widget-id="351583796551892992">Tweets by @fanfuelco</a>
+        | <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    .span4
+      .newsletter
+        .newsletter1
+          h4 = "facebook"
+          .fb-like data-href="http://www.fanfuel.co" data-send="false" data-show-faces="true" data-colorscheme="dark" data-width="100%"
+        hr
+        .newsletter2
+          h4 = t('sidebar.titles.newsletter')
+          = form_tag Configuration['mailchimp_url'], id: 'mailee-form', class: 'navbar-form', method: 'post' do
+            = text_field_tag 'EMAIL', nil, placeholder: 'email@email.com', label: 'email', id: 'newsletter-signup'
+            br
+            = submit_tag t('sidebar.buttons.newsletter'), class: 'btn btn-fforange btn-newsletter pull-right'
 
 /        .explore_link
 /          hr
