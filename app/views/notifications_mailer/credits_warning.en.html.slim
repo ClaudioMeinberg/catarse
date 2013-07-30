@@ -1,11 +1,11 @@
 - backer = @notification.backer
-|Olá, <strong>#{backer.user.display_name}</strong> !
+|Hi, <strong>#{backer.user.display_name}</strong> !
 br
 br
-|Vimos aqui que você tem  US$ #{backer.user.credits} em créditos no Catarse. Que tal aproveitar e apoiar outro projeto bacana agora mesmo?
+|We noticed you have US$ #{backer.user.credits} positive balance on fanfuel. What do you think of using these funds to support someone right now?
 br
 br
-|Abaixo selecionamos algumas sugestões de projetos especialmente para você:
+|Please see the latest projects here:
 br
 br
 -backer.user.recommended_projects(3).each do |project|
@@ -16,25 +16,25 @@ br
   br
 br
 br
-|Pra não ficar dúvida, aqui vai um passo-a-passo pra utilização dos créditos:
+|This is how you can use your credits:
 br
 br
-|1 - #{link_to('Escolher o projeto que quer apoiar;', explore_url)}
+|1 - #{link_to('Choose a project to back;', explore_url)}
 br
-|2 - Clicar em Quero apoiar este projeto;
+|2 - Click on Buy Now;
 br
-|3 - Colocar o valor que quer apoiar e selecionar o campo confirmando que você quer usar seus créditos.
+|3 - Decide how much you want to back and tick the box to use your available credits.
 br
-|4 - Clicar no botão Revisar e realizar pagamento na parte debaixo da tela;
+|4 - Click on review and comfirm payment using available credits;
 br
-|5 - Pronto! Seu apoio será confirmado =)
-br
-br
-|Caso prefira, você pode pedir o reembolso do seu dinheiro clicando #{link_to("aqui", "#{Configuration[:base_url]}/users/#{backer.user.to_param}#credits")}.  Você conseguirá tirar a maioria das suas dúvidas sobre reembolso #{link_to('nesse artigo', 'http://suporte.catarse.me/knowledgebase/articles/164746-regras-e-funcionamento-dos-reembolsos-estornos')}.
+|5 - Done! Your backing will be confirmed =)
 br
 br
-|Se tiver alguma outra dúvida, entre em contato conosco na nossa Central de Suporte: suporte.catarse.me.
+|You can also request a refund by cilcking  #{link_to("here", "#{Configuration[:base_url]}/users/#{backer.user.to_param}#credits")}.  You can learn more about refunds by visiting our Terms and Conditions #{link_to('here', '/en/terms-and-conditions')}.
 br
 br
-|Um grande abraço,
-|Equipe do Catarse
+|Should you need furhter information please get in touch with us at SUPPORT@FANFUEL.CO
+br
+br
+|a big thanks,
+|Team fanfuel

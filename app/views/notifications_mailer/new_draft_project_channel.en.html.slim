@@ -2,22 +2,22 @@
 | Hey!
 br
 br
-| Mais um projeto foi criado no Canal Asas!
-== " por #{link_to project.user.name, user_url(project.user)}"
+| A new project have been created on this channel!
+== " by #{link_to project.user.name, user_url(project.user)}"
 br
-== "Email do realizador: #{mail_to project.user.email}"
-br
-br
-| Detalhes do projeto abaixo:
+== "email of campaign creator: #{mail_to project.user.email}"
 br
 br
-b Nome:
+| Details below:
+br
+br
+b Name:
 = " #{project.name}"
 br
-b Meta:
+b Target:
 = " #{project.display_goal}"
 br
-b Lista de Links relacionados:
+b List of related links:
 br
 = simple_format(project.more_links)
 br
@@ -25,10 +25,10 @@ b Primeiros apoiadores:
 br
 = simple_format(project.first_backers)
 br
-b Como conheceu o Canal Asas:
+b How did you learn about fanfuel:
 br
 = simple_format(project.how_know)
 br
 br
-= link_to 'Veja mais sobre o projeto', project_by_slug_url(permalink: project.permalink, subdomain: 'asas')
+= link_to 'More Details', project_by_slug_url(permalink: project.permalink, subdomain: 'asas')
 

@@ -2,33 +2,33 @@
 | Hey!
 br
 br
-| Mais um projeto foi criado no #{Configuration[:company_name]}!
-== " por #{link_to project.user.name, user_url(project.user)}"
+| A new campaign have been created on #{Configuration[:company_name]}!
+== " by #{link_to project.user.name, user_url(project.user)}"
 br
-== "Email do realizador: #{mail_to project.user.email}"
-br
-br
-| Detalhes do projeto abaixo:
+== "email of campaign creator: #{mail_to project.user.email}"
 br
 br
-b Nome:
+| Campaign details below:
+br
+br
+b Name:
 = " #{project.name}"
 br
-b Meta:
+b Target:
 = " #{project.display_goal}"
 br
-b Lista de Links relacionados:
+b List of related links:
 br
 = simple_format(project.more_links)
 br
-b Primeiros apoiadores:
+b First backers:
 br
 = simple_format(project.first_backers)
 br
-b Como conheceu o #{Configuration[:company_name].downcase}:
+b How did you find #{Configuration[:company_name].downcase}:
 br
 = simple_format(project.how_know)
 br
 br
-= link_to 'Veja mais sobre o projeto', project_by_slug_url(permalink: project.permalink)
+= link_to 'Learn more about this project', project_by_slug_url(permalink: project.permalink)
 
