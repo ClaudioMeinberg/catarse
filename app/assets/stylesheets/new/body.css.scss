@@ -274,15 +274,19 @@ a:hover {
 }
 .howitworks-step1 {
 	background-image:url('howitworks-1.png');
+	background-size:148px auto;
 }
 .howitworks-step2 {
 	background-image:url('howitworks-2.png');
+	background-size: 164px auto;
 }
 .howitworks-step3 {
 	background-image:url('howitworks-3.png');
+	background-size: 132px auto;
 }
 .howitworks-step4 {
 	background-image:url('howitworks-4.png');
+	background-size:148px auto;
 }
 
 @media screen and (max-width: 979px) {
