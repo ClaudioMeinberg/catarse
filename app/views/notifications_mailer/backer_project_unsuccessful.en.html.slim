@@ -1,39 +1,29 @@
 - backer = @notification.backer
-|Hi, #{backer.user.name}!
+|Hello #{backer.user.name},
 br
 br
 |Unfortunately the campaign #{link_to(backer.project.name, "#{Configuration[:base_url]}/projects/#{backer.project.to_param}")} that you backed did not reach its goal and wasn't successful on #{Configuration[:company_name]}.
 br
 br
-|Due to this, you received #{backer.display_value} in credits to back other projects. You can explore more #{backer.project.category} projects in #{link_to("#{Configuration[:base_url]}/explore##{backer.project.category.to_s.parameterize}", "#{Configuration[:base_url]}/explore##{backer.project.category.to_s.parameterize}")}
+|Because of this you received #{backer.display_value} in credits to back other campaigns.
 br
 br
-|We selected some projects suggestions specially for you:
-br
--backer.user.recommended_projects(3).each do |project|
-  |#{link_to(project.name, "#{Configuration[:base_url]}/projects/#{project.to_param}")}
-  br
-  |#{project.headline}
-  br
-  br
-br
-br
-|If you prefer, you can ask for a refund of your money by clicking on #{link_to("here", "#{Configuration[:base_url]}/users/#{backer.user.to_param}#credits")}. It's through it that you must access your account. If you have any trouble in this process, send an email to #{mail_to Configuration[:email_payments]} with the subject “Refunds - login issues”.
+|If you prefer, you can ask for a refund by clicking #{link_to("here", "#{Configuration[:base_url]}/users/#{backer.user.to_param}#credits")}. If you have any trouble with this process, send an email to #{mail_to Configuration[:email_payments]} with the subject “Refunds - login issues”.
 br
 br
 |Back key: #{backer.key}
 br
 br
-|If you choose to be refunded, remember that, as stated on  #{link_to("Termo and Conditions of #{Configuration[:company_name]}","#{Configuration[:base_url]}/terms")}, it will be evaluated on a case by case basis and unsuccessful projects may be refunded without major issues.
+|If you choose to be refunded remember that, as stated on  #{link_to("Termo and Conditions of #{Configuration[:company_name]}","#{Configuration[:base_url]}/terms")}, it will be evaluated on a case by case basis. Unsuccessful projects will be refunded without major issues.
 br
 br
-|If, for any reason, you want to contact #{backer.project.user.display_name}, send an email to #{mail_to backer.project.user.email}.
+|If for any reason you want to contact #{backer.project.user.display_name}, send an email to #{mail_to backer.project.user.email}.
 br
 br
 |If you have any questions, access our #{link_to('FAQ',"#{Configuration[:base_url]}/faq")} or send an email to #{mail_to Configuration[:email_payments]}.
 br
 br
-|A big thanks,
+|Thanks,
 br
 br
 |#{Configuration[:company_name]} team

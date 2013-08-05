@@ -1,5 +1,5 @@
 - backer = @notification.backer
-|Hi, <strong>#{backer.user.display_name}</strong> !
+|Hello <strong>#{backer.user.display_name}</strong>!
 br
 br
 |We noticed you have US$ #{backer.user.credits} positive balance on fanfuel. What do you think of using these funds to support someone right now?
@@ -21,20 +21,23 @@ br
 br
 |1 - #{link_to('Choose a project to back;', explore_url)}
 br
-|2 - Click on Buy Now;
+|2 - Click on view campaign on one of our live campaigns
 br
-|3 - Decide how much you want to back and tick the box to use your available credits.
+|3 - Choose your reward 
 br
-|4 - Click on review and comfirm payment using available credits;
+|4 - Tick the box to use your available credits
 br
-|5 - Done! Your backing will be confirmed =)
+|5 - Click on review and comfirm payment using available credits
 br
+|6 - Done! Your backing will be confirmed!
 br
 |You can also request a refund by cilcking  #{link_to("here", "#{Configuration[:base_url]}/users/#{backer.user.to_param}#credits")}.  You can learn more about refunds by visiting our Terms and Conditions #{link_to('here', '/en/terms-and-conditions')}.
 br
 br
-|Should you need furhter information please get in touch with us at SUPPORT@FANFUEL.CO
+|Should you need furhter information please get in touch with us at support@fanfuel.co
 br
 br
-|a big thanks,
-|Team fanfuel
+br
+|Thanks,
+br
+|fanfuel team

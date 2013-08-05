@@ -5,17 +5,7 @@ br
 |Infelizmente o projeto #{link_to(backer.project.name, "#{Configuration[:base_url]}/projects/#{backer.project.to_param}")} que você apoiou não atingiu a meta estabelecida e não foi financiado no #{Configuration[:company_name]}.
 br
 br
-|Em função disto, você recebeu #{backer.display_value} em créditos para apoiar outros projetos. Você pode conhecer mais projetos de #{backer.project.category} em #{link_to("#{Configuration[:base_url]}/explore##{backer.project.category.to_s.parameterize}", "#{Configuration[:base_url]}/explore##{backer.project.category.to_s.parameterize}")}
-br
-br
-|Abaixo selecionamos algumas sugestões de projetos especialmente para você:
-br
--backer.user.recommended_projects(3).each do |project|
-  |#{link_to(project.name, "#{Configuration[:base_url]}/projects/#{project.to_param}")}
-  br
-  |#{project.headline}
-  br
-  br
+|Em função disto, você recebeu #{backer.display_value} em créditos para apoiar outros projetos.
 br
 br
 |Caso prefira, você pode pedir o reembolso do seu dinheiro clicando #{link_to("aqui", "#{Configuration[:base_url]}/users/#{backer.user.to_param}#credits")}.
@@ -35,7 +25,7 @@ br
 = link_to 'http://blog.fanfuel.co/', 'http://blog.fanfuel.co/'
 br
 br
-|Um grande abraço,
+|Um abraço,
 br
 br
 |Equipe do #{Configuration[:company_name]}

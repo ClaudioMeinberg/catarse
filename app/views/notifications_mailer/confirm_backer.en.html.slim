@@ -1,5 +1,5 @@
 - backer = @notification.backer
-|Hi, <strong>#{backer.user.display_name}</strong>!
+|Hello <strong>#{backer.user.display_name}</strong>!
 br
 br
 |Your pledge to #{link_to(backer.project.name, project_by_slug_url(permalink: backer.project.permalink))} was confirmed by <strong>#{backer.payment_method}</strong>
@@ -7,10 +7,6 @@ br
 br
 br
 |Keep this email with you as a receipt.
-br
-br
-|Selling terms:
-|All items offered by campaign creators as rewards are offered on a as is basis and all sales are conditional to the campaign achieving its final target. Once the campaign reaches its target all sales are considered final. Please make sure you clearly understood the campaign creator terms and conditions for your specific reward.
 br
 br
 |Pledged amount: <strong>US$ #{backer.value}</strong>
@@ -28,9 +24,9 @@ br
 br
 |If the campaign doesn't reach it's goal, you will receive another email with instructions to:
 br
-|1) back another campaign with the generated credits; OR
+|1) Back another campaign with the generated credits; OR
 br
-|2) ask for a refund.
+|2) Ask for a refund.
 br
 br
 |If you want to contact #{backer.project.user.name}, send an email to #{mail_to backer.project.user.email}
@@ -39,6 +35,6 @@ br
 |If you have any other questions, access our #{link_to('FAQ', "#{Configuration[:base_url]}/faq")} or send an email to #{mail_to Configuration[:email_contact]}
 br
 br
-|A big thanks,
+|Thanks,
 br
 |#{Configuration[:company_name]} Team

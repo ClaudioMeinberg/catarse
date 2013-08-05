@@ -3,6 +3,6 @@
 br
 == @notification.mail_params[:update_comment]
 br
-|Comments? Go to the campaign page: #{link_to update.project.name, Rails.application.routes.url_helpers.project_by_slug_url(permalink: update.project.permalink) }.
+|Want to share this update? Go to the campaign page: #{link_to update.project.name, Rails.application.routes.url_helpers.project_by_slug_url(permalink: update.project.permalink) }.
 br
 |To contact the campaign creator send an email to  #{ mail_to( @notification.mail_params[:project_owner_email] ) }.

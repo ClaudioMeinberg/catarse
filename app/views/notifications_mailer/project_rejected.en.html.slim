@@ -1,24 +1,20 @@
 - user = @notification.user
-| Hi #{user.name},
+| Hello #{user.name},
 br
 br
-|Thank you for sharing your idea with #{Configuration[:company_name]} o/
+|Thank you for sharing your campaign ideas with us. We feel your campaign still needs a bit of love so we advise you to read our Campaign Guidelines and Terms & Conditions to understand how we operate and how you can benefit from our service.
 br
 br
-|#{Configuration[:company_name]} Please read our terms and conditions and campaign guidelines to understand how this service works and how you can benefit from it.
-br
-br
-|We believe these documents will help you prepare your campaign to better meet the expectations of the #{Configuration[:company_name]}community.
+|We believe these documents will help you prepare your campaign to meet our standards.
 br
 br
 |Please submit it again once you have worked a bit more on the details of your campaign.
 br
 br
-|Thank you for getting in touch and please join us on #{link_to 'Facebook', Configuration[:facebook_url]}, #{link_to 'Twitter', "twitter.com/#{Configuration[:twitter_username]}" } e #{link_to 'blog', Configuration[:blog_url]}, also use this opportunity to back a campaign: #{link_to 'EXPLORE', explore_url}
+|Thank you for getting in touch and please join us on #{link_to 'Facebook', Configuration[:facebook_url]}, #{link_to 'Twitter', "twitter.com/#{Configuration[:twitter_username]}" } e #{link_to 'blog', Configuration[:blog_url]}, also use this opportunity to back a campaign: #{link_to 'EXPLORE', "#{Configuration[:base_url]}/"}
 br
 br
-br
-|A big thanks,
+|Thanks,
 br
 br
 |#{Configuration[:company_name]} team

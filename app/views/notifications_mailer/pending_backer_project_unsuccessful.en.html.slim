@@ -1,39 +1,36 @@
 - backer = @notification.backer
-|Hi, #{backer.user.name}!
+|Hello #{backer.user.name},
 br
 br
 |Unfortunatelly the campaign#{link_to(backer.project.name, "#{Configuration[:base_url]}/projects/#{backer.project.to_param}")} did not meet its funding target on #{Configuration[:company_name]}.
 br
 br
-|We can see in our database that you started to backed this campaign a few days ago.
-br
-b In case you didn't back this project
-|, please disconsider this email.
+|In case you didn't back this project please disconsider this email.
 br
 br
-b Should you have concluded backing this project
-|, but still did not receive and email confirmation for your purchase, it could be due to payment processing issues which can take a few extra days to clear.
+|If you have backed this project but still haven't received an email confirmation for your purchase, this could be due to payment processing issues which can take a few extra days to clear.
 br
 br
 |When payment is confirmed you will receive, #{backer.display_value} in credits to back other projects.
 br
 br
-|Should you prefer you can request a refund click #{link_to("here", "#{Configuration[:base_url]}/users/#{backer.user.to_param}#credits")}.
-
-|Should you encounter any problems during this process please email: #{mail_to Configuration[:email_payments]} Subject “Refund Request - Login Issues”.
+|If you prefer to request a refund click #{link_to("here", "#{Configuration[:base_url]}/users/#{backer.user.to_param}#credits")}.
 br
 br
-|Should you feel like talking to one of us #{backer.project.user.display_name}, please email #{mail_to backer.project.user.email}.
+|Should you encounter any problems during this process please email #{mail_to Configuration[:email_payments]} Subject “Refund Request - Login Issues”.
+br
+br
+|Finally if you feel like talking to one of us at #{backer.project.user.display_name}, please email #{mail_to backer.project.user.email}.
 br
 br
 |For any other inquires:
 br
-= link_to 'http://CUSTOMER SERVICE PAGE/', 'http://CUSTOMER SERVICE PAGE/'
+= link_to 'http://fanfuel.co/en/contact/', 'http://fanfuel.co/en/contact/'
 br
 |Support key: #{backer.key}
 br
 br
-|A big thanks,
+|Thank you,
 br
 br
 |#{Configuration[:company_name]}team

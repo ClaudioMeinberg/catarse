@@ -1,13 +1,13 @@
 - backer = @notification.backer
 - project = backer.project
 
-|Hi, <strong>#{project.user.display_name}</strong>!
+|You are killing it! <strong>#{project.user.display_name}</strong>!
 br
 br
-|The backer #{link_to backer.user.display_name, user_url(backer.user)} just purchased one of your rewards! 
+|#{link_to backer.user.display_name, user_url(backer.user)} just purchased one of your rewards! 
 br
 br
-|Some details about the purchase:
+|Purchase details:
 br
 br
 |<strong>Amount:</strong> #{backer.display_value}
@@ -19,15 +19,17 @@ br
 |<strong>Backer email:</strong> #{backer.user.email}
 br
 br
-|See other backers here: #{link_to project_by_slug_url(permalink: project.permalink, anchor: 'backers'), project_by_slug_url(permalink: project.permalink, anchor: 'backers')}
+|See your other backers here: #{link_to project_by_slug_url(permalink: project.permalink, anchor: 'backers'), project_by_slug_url(permalink: project.permalink, anchor: 'backers')}
 br
 br
-|Share some news with everyone here: #{link_to project_by_slug_url(permalink: project.permalink, anchor: 'updates'), project_by_slug_url(permalink: project.permalink, anchor: 'updates')}
+|You have fans now! Share some news with them: #{link_to project_by_slug_url(permalink: project.permalink, anchor: 'updates'), project_by_slug_url(permalink: project.permalink, anchor: 'updates')}
 br
 br
-|Donwload Reports here: #{link_to project_by_slug_url(permalink: project.permalink, anchor: 'reports'), project_by_slug_url(permalink: project.permalink, anchor: 'reports')}
+|Donwload reports here: #{link_to project_by_slug_url(permalink: project.permalink, anchor: 'reports'), project_by_slug_url(permalink: project.permalink, anchor: 'reports')}
 br
 br
-|A big thanks,
+|Keep promoting your campaign, you are doing great!
+br
+Congrats,
 br
 |#{Configuration[:company_name]} team
