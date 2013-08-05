@@ -110,7 +110,7 @@ describe Projects::BackersController do
     end
 
     context "when project.online? is true and we have configured a secure create url" do
-      let(:secure_review_host){ 'secure.catarse.me' }
+      let(:secure_review_host){ 'secure.fanfuel.co' }
       it "should assign the https url to @create_url" do
         assigns(:create_url).should == project_backers_url(project, host: ::Configuration[:secure_review_host], protocol: 'https')
       end

@@ -4,7 +4,7 @@ require 'spec_helper'
 describe ProjectsController do
   before{ Notification.rspec_reset }
   before{ controller.stub(:current_user).and_return(current_user) }
-  before{ ::Configuration[:base_url] = 'http://catarse.me' }
+  before{ ::Configuration[:base_url] = 'http://fanfuel.co' }
   render_views
   subject{ response }
   let(:project){ create(:project, state: 'draft') }

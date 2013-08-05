@@ -1,10 +1,10 @@
-#page_content
-  .container
-    #thank_you
+#page_content.container-fluid
+  .container.row-fluid
+    #thank_you.span12
       .title
         h1 = t('.header_title')
         h2= t('.header_subtitle')
-      .project_info
+      .project_info.black-box
         = image_tag @project.display_image, id: 'project_image', alt: @project.name, width: '250px'
         h1= t('.text_title_html', link: link_to(@project.name, project_by_slug_path(permalink: @project.permalink)))
         #review_text
@@ -19,13 +19,13 @@
               = image_tag 'catarse/icon-tw.png', title: 'Twitter'
             = link_to "http://www.facebook.com/share.php?u=#{project_by_slug_url(permalink: @project.permalink)}", target: :_blank do
               = image_tag 'catarse/icon-fb.png', title: 'Facebook'
-        #recommended_projects
-          h2 = t('.recommended_projects')
-          - rp = @backer.user.recommended_projects(3)
-          - if rp.count > 0
-            - rp.each do |project|
-              = render partial: 'projects/box', locals: {project: project }
-      .clearfix
+//        #recommended_projects
+//          h2 = t('.recommended_projects')
+//          - rp = @backer.user.recommended_projects(3)
+//          - if rp.count > 0
+//            - rp.each do |project|
+//              = render partial: 'projects/box', locals: {project: project }
+//      .clearfix
 
 
 

@@ -8,7 +8,7 @@ en:
       header: "Back confirmed"
     payment_slip:
       subject: "Status do apoio para %{project_name}: boleto impresso"
-      header: "Informações sobre pagamentos por boleto no Catarse"
+      header: "Informações sobre pagamentos por boleto no fanfuel"
     processing_payment:
       subject: "Seu apoio para %{project_name} foi recebido e está aguardando confirmação do %{payment_method}"
       header: "Apoio Em Análise - o que é isso?"
@@ -18,44 +18,44 @@ en:
       subject: "O prazo do seu projeto acabou, saiba quais são os próximos passos"
       header: "Acabou o prazo!"
     project_success:
-      subject: "Project successful: some necessary information"
-      header: "Project successful"
+      subject: "Campaign successful: some necessary information"
+      header: "Campaign successful"
     project_unsuccessful:
-      subject: "Your project was not funded on Catarse, but we would like your feedback x)"
-      header: "Project was not successfully funded ;)"
+      subject: "Your campaign was not funded on fanfuel, but we would like your feedback x)"
+      header: "Campaign was not successfully funded ;)"
     backer_project_successful:
-      subject: "Hooray! The project %{project_name} has succeeded on Catarse"
-      header: "Hooray! The project you backed has succeeded on Catarse"
+      subject: "Hooray! The campaign %{project_name} has succeeded on fanfuel"
+      header: "Hooray! The campaign you backed has succeeded on fanfuel"
     backer_project_unsuccessful:
-      subject: "The project %{project_name} was not funded - some useful information"
+      subject: "The campaign %{project_name} was not funded - some useful information"
       header: "Information on credits and refunds ;)"
     pending_backer_project_unsuccessful:
-      subject: "You started to back the project %{project_name}, which was not funded - some useful information"
+      subject: "You started to back the campaign %{project_name}, which was not funded - some useful information"
       header: "Information about confirmation of support, credits and refunds ;)"
     project_received:
-      subject: "Your project was received by Catarse"
-      header: "Your project was received by the Catarse team"
+      subject: "Your campaign was received by fanfuel"
+      header: "Your campaign was received by the fanfuel team"
     project_received_channel:
-      subject: "Your project was received by the Wings Channel"
-      header: "Your project was welcomed by the staff of the Wings Channel"
+      subject: "Your campaign was received by the Wings Channel"
+      header: "Your campaign was welcomed by the staff of the Wings Channel"
     new_draft_project_channel:
-      subject: "The project %{project_name} has just been created"
-      header:  "A new project is awaiting review"
+      subject: "The campaign %{project_name} has just been created"
+      header:  "A new campaign is awaiting review"
     project_visible:
-      subject: "Your project is now online at Catarse"
+      subject: "Your campaign is now online at fanfuel"
       header: "Now it's for real"
     project_rejected:
-      subject: "Your project does not fit Catarse's focus"
-      header: "Your project was not accepted ;("
+      subject: "Your campaign does not fit fanfuel's focus"
+      header: "Your campaign was not accepted ;("
     new_draft_project:
-      subject: "New project created - %{project_name}"
-      header: "New project created"
+      subject: "New campaign created - %{project_name}"
+      header: "New campaign created"
     new_features:
       subject: "Ajuda para tese de doutorado sobre crowdfunding"
       header: "Ajuda para tese de doutorado sobre crowdfunding"
     adm_project_deadline:
-      subject: "The project %{project_name} has reached its deadline"
-      header: "The project reached its deadline"
+      subject: "The campaign %{project_name} has reached its deadline"
+      header: "The campaign reached its deadline"
     credits_warning:
-      subject: "You have US$ %{amount} in credits on Catarse"
-      header: "Why not back another project?"
+      subject: "You have US$ %{amount} in credits on fanfuel"
+      header: "Why not back another campaign?"

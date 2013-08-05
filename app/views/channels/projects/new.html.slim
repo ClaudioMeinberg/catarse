@@ -52,7 +52,7 @@
               .bootstrap-alert
                 span
                 .alert
-                  .important= t('.tags_important', href: "http://www.catarse.me/explore").html_safe
+                  .important= t('.tags_important', href: "http://www.fanfuel.co/").html_safe
               = form.label :category, t('.category')
               = form.select :category_id, Category.array
               p.inline-hints= t('formtastic.hints.project.category')
@@ -115,7 +115,7 @@
             .submit
               fieldset.accept
                 = check_box_tag 'accept'
-                = label_tag 'accept', t('accept_terms_html', link: link_to(t('terms'), 'http://suporte.catarse.me/knowledgebase/articles/190852-termo-de-uso-canal-asas', target: :_blank)), class: 'inline'
+                = label_tag 'accept', t('accept_terms_html', link: link_to(t('terms'), 'http://www.fanfuel.co/en/terms-and-conditions', target: :_blank)), class: 'inline'
               fieldset
                 .bootstrap-twitter
                   .send

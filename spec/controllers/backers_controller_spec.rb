@@ -12,7 +12,7 @@ describe BackersController do
   let(:current_user){ nil }
   let(:format){ 'json' }
   before do
-    ::Configuration[:base_url] = 'http://catarse.me'
+    ::Configuration[:base_url] = 'http://fanfuel.co'
     controller.stub(:current_user).and_return(current_user)
     successful_backer
     failed_backer

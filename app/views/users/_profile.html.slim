@@ -181,13 +181,13 @@
 				.row-fluid.hidden
 					p="hidden stuff"
 		            = f.input :id, as: :string, input_html: { disabled:  'disabled'}
-		            = f.input :cpf, as: :string, input_html: {autocomplete: 'off'}, label: (t('activerecord.attributes.user.cpf') + link_to(t('activerecord.attributes.user.cpf_hint'), 'http://suporte.catarse.me/knowledgebase/articles/162312-o-catarse-emite-nota-fiscal', {title: t('activerecord.attributes.user.cpf_hint_title') })).html_safe
+		            = f.input :cpf, as: :string, input_html: {autocomplete: 'off'}, label: (t('activerecord.attributes.user.cpf') + link_to(t('activerecord.attributes.user.cpf_hint'), 'http://blog.fanfuel.co', {title: t('activerecord.attributes.user.cpf_hint_title') })).html_safe
 			        = f.input :address_state, as: :select, collection: State.array
 		            = f.input :address_number, as: :string
 		            = f.input :address_complement, required: false, as: :string
 		            = f.input :state_inscription, as: :string						
 		            = f.input :address_neighbourhood, as: :string
-		            = f.input :moip_login, label: (t('activerecord.attributes.user.moip_login') + '  ' +  link_to(t('activerecord.attributes.user.moip_login_hint'), "http://suporte.catarse.me/knowledgebase/articles/153570-como-criar-uma-conta-no-moip")).html_safe
+		            = f.input :moip_login, label: (t('activerecord.attributes.user.moip_login') + '  ' +  link_to(t('activerecord.attributes.user.moip_login_hint'), "http://blog.fanfuel.co")).html_safe
 		            = hidden_field_tag 'id', @user.id
 
 
@@ -304,7 +304,7 @@
 	                      h3= t('credits.modal.title')
 	                    .modal-body
 	                      p= t('credits.modal.text')
-	                      = link_to t('credits.modal.link'), 'http://suporte.catarse.me/knowledgebase/articles/164746-regras-e-funcionamento-dos-reembolsos-estornos', target: '_blank'
+	                      = link_to t('credits.modal.link'), 'http://blog.fanfuel.co', target: '_blank'
 	                    .modal-footer
 	                      button type='button' data-dismiss="modal" class="btn"
 	                        = t('credits.modal.reject_btn')

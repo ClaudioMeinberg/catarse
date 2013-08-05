@@ -11,8 +11,8 @@ describe "Projects" do
     ProjectsController.any_instance.stub(:last_tweets).and_return([])
   }
   before {
-    ::Configuration[:base_url] = 'http://catarse.me'
-    ::Configuration[:company_name] = 'Catarse'
+    ::Configuration[:base_url] = 'http://fanfuel.co'
+    ::Configuration[:company_name] = 'fanfuel'
   }
 
 
