@@ -60,7 +60,8 @@
                 = reward.display_description.html_safe
 
               .reward-backers-info.font-tg-20
-                = pluralize(reward.backers.confirmed.count, t('backer_singular'), t('backer_plural'))
+                .ff-green
+                  = pluralize(reward.backers.confirmed.count, t('backer_singular'), t('backer_plural'))
                 - if reward.maximum_backers
                   .maximum_backers.clearfix
                     - if reward.sold_out?

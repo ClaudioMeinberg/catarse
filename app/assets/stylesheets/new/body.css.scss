@@ -330,6 +330,7 @@ a:hover {
 }
 
 .blog {
+
 	ul {
 		margin-left:0;
 	}
@@ -337,10 +338,12 @@ a:hover {
 		list-style-type: none;
 	}
 	ul.posts {
+		h2 {
+			line-height: 20px;
+		}
 		h2 a {
 			font-family: TradeGothicLTPro-Cn20;
 			font-size: 20px;
-			line-height: 20px;
 		}
 		h2 a:hover {
 			text-decoration: none;
@@ -350,7 +353,8 @@ a:hover {
 	.resume {
 		font-family:'genevaregular';
 		text-transform:none;
-		font-size:14px;
+		font-size:13px;
+		line-height: 13px;
 	}
 	.resume:hover {
 		text-decoration: none;

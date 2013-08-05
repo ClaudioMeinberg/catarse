@@ -100,15 +100,14 @@ ul.nav {
   // line-height:1em;
   border:0;
   margin:0;
-  background: $ffgreen; /* Old browsers */
-  background: -moz-linear-gradient(top, $ffgreen 0%, $ffdarkgreen 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffgreen), color-stop(100%,$ffdarkgreen)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, $ffgreen 0%,$ffdarkgreen 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, $ffgreen 0%,$ffdarkgreen 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, $ffgreen 0%,$ffdarkgreen 100%); /* IE10+ */
-  background: linear-gradient(to bottom, $ffgreen 0%, $ffdarkgreen 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$ffgreen, endColorstr=$ffdarkgreen,GradientType=0 ); /* IE6-9 */
-  background-color:$ffgreen;
+  background: rgb(102,255,0); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(102,255,0,1) 0%, rgba(153,255,0,1) 40%, rgba(153,255,0,1) 60%, rgba(102,255,0,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(102,255,0,1)), color-stop(40%,rgba(153,255,0,1)), color-stop(60%,rgba(153,255,0,1)), color-stop(100%,rgba(102,255,0,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(102,255,0,1) 0%,rgba(153,255,0,1) 40%,rgba(153,255,0,1) 60%,rgba(102,255,0,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(102,255,0,1) 0%,rgba(153,255,0,1) 40%,rgba(153,255,0,1) 60%,rgba(102,255,0,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(102,255,0,1) 0%,rgba(153,255,0,1) 40%,rgba(153,255,0,1) 60%,rgba(102,255,0,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(102,255,0,1) 0%,rgba(153,255,0,1) 40%,rgba(153,255,0,1) 60%,rgba(102,255,0,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66ff00', endColorstr='#66ff00',GradientType=0 ); /* IE6-9 */
   color:#333;
   text-transform:uppercase;
   text-shadow: none;
@@ -122,15 +121,14 @@ ul.nav {
 
 }
 .btn-ffgreen:hover {
-  background: $ffgreen; /* Old browsers */
-  background: -moz-linear-gradient(top, $ffgreen 0%, $ffdarkgreen 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffgreen), color-stop(100%,$ffdarkgreen)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, $ffgreen 0%,$ffdarkgreen 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, $ffgreen 0%,$ffdarkgreen 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, $ffgreen 0%,$ffdarkgreen 100%); /* IE10+ */
-  background: linear-gradient(to bottom, $ffgreen 0%, $ffdarkgreen 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=$ffgreen, endColorstr=$ffdarkgreen,GradientType=0 ); /* IE6-9 */
-  background-color:$ffgreen;
+  background: rgb(102,255,0); /* Old browsers */
+  background: -moz-linear-gradient(top,  rgba(102,255,0,1) 0%, rgba(153,255,0,1) 40%, rgba(153,255,0,1) 60%, rgba(102,255,0,1) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(102,255,0,1)), color-stop(40%,rgba(153,255,0,1)), color-stop(60%,rgba(153,255,0,1)), color-stop(100%,rgba(102,255,0,1))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(102,255,0,1) 0%,rgba(153,255,0,1) 40%,rgba(153,255,0,1) 60%,rgba(102,255,0,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(102,255,0,1) 0%,rgba(153,255,0,1) 40%,rgba(153,255,0,1) 60%,rgba(102,255,0,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(102,255,0,1) 0%,rgba(153,255,0,1) 40%,rgba(153,255,0,1) 60%,rgba(102,255,0,1) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(102,255,0,1) 0%,rgba(153,255,0,1) 40%,rgba(153,255,0,1) 60%,rgba(102,255,0,1) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#66ff00', endColorstr='#66ff00',GradientType=0 ); /* IE6-9 */
   color:black;
   text-decoration:none;
 }

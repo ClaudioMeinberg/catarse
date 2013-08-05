@@ -16,7 +16,8 @@
 .container-fluid.howitworks
   .row-fluid
     .span12
-      h3 = "How it works"
+      h3
+        h2 = "How it works"
   .row-fluid
     .span3.howitworks-step1
     .span3.howitworks-step2
@@ -39,7 +40,7 @@
                   = truncate(post.title, length: 80)
               / p.author= "#{t('projects.box.by')} #{post.author}"
               = link_to post.url, target: '__blank', class: 'resume' do
-                = truncate(post.summary, length: 130).html_safe
+                = truncate(post.summary, length: 100).html_safe
     .span4
       .twtr-feed
         h4 = "twitter"
@@ -49,7 +50,7 @@
       .newsletter
         .newsletter1
           h4 = "facebook"
-          .fb-like data-href="http://www.fanfuel.co" data-send="false" data-show-faces="true" data-colorscheme="dark" data-width="100%"
+          .fb-like data-href="https://www.facebook.com/fanfuelco" data-send="false" data-show-faces="true" data-colorscheme="dark" data-width="100%"
         hr
         .newsletter2
           h4 = t('sidebar.titles.newsletter')
