@@ -3,7 +3,7 @@
     .row-fluid
       .span12
         .progress
-          - if project.display_progress > 30
+          - if project.display_progress > 50
             .bar style="width: #{project.display_progress}%;"
               p = "#{project.display_progress}% fuelled"
           - else
@@ -40,7 +40,7 @@
             /div = "Country"
             - unless project.user.address_city.blank?
               div 
-                span.small-text = 'City'
+                /span.small-text = 'City'
                 = project.user.address_city
           li.stats3.nav_border_right.nav_border_left
             /div = "Amount raised"
@@ -57,8 +57,8 @@
           li.stats5.double_border_left
             - if project.in_time?
               div
-                = "#{project.time_to_go[:time]} #{project.time_to_go[:unit]} "
-                = "#{project.remaining_text}"
+                = "#{project.time_to_go[:time]} "
+                span.small-text = "#{project.time_to_go[:unit]} #{project.remaining_text}"
             - else
               div
                 = I18n.t("project.display_status.#{project.display_status}").capitalize
