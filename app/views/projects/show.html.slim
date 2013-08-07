@@ -40,13 +40,13 @@
             / #project_about.content= render 'project_about'
         .span4.campaignbar
           .progress
-            - if @project.display_progress > 30
-              .bar style="width: #{@project.display_progress}%;"
-                p = "#{@project.display_progress}% fuelled"
+            - if @project.progress > 50
+              .bar style="width: #{@project.progress}%;"
+                p = "#{@project.progress}% fuelled"
             - else
-              .bar style="width: #{@project.display_progress}%;"
+              .bar style="width: #{@project.progress}%;"
               .outside-bar
-                p = "#{@project.display_progress}% fuelled"
+                p = "#{@project.progress}% fuelled"
           #statistics
             .statistics
               .item

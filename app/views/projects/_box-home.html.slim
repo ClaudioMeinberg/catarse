@@ -3,13 +3,13 @@
     .row-fluid
       .span12
         .progress
-          - if project.display_progress > 50
-            .bar style="width: #{project.display_progress}%;"
-              p = "#{project.display_progress}% fuelled"
+          - if project.progress > 50
+            .bar style="width: #{project.progress}%;"
+              p = "#{project.progress}% fuelled"
           - else
-            .bar style="width: #{project.display_progress}%;"
+            .bar style="width: #{project.progress}%;"
             .outside-bar
-              p = "#{project.display_progress}% fuelled"
+              p = "#{project.progress}% fuelled"
       - if project.expired?
         .status_image
           = link_to project_by_slug_path(permalink: project.permalink), target: ( defined?(embed_link) ? '__blank' : '' ) do
