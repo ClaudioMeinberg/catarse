@@ -335,6 +335,8 @@ div.pluginConnectButton {
 	text-align:left;
 	padding:16px;
 	background-color:#000;
+	height:200px;
+
 }
 
 
@@ -360,6 +362,7 @@ p.reward-title {
 	display:inline-block;
 	width:33%;
 	margin-bottom:15px;
+	float:left;
 	@media screen and (max-width: 979px) {
 		width:50%;
 	}
