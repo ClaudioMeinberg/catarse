@@ -362,7 +362,7 @@ p.reward-title {
 	cursor: pointer;
 }
 
-.masonry-backers-box {
+.masonry-box, .masonry-backers-box {
 	display:inline-block;
 	width:33%;
 	margin-bottom:15px;
@@ -374,7 +374,13 @@ p.reward-title {
 	}
 }
 
+.box {
+	padding:10px;	
+}
 
+#masonry-container {
+	text-align:left;
+}
 
 .backer_profile_image, .backer_avatar {
 	width:70px;

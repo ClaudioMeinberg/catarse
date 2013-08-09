@@ -158,7 +158,7 @@ CATARSE.ProjectsShowView = Backbone.View.extend({
 
   rewards: function() {
     this.selectItem("rewards")
-    init_masonry_rewards()
+    // init_masonry_rewards()
   },
 
   updates: function() {
