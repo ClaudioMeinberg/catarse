@@ -10,14 +10,15 @@
             - else
               = image_tag("#{reward.image}")
             .campaign-reward-bar
-              .campaign-reward-bar-price.nav_border_right
-                = reward.display_minimum
-              .campaign-reward-bar-middle.nav_border_left
-              .campaign-reward-bar-buynow.double_border_left
-                p
-                  = "buy"
-                  br
-                  = "now"
+              .double_border_right
+                .campaign-reward-bar-price
+                  = reward.display_minimum
+              .double_border_left
+                .campaign-reward-bar-buynow
+                  p
+                    = "buy"
+                    br
+                    = "now"
             .campaign-reward-text
               - if can?(:update, @project)
                 .hide id="reward#{reward.id}Editor"

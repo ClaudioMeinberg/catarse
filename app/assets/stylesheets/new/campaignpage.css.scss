@@ -271,21 +271,15 @@ div.pluginConnectButton {
 #project_rewards {
 	.double_border_left {
 		border-left:1px solid rgba(45,45,45,1); 
-		padding-left:1px; 
-		background-color:black;
+		margin-left:1px;
+		display: inline-block;
+		float: right;
 	}
 	.double_border_right {
 		border-right:1px solid black; 
-		padding-right:1px; 
-		background-color:rgba(45,45,45,1);
-	}
-	.nav_border_right {
-		border-right: 1px solid rgba(45,45,45,1); 
-		height:100%;
-	}
-	.nav_border_left {
-		border-left:1px solid black; 
-		height:100%;
+		margin-right:1px; 
+		display: inline-block;
+		float: left;
 	}
 }
 
@@ -302,6 +296,7 @@ div.pluginConnectButton {
 	line-height:50px;
 	font-family:'TradeGothicLTPro-Cn20';
 	border-bottom:1px solid #1a1a1a;
+	border-top:1px solid #1a1a1a;
 	background: #444; /* Old browsers */
 	background: -moz-linear-gradient(top,  #444 0%, #0a0a0a 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#444), color-stop(100%,#0a0a0a)); /* Chrome,Safari4+ */
@@ -318,12 +313,9 @@ div.pluginConnectButton {
 	padding:0 20px;
 	float:left;
 	display:inline-block;
+	border-right:1px solid #2d2d2d;
 }
 
-.campaign-reward-bar-middle {
-	float:left;
-	display:inline-block;
-}
 .campaign-reward-bar-buynow {
 	line-height:15px;
 	font-size:15px;
@@ -331,7 +323,9 @@ div.pluginConnectButton {
 	float:right;
 	display:inline-block;
 	padding:10px 20px;
-	width: 43px;
+	width: 34px;
+	text-align:center;
+	border-left:1px solid black;
 	p {
 		margin:0;
 	}
