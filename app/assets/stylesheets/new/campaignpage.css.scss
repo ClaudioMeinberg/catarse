@@ -328,17 +328,39 @@ div.pluginConnectButton {
 	border-left:1px solid black;
 	p {
 		margin:0;
+		font-family:'TradeGothicLTPro-Cn20';
 	}
+}
+
+.campaign-reward-bar-buynow:hover{
+	color:#111;
+	text-decoration:none;
+	background: $ffgreen; /* Old browsers */
+	background: -moz-linear-gradient(top,  $ffgreen 0%, $ffdarkgreen 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$ffgreen), color-stop(100%,$ffdarkgreen)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  $ffgreen 0%,$ffdarkgreen 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  $ffgreen 0%,$ffdarkgreen 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  $ffgreen 0%,$ffdarkgreen 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  $ffgreen 0%,$ffdarkgreen 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$ffgreen', endColorstr='$ffdarkgreen',GradientType=0 ); /* IE6-9 */
 }
 
 .campaign-reward-text {
 	text-align:left;
-	padding:16px;
+	padding:0;
 	background-color:#000;
-	height:200px;
-
+	min-height:209px;
 }
 
+.campaign-reward-text > * {
+	padding:0 16px;
+}
+
+.campaign-reward-text2 {
+	width:auto !important;
+	min-height:262px;
+	background-color:black;
+}
 
 p.reward-title {
 	font-family:'TradeGothicLTPro-Cn20';
@@ -406,6 +428,8 @@ p.reward-title {
 #rewards {
 	.reward-backers-info {
 		font-size: 14px;
+		padding-top:8px;
+		padding-bottom:8px;
 	}
 }
 
@@ -483,3 +507,10 @@ p.reward-title {
 		}
 	}
 }
+
+a.readm-more, a.readm-less {
+	color:$ffgreen;
+	font-family:'TradeGothicLTPro-Cn20';
+}
+
+
