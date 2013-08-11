@@ -70,7 +70,7 @@ var CATARSE = {
 
         var opt     = $.fn.extend(default_options, opt);
 
-        mixpanel.track(text, opt);
+        // mixpanel.track(text, opt);
       });
 
     },
