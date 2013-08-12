@@ -14,38 +14,37 @@
 #profile-show
   .container-fluid
     .row-fluid
-      .span12
+      .span12.section_header
         .row-fluid
           #user_profile[data-user="#{@user.to_json}"]
             .span2
-              .section_header
-                .profile_image
-                  = @user.display_image_html
-                .profile_title
-                  h1.profile
-                    = @user.display_name
-                .user_social
-                  - if !@user.facebook_link.blank? || !@user.twitter.blank?
-                    div.profile_subheading
-                      = "Follow me"
-                    / - if can? :manage, @user
-                    /   li.email
-                    /     = mail_to @user.email, @user.email, target: '_blank'
-                    - if !@user.twitter.blank?
-                      .twitter
-                        = link_to (image_tag 'homepageicon-tw.png', size:'30x30'), @user.twitter_link, target: '_blank'
-                    - if !@user.facebook_link.blank?
-                      .facebook
-                        = link_to (image_tag 'homepageicon-fb.png', size:'30x30'), @user.facebook_link, target: '_blank'
-                    / - if @user.other_link
-                    /   li.other
-                    /     = link_to @user.other_link, @user.other_link, target: '_blank'
-                .clearfix
-                .profile_title
-                  - if !@user.bio.blank?
-                    .profile_subheading = "BIO"
-                    .bio
-                      = @user.bio
+              .profile_image
+                = @user.display_image_html
+              .profile_title
+                h1.profile
+                  = @user.display_name
+              .user_social
+                - if !@user.facebook_link.blank? || !@user.twitter.blank?
+                  div.profile_subheading
+                    = "Follow me"
+                  / - if can? :manage, @user
+                  /   li.email
+                  /     = mail_to @user.email, @user.email, target: '_blank'
+                  - if !@user.twitter.blank?
+                    .twitter
+                      = link_to (image_tag 'homepageicon-tw.png', size:'30x30'), @user.twitter_link, target: '_blank'
+                  - if !@user.facebook_link.blank?
+                    .facebook
+                      = link_to (image_tag 'homepageicon-fb.png', size:'30x30'), @user.facebook_link, target: '_blank'
+                  / - if @user.other_link
+                  /   li.other
+                  /     = link_to @user.other_link, @user.other_link, target: '_blank'
+              .clearfix
+              .profile_title
+                - if !@user.bio.blank?
+                  .profile_subheading = "BIO"
+                  .bio
+                    = @user.bio
             .span10
               = render 'users/profile'
               / hr

@@ -11,13 +11,13 @@
 			    .row-fluid
 			      .span12
 			        .progress
-			          - if project.display_progress > 30
-			            .bar style="width: #{project.display_progress}%;"
-			              p = "#{project.display_progress}% fuelled"
+			          - if project.progress > 50
+			            .bar style="width: #{project.progress}%;"
+			              p = "#{project.progress}% fuelled"
 			          - else
-			            .bar style="width: #{project.display_progress}%;"
+			            .bar style="width: #{project.progress}%;"
 			            .outside-bar
-			              p = "#{project.display_progress}% fuelled"
+			              p = "#{project.progress}% fuelled"
 			      - if project.expired?
 			        .status_image
 			          = link_to project_by_slug_path(permalink: project.permalink), target: ( defined?(embed_link) ? '__blank' : '' ) do
@@ -34,7 +34,7 @@
 			        p = truncate(project.headline, length: 300)
 
 		    	    / p = truncate(project.about, length: 300)
-			        = link_to "View Campaign", project, target: ( defined?(embed_link) ? '__blank' : '' ) , class: "btn btn-browserewards"
+			        = link_to "View Campaign", project, target: ( defined?(embed_link) ? '__blank' : '' ) , class: "btn btn-fforange btn-browserewards"
 			    .row-fluid
 			      .span12.stats
 			        / .stats
@@ -78,13 +78,13 @@
 				        	.row-fluid
 				        		.span12
 							        .progress
-							          - if project.display_progress > 30
-							            .bar style="width: #{project.display_progress}%;"
-							              p = "#{project.display_progress}% fuelled"
+							          - if project.progress > 50
+							            .bar style="width: #{project.progress}%;"
+							              p = "#{project.progress}% fuelled"
 							          - else
-							            .bar style="width: #{project.display_progress}%;"
+							            .bar style="width: #{project.progress}%;"
 							            .outside-bar
-							              p = "#{project.display_progress}% fuelled"
+							              p = "#{project.progress}% fuelled"
 						    .row-fluid
 						    	.span12.project_image_box
 							    	= image_tag project.video_thumbnail
