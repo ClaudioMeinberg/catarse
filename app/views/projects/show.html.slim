@@ -72,8 +72,8 @@
                   - else
                     #{@project.remaining_days} #{@project.time_to_go[:unit].capitalize} #{pluralize_without_number(@project.time_to_go[:time], t('remaining_singular'), t('remaining_plural'))}
           = link_to "Fund this athlete!", new_project_backer_path(@project), class: "btn-ffgreen btn-fundathlete"
-  p.campaign-execution-alert
-    = "This campaign will only be executed if we reach #{@project.display_goal} within #{@project.remaining_days}"
+    p.campaign-execution-alert
+      = "This campaign will only be executed if we reach #{@project.display_goal} within #{@project.remaining_days} days"
 
 
 #page_content.campaignpage-body
