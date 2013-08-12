@@ -49,6 +49,11 @@
                 p = "#{@project.progress}% fuelled"
           #statistics
             .statistics
+              .item.share
+                .stat
+                  = "Share "
+                  .fb-like data-href="#{url_for(:only_path => false, :overwrite_params=>nil)}" data-layout="button_count" data-send="false" data-show-faces="false" data-width="450"
+                  a.twitter-share-button href="#{project_path(@project)}"
               .item
                 .stat
                   = @project.display_pledged
@@ -66,11 +71,6 @@
                     em #{@project.online_days} #{pluralize_without_number(@project.online_days, I18n.t('datetime.prompts.day').downcase)} #{pluralize_without_number(@project.online_days, t('remaining_singular'), t('remaining_plural'))}
                   - else
                     #{@project.remaining_days} #{@project.time_to_go[:unit].capitalize} #{pluralize_without_number(@project.time_to_go[:time], t('remaining_singular'), t('remaining_plural'))}
-              .item.share
-                .stat
-                  = "Share "
-                  .fb-like data-href="#{url_for(:only_path => false, :overwrite_params=>nil)}" data-layout="button_count" data-send="false" data-show-faces="false" data-width="450"
-                  a.twitter-share-button href="#{project_path(@project)}"
           = link_to "Fund this athlete!", new_project_backer_path(@project), class: "btn-ffgreen btn-fundathlete"
 
 #page_content.campaignpage-body
