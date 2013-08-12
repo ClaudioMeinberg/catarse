@@ -3,24 +3,61 @@
 <head>
   <title>We're sorry, but something went wrong (500)</title>
   <style type="text/css">
-    body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-    div.dialog {
-      width: 25em;
-      padding: 0 4em;
-      margin: 4em auto 0 auto;
-      border: 1px solid #ccc;
-      border-right-color: #999;
-      border-bottom-color: #999;
+    body { 
+      color: white; 
+      text-align: center; 
+      font-family: arial, sans-serif; 
+      background-color: black;
+      margin: 0;
+      padding: 0;
+      background-image: url(https://s3-eu-west-1.amazonaws.com/ff-production/img/noise.png);
     }
-    h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
+    div.dialog {
+      margin: 4em auto 0 auto;
+    }
+    h1 { 
+      font-size: 35px; 
+      margin-bottom: 100px;
+      font-weight: normal; 
+    }
+    p {
+      margin-top: 40px;
+     font-weight: normal;  
+     font-size: 30px;
+    }
+    a {
+     font-size: 27px; 
+     color: #99ff00;
+     text-decoration: none;
+    }
+    div.bgimg{
+      width: 100%;
+      height: 100%;
+      background-image: url(https://s3-eu-west-1.amazonaws.com/ff-production/img/gradient2.png);
+      background-repeat: repeat-x;
+      position: absolute;
+    }
   </style>
 </head>
 
 <body>
   <!-- This file lives in public/500.html -->
-  <div class="dialog">
-    <h1>We're sorry, but something went wrong.</h1>
-    <p>We've been notified about this issue and we'll take a look at it shortly.</p>
+  <div class="bgimg">
+    <div class="dialog">
+      <h1>NO FUEL!</h1>
+      <img src="https://s3-eu-west-1.amazonaws.com/ff-production/img/no-fuel.png" alt="no fuel...">
+      <p>
+        WHOA! WE ARE OVERCROWDED AT THE MOMENT! <br />
+        LET US KNOW ON OUR FACEBOOK PAGE  <br />
+        OR TRY AGAIN IN 2 MINS! <br />
+      </p>
+      <p>
+        <a href="http://www.facebook.com/fanfuelco">www.facebook.com/fanfuelco</a>
+      </p>
+    </div>
   </div>
+  
+  
+
 </body>
 </html>
