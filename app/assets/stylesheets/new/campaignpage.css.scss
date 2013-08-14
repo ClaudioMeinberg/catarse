@@ -196,10 +196,16 @@ h1.campaigntitle {
 
 
 #project_content {
-	padding: 25px;
-	background-color: #151515;
-	text-align: left;
-
+	
+	#project_rewards,
+	#project_updates,
+	#project_comments,
+	#project_backers,
+	#description-text {
+		padding: 25px;
+		background-color: #151515;
+		text-align: left;	
+	}
 	.anchorHack {
 		display: block;
 		position: relative;
@@ -315,6 +321,7 @@ div.pluginConnectButton {
 }
 
 .campaign-reward-bar-buynow {
+	color: $ffgreen;
 	line-height:15px;
 	font-size:15px;
 	text-align:right;
@@ -330,7 +337,8 @@ div.pluginConnectButton {
 	}
 }
 
-.campaign-reward-bar-buynow:hover{
+.campaign-reward-bar-buynow:hover,
+.campaign-reward-bar-buynow-hovered{
 	color:#111;
 	text-decoration:none;
 	background: $ffgreen; /* Old browsers */
@@ -364,7 +372,8 @@ p.reward-title {
 	font-family:'TradeGothicLTPro-Cn20';
 	font-size:24px;
 	line-height: 26px;
-	color: white;
+	color: $ff-lightest-grey;
+	text-transform: uppercase;
 }
 
 .reward-description {
@@ -424,13 +433,16 @@ p.reward-title {
 	}
 }
 
-#rewards {
-	.reward-backers-info {
-		font-size: 14px;
-		padding-top:8px;
-		padding-bottom:8px;
-	}
+
+.reward-backers-info {
+	font-size: 15px;
+	padding-top:8px;
+	padding-bottom:8px;
+	font-family: 'TradeGothicLTPro-Cn18';
+	text-transform: uppercase;
+	color: $ff-lightest-grey;
 }
+
 
 /*****/
 #campaign-page{
@@ -513,3 +525,36 @@ a.readm-more, a.readm-less {
 }
 
 
+/* INFORMATION */
+
+#project_information{
+	.text-off {
+		color: #aaa;
+		a{
+			color: #aaa;
+		}
+	}
+	.bg-grey {
+		background-color:#151515;
+	}
+	.campaign-reward-text,
+	.campaign-reward-text2 {
+		min-height: 0;
+		border: 0;
+	}
+	.campaign-reward-bar-price{
+		border: 0;
+	}
+	.box{
+		margin: 0;
+		margin-right: -31px;
+		padding: 20px;
+		padding-bottom: 0;
+	}
+	.masonry-box, .masonry-backers-box {
+		margin-bottom:0;
+		@media screen and (max-width: 979px) {
+			width:33%;
+		}
+	}
+}
