@@ -1,5 +1,5 @@
 .row-fluid
-	.span8
+	.span8.text-left
 		= raw(@project.about)
 	.span4
     - @rewards.each do |reward|
@@ -83,13 +83,6 @@
                       .updated_reward
                         span id="rewardVersioning#{reward.id}"
                           = 'See previous version.'
-.clearfix
-	javascript:
-		$(function () {
-		  $('.reward-description').readmore();
-		});
-
-
 
 
 
