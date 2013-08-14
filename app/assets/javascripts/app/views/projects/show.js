@@ -2,7 +2,7 @@ CATARSE.ProjectsShowView = Backbone.View.extend({
 
   initialize: function() {
     _.bindAll(this, "bestInPlaceEvents", "showUpRewardEditForm", "showUpNewRewardForm","render", "BackerView", "BackersView", "information", "updates", "edit", "reports", "backers", "comments", "embed", "isValid", "backWithReward", "rewards")
-    CATARSE.router.route("", "index", this.rewards)
+    CATARSE.router.route("", "index", this.information)
     CATARSE.router.route("information", "information", this.information)
     CATARSE.router.route("updates", "updates", this.updates)
     CATARSE.router.route(/updates\/\d+/, "updates", this.updates)

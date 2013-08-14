@@ -82,10 +82,10 @@
       .span12
         .tab_container
           nav#project_menu.campaign-submenu
-            = link_to '#rewards', id: 'rewards_link', class: 'item selected' do
-              = "rewards"
-            = link_to '#information', id: 'information_link', class: 'item' do
+            = link_to '#information', id: 'information_link', class: 'item selected' do
               = "information"
+            = link_to '#rewards', id: 'rewards_link', class: 'item' do
+              = "rewards"
             = link_to '#updates', id: 'updates_link', class: 'item' do
               = "updates"
             = link_to '#comments', id: 'comments_link', class: 'item' do
@@ -154,9 +154,8 @@
             .media_content_backers
               #project_backers.content.hide
             #project_comments.content.hide= render 'comments'
-            #project_information.content.hide.lowercase= render 'project_about'
-            #rewards
-              #project_rewards.content= render 'project_rewards'
+            #project_information.content.lowercase= render 'project_about'
+            #project_rewards.content.hide= render 'project_rewards'
 
             hr
             .align-left.size-12
