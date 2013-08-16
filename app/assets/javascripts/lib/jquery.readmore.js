@@ -2,7 +2,7 @@
   $.fn.readmore = function (settings) {
 
     var defaults = {
-      substr_len: 240,
+      substr_len: 220,
       split_word: false,
       ellipses: '&#8230;',
       // more_link: '<a class="readm-more">Read&nbsp;More</a>',
@@ -36,6 +36,7 @@
         elem.find('.' + opts.hidden_clzz).hide();
         elem.find('.' + opts.ellipse_clzz).show();
         $(this).parent().children().not(":first-child").hide();
+        $(window).trigger('resize');
       });
       // On 'Read More'
       elem.find('.' + opts.more_clzz).click( function () {
@@ -44,8 +45,8 @@
         $(this).hide();
         // Show Read Less and all other paragraphs
         $(this).parent().children('.readm-hidden').show();
-        $(this).parent().parent().children().show();
-
+        $(this).parent().parent().children().slideDown("slow");
+        $(window).trigger('resize');
       });
 
     }

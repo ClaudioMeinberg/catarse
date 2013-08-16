@@ -230,6 +230,7 @@ h1.campaigntitle {
 
 #project_content img{
   margin: 0;
+  width:100%;
 }
 
 #project_content .comment{
@@ -359,18 +360,18 @@ div.pluginConnectButton {
 	text-align:left;
 	padding:0;
 	background-color:#000;
-	min-height:209px;
+	min-height:294px;
 }
 
 .campaign-reward-text > * {
 	padding:0 16px;
 }
 
-.campaign-reward-text2 {
-	width:auto !important;
-	min-height:262px;
-	background-color:black;
-}
+// .campaign-reward-text2 {
+// 	width:auto !important;
+// 	min-height:262px;
+// 	background-color:black;
+// }
 
 p.reward-title {
 	font-family:'TradeGothicLTPro-Cn20';
@@ -437,9 +438,14 @@ p.reward-title {
 	}
 }
 
+.reward-backers-title-info {
+	min-height: 210px;
+}
+
 
 .reward-backers-info {
 	font-size: 15px;
+	line-height:40px;
 	padding-top:8px;
 	padding-bottom:8px;
 	font-family: 'TradeGothicLTPro-Cn18';
@@ -562,3 +568,18 @@ a.readm-more, a.readm-less {
 		}
 	}
 }
+
+.reward-backers-info {
+	min-height:30px;
+}
+
+.reward-backers-count {
+	float:left;
+}
+
+.maximum_backers {
+	float:right;
+}
+
+
+
