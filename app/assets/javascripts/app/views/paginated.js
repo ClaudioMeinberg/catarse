@@ -47,7 +47,7 @@ CATARSE.PaginatedView = Backbone.View.extend({
   },
 
   afterUpdate: function(){
-    // init_masonry_backers()
+    init_masonry_backers()
   },
   
   beforeUpdate: function(){
@@ -56,16 +56,16 @@ CATARSE.PaginatedView = Backbone.View.extend({
   update: function(){
     this.beforeUpdate()
     this.loading.children().hide()
-		// ul_element = this.el.find("div#masonry-backers-container")
-  //   if(!this.collection.isEmpty()) {
-  //     this.collection.each(function(model, i){
-  //       var item = $("<div class='masonry-backers-box "+(i%3==0?'first':'')+""+(i%3==2?'last':'')+"'>")
-  //       ul_element.append(item)
-  //       new this.modelView({el: item, model: model})
-  //     }, this)
-  //   } else if(this.collection.page == 1) {
-  //     this.el.html(_.template(this.emptyTemplate()))
-  //   }
+		ul_element = this.el.find("div#masonry-backers-container")
+    if(!this.collection.isEmpty()) {
+      this.collection.each(function(model, i){
+        var item = $("<div class='masonry-backers-box "+(i%3==0?'first':'')+""+(i%3==2?'last':'')+"'>")
+        ul_element.append(item)
+        new this.modelView({el: item, model: model})
+      }, this)
+    } else if(this.collection.page == 1) {
+      this.el.html(_.template(this.emptyTemplate()))
+    }
     this.afterUpdate()
     this.loading.waypoint(this.waypoint, {offset: "100%"})
     return this
