@@ -407,7 +407,7 @@ p.reward-title {
 }
 
 .box {
-	padding:10px;	
+	padding:0;	
 }
 
 #masonry-container {
@@ -547,22 +547,14 @@ a.readm-more, a.readm-less {
 	.bg-grey {
 		background-color:#151515;
 	}
-	.campaign-reward-text,
-	.campaign-reward-text2 {
-		min-height: 0;
+	.campaign-reward-text {
+		min-height: 282px;
 		border: 0;
 	}
 	.campaign-reward-bar-price{
 		border: 0;
 	}
-	.box{
-		margin: 0;
-		margin-right: -31px;
-		padding: 20px;
-		padding-bottom: 0;
-	}
 	.masonry-box, .masonry-backers-box, .masonry-info-box {
-		margin-bottom:0;
 		@media screen and (max-width: 979px) {
 			width:33%;
 		}
@@ -582,4 +574,14 @@ a.readm-more, a.readm-less {
 }
 
 
+#masonry-info-container {
+	margin-top: 20px;
+}
+
+.masonry-lge-info-box {
+	min-width:66%;
+	@media screen and (max-width: 979px) {
+		min-width:100%;
+	}
+}
 

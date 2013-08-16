@@ -154,13 +154,12 @@ CATARSE.ProjectsShowView = Backbone.View.extend({
 
   information: function() {
     this.selectItem("information")
+    init_masonry('#masonry-info-container', '.masonry-info-box');
   },
 
   rewards: function() {
     this.selectItem("rewards")
-    // init_masonry_rewards()
     init_masonry('#masonry-container', '.masonry-box')
-
   },
 
   updates: function() {
