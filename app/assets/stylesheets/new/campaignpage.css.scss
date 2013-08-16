@@ -559,6 +559,21 @@ a.readm-more, a.readm-less {
 			width:33%;
 		}
 	}
+	.masonry-lge-info-box {
+		min-width:66%;
+		@media screen and (max-width: 979px) {
+			min-width:100%;
+		}
+	}
+
+	.project-about-rewards-title-desc {
+		min-height:224px;	
+	}
+	p.reward-title {
+		padding-top:8px;
+	}
+
+
 }
 
 .reward-backers-info {
@@ -578,10 +593,4 @@ a.readm-more, a.readm-less {
 	margin-top: 20px;
 }
 
-.masonry-lge-info-box {
-	min-width:66%;
-	@media screen and (max-width: 979px) {
-		min-width:100%;
-	}
-}
 
