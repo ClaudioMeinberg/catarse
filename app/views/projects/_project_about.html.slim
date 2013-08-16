@@ -3,7 +3,7 @@
 		= raw(@project.about)
 	/.span4
     - @rewards.each do |reward|
-      .campaign-reward.masonry-box
+      .campaign-reward.masonry-info-box
         div[id="reward_#{reward.id}" data-update_url="#{sort_project_reward_path(@project, reward)}" class="box #{(can?(:update, reward) ? 'clickable_owner sortable' : '')} #{(@project.online? && !reward.sold_out? && !can?(:update, reward)  ? 'clickable'  : '' )}"]
           .campaign-reward-bar
             .campaign-reward-bar-price

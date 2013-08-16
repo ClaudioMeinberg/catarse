@@ -393,7 +393,7 @@ p.reward-title {
 	cursor: pointer;
 }
 
-.masonry-box, .masonry-backers-box {
+.masonry-box, .masonry-backers-box, .masonry-info-box {
 	display:inline-block;
 	width:33%;
 	margin-bottom:15px;
@@ -561,7 +561,7 @@ a.readm-more, a.readm-less {
 		padding: 20px;
 		padding-bottom: 0;
 	}
-	.masonry-box, .masonry-backers-box {
+	.masonry-box, .masonry-backers-box, .masonry-info-box {
 		margin-bottom:0;
 		@media screen and (max-width: 979px) {
 			width:33%;
