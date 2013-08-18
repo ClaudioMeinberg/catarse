@@ -95,7 +95,7 @@ group :production do
 
   # Enabling Gzip on Heroku
   # If you don't use Heroku, please comment the line below.
-  gem 'heroku-deflater', '>= 0.4.1'
+  #gem 'heroku-deflater', '>= 0.4.1'
 
 
   # Monitoring with the new new relic
@@ -137,6 +137,7 @@ group :assets do
   gem "compass-rails"
   gem 'uglifier'
   gem 'compass-960-plugin'
+  gem 'asset_sync'
 end
 
 
