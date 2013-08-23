@@ -128,7 +128,7 @@
 	margin-top: -35px;
 }
 
-#checkout .reward_image{
+#checkout .reward_image {
 	float: right;
 	background-color: white;
 	background-size:100% auto;
@@ -137,6 +137,9 @@
 	max-height: 132px;
 	margin-top: -10px;
 	margin-right: -20px;
+	@media screen and (max-width: 767px) {
+		display:none;
+	}
 }
 
 #checkout hr{
