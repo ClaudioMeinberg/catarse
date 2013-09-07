@@ -71,7 +71,8 @@
                     nav#payment_menu
                       - PaymentEngines.engines.each do |engine|
                         = link_to "##{engine[:name]}_payment", id: engine[:name], class: 'selected enabled' , :'data-target' => engine[:review_path].call(@backer) do
-                          = image_tag 'paypal_logo.png', id: 'paypal_logo', alt: 'paypal_logo', width: '140px'
+                          = image_tag 'http://s3-eu-west-1.amazonaws.com/ff-production/img/PayPal.png', id: 'paypal_logo', alt: 'paypal_logo', width: '140px'
+                          = image_tag 'http://s3-eu-west-1.amazonaws.com/ff-production/img/CreditCards.png', id: 'CreditCards', alt: 'CreditCards', width: '140px'
 
                   - PaymentEngines.engines.each do |engine|
                     div[id="#{engine[:name]}_payment" class="payments_type hide"]
