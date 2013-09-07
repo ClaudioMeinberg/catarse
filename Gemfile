@@ -137,7 +137,7 @@ group :assets do
   gem "compass-rails"
   gem 'uglifier'
   gem 'compass-960-plugin'
-  gem 'asset_sync'
+  #gem 'asset_sync'
 end
 
 
